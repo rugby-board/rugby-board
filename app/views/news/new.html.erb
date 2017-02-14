@@ -1,0 +1,56 @@
+<div class="section">
+  <%= form_for :news, method: :post, url: '/news/create' do |f| %>
+  <div class="section-wrap" id="title-input">
+    <div class="section-item">
+      <div class="section-title">
+        <%= f.label :title %>
+      </div>
+      <div class="section-content">
+        <%= f.text_field :title %>
+      </div>
+    </div>
+
+    <div class="section-item">
+      <div class="section-title">
+        <%= f.label :content %>
+      </div>
+      <div class="section-content">
+        <%= f.text_area :content %>
+      </div>
+    </div>
+
+    <div class="section-item">
+      <div class="section-title">
+        <%= f.label :klass %>
+      </div>
+      <div class="section-content">
+        <%= select_tag(:klass, options_for_select(@class_list))
+        %>
+      </div>
+    </div>
+
+    <div class="section-item">
+      <div class="section-title">
+        <%= f.label :event %>
+      </div>
+      <div class="section-content">
+        <%= select_tag(:event, options_for_select(@event_list)) %>
+        </select>
+      </div>
+    </div>
+
+    <div class="section-item">
+      <div class="section-title">
+        <%= f.label :tag %>
+      </div>
+      <div class="section-content">
+        <%= f.text_field :tag %>
+      </div>
+    </div>
+
+    <div class="section-item">
+      <%= f.submit %>
+    </div>
+  </div>
+  <% end %>
+</div>

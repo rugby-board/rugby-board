@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'index/index' => 'index#index'
+  get 'index/about' => 'index#about'
+  
+  get 'news/new' => 'news#new'
+  post 'news/create' => 'news#create'
+
+  root 'index#index'
 end

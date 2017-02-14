@@ -1,0 +1,14 @@
+<div class="section">
+  <% @news.each do |n| %>
+  <div class="section-wrap" id="chimera">
+    <div class="section-item">
+      <div class="section-title">
+      <%= n.title %>
+      </div>
+      <div class="section-content">
+      <%= n.content %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
