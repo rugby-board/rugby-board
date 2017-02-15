@@ -38,7 +38,7 @@ footer {
 }
 a {
   text-decoration: none;
-  color: #06c;
+  color: #333;
 }
 a:hover {
   text-decoration: underline;
@@ -58,11 +58,30 @@ a:hover {
 }
 .menu {
   padding-top: 2rem;
-  padding-left: 1rem;
+  text-align: center;
+}
+.site-name {
+  font-size: 2rem;
+  border: #333 solid .1rem;
+  padding-top: 1rem;
+  padding-bottom: .6rem;
+  border-radius: .2rem;
+}
+.site-name a:hover {
+  color: white;
+}
+.site-name:hover {
+  background-color: #333;
+}
+.site-name:hover a {
+  color: white;
+}
+.site-menu {
+  font-size: 1rem;
 }
 .section {
   text-align: left;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 @media (max-width: 42rem) {
   .section {
