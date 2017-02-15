@@ -13,3 +13,109 @@
  *= require_tree .
  *= require_self
  */
+
+/*
+ * Theme of Crisp Wiki
+ * Copyright(c) David Zhang, 2016
+ */
+* {
+  box-sizing: border-box;
+}
+html {
+  width: 100%;
+  font-size: 16px;
+}
+@media (max-width: 42rem) {
+  html {
+    font-size: 12px;
+  }
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+  background-color: #fbfbfb;
+  word-wrap: break-word;
+  text-align: center;
+  height: 100%;
+}
+footer {
+  text-align: center;
+  font-size: 1rem;
+  overflow: hidden;
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+a:hover {
+  text-decoration: underline;
+}
+.container {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  margin-bottom: 3rem;
+}
+@media (max-width: 42rem) {
+  .container {
+    padding-left: .4rem;
+    padding-right: .4rem;
+  }
+}
+.menu {
+  padding-top: 1rem;
+  text-align: center;
+}
+.site-name {
+  font-size: 2rem;
+  padding-top: 1rem;
+  padding-bottom: .6rem;
+  border-radius: .2rem;
+  background-color: #333;
+}
+.site-name a {
+  color: white;
+  text-decoration: none;
+}
+.site-name a:hover {
+  text-decoration: none;
+}
+.site-menu {
+  font-size: 1rem;
+}
+.site-menu a:hover {
+  text-decoration: underline;
+}
+.section {
+  text-align: left;
+  margin-top: 1rem;
+}
+@media (max-width: 42rem) {
+  .section {
+    padding-left: .4rem;
+  }
+}
+.section-wrap {
+  margin-top: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 .1rem .4rem 0 #ddd;
+  padding: 1rem;
+}
+.section-item {
+  display: block;
+  line-height: 1.25;
+  overflow: auto;
+}
+.section-title {
+  width: 100%;
+}
+.section-content {
+  padding-right: .5rem;
+  width: 100%;
+}
