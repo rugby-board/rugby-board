@@ -45,4 +45,9 @@ class NewsController < ApplicationController
   def list
   	@news = News.where(channel: 0).all.reverse_order
   end
+
+  def feed
+    @news = News.where(channel: 0).last(20).reverse
+    render "news/feed.xml"
+  end
 end

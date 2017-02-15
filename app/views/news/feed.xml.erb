@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rugby News Board</title>
+    <description>中文英式橄榄球资讯</description>
+    <link>http://rugbynews.space/</link>
+    <atom:link href="http://rugbynews.space/news/feed.xml" rel="self" type="application/rss+xml"/>
+    <generator>RugbyNewsBoard</generator>
+    <% @news.each do |n| %>
+    <item>
+      <title><%= n.title %></title>
+      <description><%= n.content %></description>
+      <pubDate><%= n.created_at.to_s(:rfc822) %></pubDate>
+      <link><%= "http://rugbynews.space/news/#{n.id}" %></link>
+      <guid><%= n.id %></guid>
+    </item>
+    <% end %>
+  </channel>
+</rss>
