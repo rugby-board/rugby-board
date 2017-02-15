@@ -34,6 +34,10 @@ class NewsController < ApplicationController
     @news = News.new(params.require(:news).permit(:title, :content, :klass, :event, :tag))
     @news.save
 
-    render plain: params[:news].inspect
+    redirect_to action: "news", controller: "list"
+  end
+
+  def list
+  	@news = News.all.reverse_order
   end
 end

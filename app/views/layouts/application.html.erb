@@ -14,7 +14,15 @@
   <body>
     <div class="container">
       <header class="menu">
-        <%= link_to "Rugby News Board", controller: "index", action: "index" %>
+        <div class="site-name">
+          <div><%= link_to "Rugby News Board", controller: "index", action: "index" %></div>
+          <div>
+            <span class="site-menu"><%= link_to "Home", controller: "index", action: "index" %></span>
+            <span class="site-menu"><%= link_to "News", controller: "news", action: "list" %></span>
+            <span class="site-menu"><%= link_to "Live!", controller: "live", action: "index" %></span>
+            <span class="site-menu"><%= link_to "About", controller: "index", action: "about" %></span>
+          </div>
+        </div>
       </header>
       <%= yield %>
     </div>
