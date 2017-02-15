@@ -1,6 +1,6 @@
 class IndexController < ApplicationController
   def index
-    @news = News.all.reverse_order
+    @news = News.where(channel: 0).all.reverse_order
   end
 
   def about

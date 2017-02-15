@@ -21,10 +21,10 @@
 
     <div class="section-item">
       <div class="section-title">
-        <%= f.label :klass %>
+        <%= f.label :channel %>
       </div>
       <div class="section-content">
-        <%= select_tag(:klass, options_for_select(@class_list))
+        <%= select_tag(:channel, options_for_select(@channel_list))
         %>
       </div>
     </div>
@@ -47,6 +47,8 @@
         <%= f.text_field :tag %>
       </div>
     </div>
+
+    <%= f.hidden_field :token, value: "12ffbb6" %>
 
     <div class="section-item">
       <%= f.submit %>

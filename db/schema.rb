@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20170214045127) do
     t.string   "title"
     t.text     "content"
     t.integer  "channel"
-    t.integer  "klass"
     t.integer  "event"
     t.string   "tag"
     t.datetime "created_at", null: false

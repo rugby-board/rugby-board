@@ -4,7 +4,6 @@ class CreateNews < ActiveRecord::Migration[5.0]
       t.string :title
       t.text :content
       t.integer :channel
-      t.integer :klass
       t.integer :event
       t.string :tag
 

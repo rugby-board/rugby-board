@@ -1,6 +1,6 @@
 class NewsController < ApplicationController
   def new
-    @class_list = [
+    @channel_list = [
       ['News', 0],
       ['Event', 1],
       ['Live', 2],
@@ -31,13 +31,18 @@ class NewsController < ApplicationController
   end
 
   def create
-    @news = News.new(params.require(:news).permit(:title, :content, :klass, :event, :tag))
-    @news.save
+    if !params[:token].eql? "12ffbb6"
+      redirect_to action: "index", controller: "index"
+    end
 
-    redirect_to action: "news", controller: "list"
+    @news = News.new(params.require(:news).permit(:title, :content, :channel, :event, :tag))
+    @news.channel = params[:channel]
+    @news.event = params[:event]
+    @news.tag = params[:tag]
+    @news.save
   end
 
   def list
-  	@news = News.all.reverse_order
+  	@news = News.where(channel: 0).all.reverse_order
   end
 end
