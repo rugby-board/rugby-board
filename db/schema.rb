@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170214045127) do
     t.integer  "channel"
     t.integer  "event"
     t.string   "tag"
+    t.integer  "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
