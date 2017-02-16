@@ -1,5 +1,7 @@
 class NewsController < ApplicationController
-  def new
+  def admin
+    check_token
+
     @channel_list = [
       ['News', 0],
       ['Event', 1],
@@ -24,25 +26,41 @@ class NewsController < ApplicationController
       ['Top League', 13],
       ['Rugby Sevens', 14]
     ].freeze
-
-    if !params[:token].eql? "12ffbb6"
-      redirect_to action: "index", controller: "index"
-    end
   end
 
   def create
-    if !params[:token].eql? "12ffbb6"
-      redirect_to action: "index", controller: "index"
-    end
+    check_token
 
     @news = News.new(params.require(:news).permit(:title, :content, :channel, :event, :tag))
     @news.channel = params[:channel]
     @news.event = params[:event]
     @news.tag = params[:tag]
+    @news.status = 0
+    @news.save
+  end
+
+  def delete
+    check_token
+
+    params.require(:news).permit(:id)
+    @news = News.find(params[:news][:id])
+    @news.status = 1
     @news.save
   end
 
   def list
-  	@news = News.where(channel: 0).all.reverse_order
+  	@news = News.where(channel: 0, status: 0).last(20).reverse
+  end
+
+  def feed
+    @news = News.where(channel: 0, status: 0).last(20).reverse
+    render "news/feed.xml"
+  end
+
+  private
+  def check_token
+    if !params[:token].eql? "12ffbb6"
+      redirect_to action: "index", controller: "index"
+    end
   end
 end

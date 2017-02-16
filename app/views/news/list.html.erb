@@ -1,6 +1,6 @@
 <div class="section">
   <% @news.each do |n| %>
-  <div class="section-wrap" id="chimera">
+  <div class="section-wrap" id="news-<%= n.id %>">
     <div class="section-item">
       <div class="section-title">
       [<%= n.created_at.strftime("%Y-%m-%d") %>]
@@ -12,4 +12,14 @@
     </div>
   </div>
   <% end %>
+</div>
+
+<div class="section">
+  <div class="section-wrap">
+    <div class="section-item">
+      <div class="section-title">
+        <%= link_to "订阅 RSS", controller: "news", action: "feed" %>
+      </div>
+    </div>
+  </div>
 </div>
