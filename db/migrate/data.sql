@@ -1,0 +1,15 @@
+INSERT INTO "news" VALUES(1,'南非世界冠军成员 Joost van der Westhuizen 去世','',0,0,NULL,0,'2017-02-15 07:01:18.612911','2017-02-15 07:01:18.612911');
+INSERT INTO "news" VALUES(2,'英格兰客场21-16战胜威尔士','',0,2,NULL,0,'2017-02-15 07:02:21.979974','2017-02-15 07:02:21.979974');
+INSERT INTO "news" VALUES(3,'爱尔兰客场63-10大胜意大利','',0,2,NULL,0,'2017-02-15 07:03:14.761728','2017-02-15 07:03:14.761728');
+INSERT INTO "news" VALUES(4,'法国主场22-16险胜苏格兰','苏格兰队长格雷格·雷德洛 Greig Laidlaw 受伤下场',0,2,NULL,0,'2017-02-15 07:04:45.983306','2017-02-15 07:04:45.983306');
+INSERT INTO "news" VALUES(5,'法国主教练 Guy Novès 增补了4名球员 Camille Chat, Eddy Ben Arous, Bernard le Roux 和 Paul Jedrasiak 备战下一场同爱尔兰队的比赛','法国队阵容: Uini Atonio, Cyril Baille, Eddy Ben Arous, Djibril Camara, Camille Chat, Damien Chouly, Gaël Fickou, Kevin Gourdon, Guilhem Guirado, Yoann Huget, Paul Jedrasiak, Rémi Lamerat, Julien Le Devedec, Bernard Le Roux, Camille Lopez, Maxime Machenaud, Yoann Maestri, Noa Nakaitaci, Louis Picamoles, Baptiste Serin, Rabah Slimani, Scott Spedding, Sébastien Vahaamahina, Virimi Vakatawa',0,2,NULL,0,'2017-02-15 07:08:04.726810','2017-02-15 07:08:04.726810');
+INSERT INTO "news" VALUES(6,'威尔士放回了13名替补归队参加 PRO12 的联赛比赛','其中包括加的夫蓝 Cardiff Blues 队的阿莱克斯·卡斯伯特，他上周末参加了同英格兰队的六国赛比赛',0,2,NULL,0,'2017-02-15 13:54:19.560865','2017-02-15 13:54:19.560865');
+INSERT INTO "news" VALUES(7,'苏格兰队长雷德洛因伤将缺席余下 SixNations 比赛','上场苏格兰客场负于法国的比赛中，苏格兰 scrum-half 格雷格·雷德洛 Greig Laidlaw 上半场因伤下场，目前已检查确认脚踝韧带伤势严重，将会缺席六国赛余下比赛。具体恢复时间需要这周后半段时才能确认。',0,2,NULL,0,'2017-02-15 15:12:14.424491','2017-02-15 15:12:14.424491');
+INSERT INTO "news" VALUES(8,'爱尔兰最后卫 Full-back 罗布·卡尼 Rob Kearney 可能会缺席余下六国赛比赛','据爱尔兰媒体报道，卡尼的肱二头肌受伤，可能会接受手术治疗。',0,2,NULL,0,'2017-02-16 06:42:07.552466','2017-02-16 06:42:07.552466');
+INSERT INTO "news" VALUES(9,'上周末六国赛中，爱尔兰前锋 CJ·斯坦德 CJ Stander 面对意大利独中三元，成为史上第三位上演“帽子戏法”的前锋球员','这也是自六国赛2000年创立以来，第一位上演达阵“帽子戏法”的前锋球员。',0,2,NULL,0,'2017-02-16 06:53:31.750337','2017-02-16 06:53:31.750337');
+INSERT INTO "news" VALUES(10,'巴雷特兄弟将首次联袂出场','橄榄球世界最佳球员——布登·巴雷特 Beauden Barrett 将同弟弟约迪·巴雷特 Jordie Barrett 一起代表飓风队 Hurricanes 出场，对手是十字军队 Crusaders，这是一场 Super Rugby 热身赛。同时，他们的对手中也有一个家族中的兄弟——斯科特·巴雷特 Scott Barrett。',0,0,NULL,0,'2017-02-16 07:02:28.910354','2017-02-16 07:02:28.910354');
+INSERT INTO "news" VALUES(11,'鲨鱼队公布 Super Rugby 新赛季大名单','总共45人入选，其中27名将在本周六前往澳大利亚。27人大名单如下：
+Forwards: Chiliboy Ralepelle, Coenie Oosthuizen, Etienne Oosthuizen, Franco Marais, Jacques Vermeulen, Jean Droste, Jean-Luc du Preez, Juan Schoeman, Lourens Adriaanse, Philip van der Walt, Ruan Botha, Stephan Coetzee, Stephan Lewies, Tendai Mtawarira, Tera Mtembu, Thomas du Toit
+
+Backs: Andre Esterhuizen, Clement Poitrenaud, Cobus Reinach, Curwin Bosch, Jeremy Ward, Kobus van Wyk, Lukhanyo Am, Lwazi Mvovo, Michael Claassens, Patrick Lambie, Sbu Nkosi',0,4,NULL,0,'2017-02-16 11:04:50.366844','2017-02-16 11:04:50.366844');
+INSERT INTO "news" VALUES(12,'澳大利亚橄榄球球员联盟 RUPA 敦促澳大利亚橄榄球联盟 ARU 保持现有 Super Rugby 球队数量','SANZAAR 南非-澳大利亚-新西兰联盟执委会讨论减少南非和澳大利亚球队数量，澳大利亚方面可能会是西部力量 Western Force 和墨尔本背叛者队 Melbourne Rebels',0,4,NULL,0,'2017-02-16 11:09:25.716318','2017-02-16 11:09:25.716318');
