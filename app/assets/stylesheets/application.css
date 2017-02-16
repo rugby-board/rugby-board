@@ -120,3 +120,15 @@ a:hover {
   padding-right: .5rem;
   width: 100%;
 }
+.info {
+  background-color: #6ec3b4;
+}
+.info a {
+  color: #393c40;
+}
+.hint {
+  background-color: #facb5b;
+}
+.warning {
+  background-color: #e95260;
+}
