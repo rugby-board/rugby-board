@@ -1,6 +1,6 @@
 class IndexController < ApplicationController
   def index
-    @news = News.where(channel: 0, status: 0).last(20).reverse
+    @news = News.where(channel: 0, status: 0).last(News::PAGINATION_STEP).reverse
   end
 
   def about
