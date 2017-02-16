@@ -61,6 +61,10 @@ class NewsController < ApplicationController
     }
   end
 
+  def item
+    @news = News.find(params[:id].to_i)
+  end
+
   def feed
     @news = News.where(channel: 0, status: 0).last(News::PAGINATION_STEP).reverse
     render "news/feed.xml"

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'live' => 'live#index'
   
   get 'news' => 'news#list'
+  get 'news/:id' => 'news#item'
   get 'news/feed' => 'news#feed'
 
   get 'admin' => 'news#admin'
