@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   
   get 'news' => 'news#list'
   get 'news/feed' => 'news#feed'
-  get 'news/new' => 'news#new'
+
+  get 'admin' => 'news#admin'
   post 'news/create' => 'news#create'
+  delete 'news/delete' => 'news#delete'
 
   root 'index#index'
 end

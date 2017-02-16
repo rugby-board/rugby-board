@@ -1,6 +1,14 @@
 <div class="section">
+  <div class="section-wrap">
+    <div class="section-item">
+      <div class="section-title">
+        Create news:
+      </div>
+    </div>
+  </div>
+
   <%= form_for :news, method: :post, url: '/news/create' do |f| %>
-  <div class="section-wrap" id="title-input">
+  <div class="section-wrap">
     <div class="section-item">
       <div class="section-title">
         <%= f.label :title %>
@@ -50,6 +58,32 @@
 
     <%= f.hidden_field :token, value: "12ffbb6" %>
 
+    <div class="section-item">
+      <%= f.submit %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<div class="section">
+  <div class="section-wrap">
+    <div class="section-item">
+      <div class="section-title">
+        Delete news:
+      </div>
+    </div>
+  </div>
+
+  <%= form_for :news, method: :delete, url: '/news/delete' do |f| %>
+  <div class="section-wrap">
+    <div class="section-item">
+      <div class="section-title">
+        <%= f.label :id %>
+      </div>
+      <div class="section-content">
+        <%= f.text_field :id %>
+      </div>
+    </div>
     <div class="section-item">
       <%= f.submit %>
     </div>
