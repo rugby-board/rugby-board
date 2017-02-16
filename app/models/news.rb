@@ -1,3 +1,3 @@
 class News < ApplicationRecord
-  PAGINATION_STEP = 2.freeze
+  PAGINATION_STEP = 20.freeze
 end
