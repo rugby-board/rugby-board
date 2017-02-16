@@ -21,7 +21,6 @@
       <div class="section-content">
         <%= f.label :event %>
         <%= select_tag(:event, options_for_select(@event_list)) %>
-        </select>
       </div>
       <div class="section-content">
         <%= f.label :tag %>
@@ -31,7 +30,7 @@
       <%= f.hidden_field :token, value: "12ffbb6" %>
 
       <div class="section-content">
-        <%= f.submit %>
+        <%= f.submit "Create" %>
       </div>
     </div>
   </div>
@@ -51,8 +50,49 @@
       </div>
     </div>
     <div class="section-content">
-      <%= f.submit %>
+      <%= f.submit "Delete" %>
     </div>
   </div>
   <% end %>
 </div>
+
+<% if @edit_news != nil %>
+<div class="section">
+  <div class="section-wrap">
+    <div class="section-item">
+      <%= form_for :news, method: :post, url: '/news/edit' do |f| %>
+      <div class="section-title">
+        Edit news: <%= @edit_news.id %>
+      </div>
+      <div class="section-content">
+        <%= f.label :title %>
+        <%= f.text_field :title, :value => @edit_news.title %>
+      </div>
+      <div class="section-content">
+        <%= f.label :content %>
+        <%= f.text_area :content, :value => @edit_news.content %>
+      </div>
+      <div class="section-content">
+        <%= f.label :channel %>
+        <%= select_tag(:channel, options_for_select(@channel_list, @edit_news.channel))
+        %>
+      </div>
+      <div class="section-content">
+        <%= f.label :event %>
+        <%= select_tag(:event, options_for_select(@event_list, @edit_news.event)) %>
+      </div>
+      <div class="section-content">
+        <%= f.label :tag %>
+        <%= f.text_field :tag, :value => @edit_news.tag %>
+      </div>
+
+      <%= f.hidden_field :id, value: "#{@edit_news.id}" %>
+      <%= f.hidden_field :token, value: "12ffbb6" %>
+
+      <div class="section-content">
+        <%= f.submit "Edit" %>
+      </div>
+      <% end %>
+  </div>
+</div>
+<% end %>

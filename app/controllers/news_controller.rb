@@ -26,6 +26,10 @@ class NewsController < ApplicationController
       ['Top League', 13],
       ['Rugby Sevens', 14]
     ].freeze
+
+    if params[:id] != nil
+      @edit_news = News.find(params[:id].to_i)
+    end
   end
 
   def create
@@ -34,7 +38,6 @@ class NewsController < ApplicationController
     @news = News.new(params.require(:news).permit(:title, :content, :channel, :event, :tag))
     @news.channel = params[:channel]
     @news.event = params[:event]
-    @news.tag = params[:tag]
     @news.status = 0
     @news.save
   end
@@ -45,6 +48,19 @@ class NewsController < ApplicationController
     params.require(:news).permit(:id)
     @news = News.find(params[:news][:id])
     @news.status = 1
+    @news.save
+  end
+
+  def edit
+    check_token
+
+    params.require(:news).permit(:title, :content, :channel, :event, :tag)
+    @news = News.find(params[:news][:id])
+    @news.title = params[:news][:title]
+    @news.content = params[:news][:content]
+    @news.channel = params[:channel]
+    @news.event = params[:event]
+    @news.tag = params[:news][:tag]
     @news.save
   end
 
