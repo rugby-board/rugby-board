@@ -4,62 +4,35 @@
       <div class="section-title">
         Create news:
       </div>
-    </div>
-  </div>
-
-  <%= form_for :news, method: :post, url: '/news/create' do |f| %>
-  <div class="section-wrap">
-    <div class="section-item">
-      <div class="section-title">
-        <%= f.label :title %>
-      </div>
+      <%= form_for :news, method: :post, url: '/news/create' do |f| %>
       <div class="section-content">
+        <%= f.label :title %>
         <%= f.text_field :title %>
       </div>
-    </div>
-
-    <div class="section-item">
-      <div class="section-title">
-        <%= f.label :content %>
-      </div>
       <div class="section-content">
+        <%= f.label :content %>
         <%= f.text_area :content %>
       </div>
-    </div>
-
-    <div class="section-item">
-      <div class="section-title">
-        <%= f.label :channel %>
-      </div>
       <div class="section-content">
+        <%= f.label :channel %>
         <%= select_tag(:channel, options_for_select(@channel_list))
         %>
       </div>
-    </div>
-
-    <div class="section-item">
-      <div class="section-title">
-        <%= f.label :event %>
-      </div>
       <div class="section-content">
+        <%= f.label :event %>
         <%= select_tag(:event, options_for_select(@event_list)) %>
         </select>
       </div>
-    </div>
-
-    <div class="section-item">
-      <div class="section-title">
-        <%= f.label :tag %>
-      </div>
       <div class="section-content">
+        <%= f.label :tag %>
         <%= f.text_field :tag %>
       </div>
-    </div>
 
-    <%= f.hidden_field :token, value: "12ffbb6" %>
+      <%= f.hidden_field :token, value: "12ffbb6" %>
 
-    <div class="section-item">
-      <%= f.submit %>
+      <div class="section-content">
+        <%= f.submit %>
+      </div>
     </div>
   </div>
   <% end %>
@@ -71,20 +44,13 @@
       <div class="section-title">
         Delete news:
       </div>
-    </div>
-  </div>
-
-  <%= form_for :news, method: :delete, url: '/news/delete' do |f| %>
-  <div class="section-wrap">
-    <div class="section-item">
-      <div class="section-title">
-        <%= f.label :id %>
-      </div>
+      <%= form_for :news, method: :delete, url: '/news/delete' do |f| %>
       <div class="section-content">
+        <%= f.label :id %>
         <%= f.text_field :id %>
       </div>
     </div>
-    <div class="section-item">
+    <div class="section-content">
       <%= f.submit %>
     </div>
   </div>
