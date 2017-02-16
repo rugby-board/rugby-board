@@ -4,11 +4,13 @@
     <div class="section-item">
       <div class="section-title">
       [<%= n.created_at.strftime("%Y-%m-%d") %>]
-      <%= n.title %>
+      <%= link_to n.title, "/news/#{n.id}" %>
       </div>
+      <% if n.content.size != 0 %>
       <div class="section-content">
-      <%= n.content %>
+        <%= n.content %>
       </div>
+      <% end %>
     </div>
   </div>
   <% end %>
