@@ -88,7 +88,8 @@ class NewsController < ApplicationController
 
   private
   def check_token
-    if !params[:token].eql? "12ffbb6"
+    token = ENV["ADMIN_TOKEN"] || "12ffbb6"
+    if !params[:token].eql? token
       redirect_to action: "index", controller: "index"
     end
   end
