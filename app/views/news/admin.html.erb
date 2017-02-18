@@ -26,10 +26,8 @@
         <%= f.label :tag %>
         <%= f.text_field :tag %>
       </div>
-
-      <%= f.hidden_field :token, value: "12ffbb6" %>
-
       <div class="section-content">
+        <%= f.hidden_field :token, value: "#{@token}" %>
         <%= f.submit "Create" %>
       </div>
     </div>
@@ -50,6 +48,7 @@
       </div>
     </div>
     <div class="section-content">
+      <%= f.hidden_field :token, value: "#{@token}" %>
       <%= f.submit "Delete" %>
     </div>
   </div>
@@ -85,11 +84,9 @@
         <%= f.label :tag %>
         <%= f.text_field :tag, :value => @edit_news.tag %>
       </div>
-
-      <%= f.hidden_field :id, value: "#{@edit_news.id}" %>
-      <%= f.hidden_field :token, value: "12ffbb6" %>
-
       <div class="section-content">
+        <%= f.hidden_field :id, value: "#{@edit_news.id}" %>
+      <%= f.hidden_field :token, value: "#{@token}" %>
         <%= f.submit "Edit" %>
       </div>
       <% end %>

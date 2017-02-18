@@ -1,6 +1,7 @@
 class NewsController < ApplicationController
   def admin
     check_token
+    @token = token
 
     @channel_list = [
       ['News', 0],
@@ -88,9 +89,12 @@ class NewsController < ApplicationController
 
   private
   def check_token
-    token = ENV["ADMIN_TOKEN"] || "12ffbb6"
     if !params[:token].eql? token
       redirect_to action: "index", controller: "index"
     end
+  end
+
+  def token
+    ENV["ADMIN_TOKEN"] || "12ffbb6"
   end
 end
