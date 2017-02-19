@@ -48,6 +48,9 @@ footer {
   margin-top: 2rem;
   margin-bottom: 1.2rem;
 }
+p {
+  margin: 0;
+}
 a {
   text-decoration: none;
   color: #333;
