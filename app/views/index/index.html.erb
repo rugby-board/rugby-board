@@ -1,6 +1,6 @@
 <div class="section">
   <% @news.each do |n| %>
-  <div class="section-wrap" id="news-<%= n.id %>">
+  <div class="section-wrap hover-effect" id="news-<%= n.id %>">
     <div class="section-item">
       <div class="section-title">
       [<%= n.created_at.strftime("%Y-%m-%d") %>]
