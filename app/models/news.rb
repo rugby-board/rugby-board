@@ -5,4 +5,8 @@ class News < ApplicationRecord
     require "kramdown"
     Kramdown::Document.new(content).to_html
   end
+
+  def page_title
+    "#{title} | "
+  end
 end

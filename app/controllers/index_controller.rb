@@ -4,10 +4,7 @@ class IndexController < ApplicationController
   end
 
   def about
-  	render "index/about"
-  end
-
-  def live
-  	render "index/live"
+    @page_title = "About | "
+    render "index/about"
   end
 end

@@ -1,4 +1,5 @@
 class NewsController < ApplicationController
+  attr_reader :page_title
   def admin
     check_token
     @token = token
@@ -31,6 +32,8 @@ class NewsController < ApplicationController
     if params[:id] != nil
       @edit_news = News.find(params[:id].to_i)
     end
+
+    @page_title = "Admin | "
   end
 
   def create
@@ -76,10 +79,12 @@ class NewsController < ApplicationController
       :cur_page => page,
       :total_page => (total/News::PAGINATION_STEP).ceil
     }
+    @page_title = "News | "
   end
 
   def item
     @news = News.find(params[:id].to_i)
+    @page_title = @news.page_title
   end
 
   def feed
