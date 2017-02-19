@@ -9,7 +9,7 @@
     <% @news.each do |n| %>
     <item>
       <title><%= n.title %></title>
-      <description><%= n.content %></description>
+      <description><![CDATA[<%= raw n.markdown_content %>]]></description>
       <pubDate><%= n.created_at.to_s(:rfc822) %></pubDate>
       <link><%= "http://rugbynews.space/news/#{n.id}" %></link>
       <guid><%= n.id %></guid>
