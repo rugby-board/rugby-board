@@ -70,6 +70,9 @@ a:hover {
     padding-left: .4rem;
     padding-right: .4rem;
   }
+  .site-menu a {
+    font-size: 1.2rem;
+  }
 }
 .menu {
   padding-top: 1rem;
