@@ -3,7 +3,6 @@
   <div class="section-wrap hover-effect" id="news-<%= n.id %>">
     <div class="section-item">
       <div class="section-title">
-      [<%= n.created_at.strftime("%Y-%m-%d") %>]
       <%= link_to n.title, "/news/#{n.id}" %>
       </div>
       <% if n.content.size != 0 %>
@@ -11,6 +10,9 @@
         <%= raw n.markdown_content %>
       </div>
       <% end %>
+      <div class="section-time">
+        <%= link_to n.created_at.strftime("%H:%M %Y-%m-%d"), "/news/#{n.id}" %>
+      </div>
     </div>
   </div>
   <% end %>

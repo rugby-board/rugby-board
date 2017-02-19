@@ -2,7 +2,6 @@
   <div class="section-wrap" id="news-<%= @news.id %>">
     <div class="section-item">
       <div class="section-title">
-      [<%= @news.created_at.strftime("%Y-%m-%d") %>]
       <%= @news.title %>
       </div>
       <% if @news.content.size != 0 %>
@@ -10,6 +9,9 @@
         <%= raw @news.markdown_content %>
       </div>
       <% end %>
+      <div class="section-time">
+        <%= @news.created_at.strftime("%H:%M %Y-%m-%d") %>
+      </div>
     </div>
   </div>
 </div>

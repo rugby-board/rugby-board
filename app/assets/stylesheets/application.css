@@ -49,7 +49,7 @@ footer {
   margin-bottom: 1.2rem;
 }
 p {
-  margin: 0;
+  margin: .8rem 0 0 0;
 }
 a {
   text-decoration: none;
@@ -113,9 +113,6 @@ a:hover {
   box-shadow: 0 .1rem .4rem 0 #ddd;
   padding: 1rem;
 }
-.hover-effect:hover {
-  box-shadow: 0 .1rem .4rem .1rem #ddd;
-}
 .section-item {
   display: block;
   line-height: 1.25;
@@ -129,6 +126,14 @@ a:hover {
   padding-right: .5rem;
   width: 100%;
 }
+.section-time {
+  color: #bbb;
+  font-style: italic;
+  text-align: right;
+}
+.section-time a {
+  color: #bbb;
+}
 .info {
   background-color: #6ec3b4;
 }
@@ -140,4 +145,7 @@ a:hover {
 }
 .warning {
   background-color: #e95260;
+}
+.hover-effect:hover {
+  box-shadow: 0 .1rem .4rem .1rem #ddd;
 }
