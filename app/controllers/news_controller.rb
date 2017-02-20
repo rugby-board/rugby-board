@@ -77,7 +77,7 @@ class NewsController < ApplicationController
     @page = {
       :total => total,
       :cur_page => page,
-      :total_page => (total/News::PAGINATION_STEP).ceil
+      :total_page => (total.to_f/News::PAGINATION_STEP).ceil
     }
     @page_title = "News | "
   end
