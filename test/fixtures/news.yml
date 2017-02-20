@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  title: go rugby news
   content: MyText
-  class: 1
+  channel: 1
   event: 1
   tag: MyString
+  status: 0
 
 two:
   title: MyString
   content: MyText
-  class: 1
+  channel: 1
   event: 1
   tag: MyString
+  status: 0
