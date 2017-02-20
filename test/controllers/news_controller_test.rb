@@ -1,7 +1,18 @@
 require 'test_helper'
 
 class NewsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should get news list" do
+    get news_url
+    assert_response :success
+  end
+
+  test "should get news feed" do
+    get news_feed_url
+    assert_response :success
+  end
+
+  test "should get news admin" do
+    get admin_url
+    assert_response :redirect
+  end
 end
