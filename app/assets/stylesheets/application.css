@@ -51,6 +51,12 @@ footer {
 p {
   margin: .8rem 0 0 0;
 }
+table {
+  width: 100%;
+}
+td {
+  padding-right: 1rem;
+}
 a {
   text-decoration: none;
   color: #333;
