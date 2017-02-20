@@ -8,4 +8,4 @@ script:
   - RAILS_ENV=test bin/rails db:migrate
   - bin/rails test
 before_script:
-  - cp config/secrets.example.yml config/secrets.yml
+  - cp config/secrets.travis.yml config/secrets.yml
