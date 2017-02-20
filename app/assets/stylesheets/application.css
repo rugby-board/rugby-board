@@ -144,13 +144,14 @@ a:hover {
 }
 .section-title {
   width: 100%;
+  font-size: 1.2rem;
 }
 .section-content {
-  padding-top: 1rem;
-  padding-right: .5rem;
+  padding-top: .8rem;
   width: 100%;
 }
 .section-time {
+  padding-top: .4rem;
   color: #bbb;
   font-style: italic;
   text-align: right;
