@@ -53,9 +53,27 @@ p {
 }
 table {
   width: 100%;
+  border-spacing: 0;
 }
-td {
-  padding-right: 1rem;
+th {
+  background-color: #facb5b;
+  padding: .2rem .4rem .2rem .4rem;
+}
+tr:hover {
+  background-color: #facb5b;
+}
+th:first-child, td:first-child {
+  width: 40%;
+}
+th:nth-child(2) {
+  text-align: center;
+}
+td:nth-child(2) {
+  text-align: center;
+}
+th:last-child, td:last-child {
+  width: 40%;
+  text-align: right;
 }
 a {
   text-decoration: none;
