@@ -174,3 +174,6 @@ a:hover {
 .hover-effect:hover {
   box-shadow: 0 .1rem .4rem .1rem #ddd;
 }
+.mid {
+  text-align: center;
+}
