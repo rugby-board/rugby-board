@@ -14,7 +14,7 @@
         <span class="section-channel left">
           <%= News::CHANNEL_LIST[n.channel][0] %>
           <% if n.event != 0 %>
-            , <%= News::EVENT_LIST[n.event][0] %>
+            | <%= News::EVENT_LIST[n.event][0] %>
           <% end %>
         </span>
         <span class="section-time right"><%= link_to n.created_at.strftime("%H:%M %Y-%m-%d"), "/news/#{n.id}" %></span>
