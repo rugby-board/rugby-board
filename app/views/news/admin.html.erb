@@ -15,12 +15,12 @@
       </div>
       <div class="section-content">
         <%= f.label :channel %>
-        <%= select_tag(:channel, options_for_select(@channel_list))
+        <%= select_tag(:channel, options_for_select(News::CHANNEL_LIST))
         %>
       </div>
       <div class="section-content">
         <%= f.label :event %>
-        <%= select_tag(:event, options_for_select(@event_list)) %>
+        <%= select_tag(:event, options_for_select(News::EVENT_LIST)) %>
       </div>
       <div class="section-content">
         <%= f.label :tag %>
@@ -73,12 +73,12 @@
       </div>
       <div class="section-content">
         <%= f.label :channel %>
-        <%= select_tag(:channel, options_for_select(@channel_list, @edit_news.channel))
+        <%= select_tag(:channel, options_for_select(News::CHANNEL_LIST, @edit_news.channel))
         %>
       </div>
       <div class="section-content">
         <%= f.label :event %>
-        <%= select_tag(:event, options_for_select(@event_list, @edit_news.event)) %>
+        <%= select_tag(:event, options_for_select(News::EVENT_LIST, @edit_news.event)) %>
       </div>
       <div class="section-content">
         <%= f.label :tag %>

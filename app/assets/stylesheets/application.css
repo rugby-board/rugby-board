@@ -150,11 +150,20 @@ a:hover {
   padding-top: .8rem;
   width: 100%;
 }
-.section-time {
-  padding-top: .4rem;
+.section-footer {
+  padding-top: .8rem;
   color: #bbb;
+  display: flex;
+  line-height: 1.25;
+}
+.section-channel {
+  text-align: left;
+  width: 50%;
+}
+.section-time {
   font-style: italic;
   text-align: right;
+  width: 50%;
 }
 .section-time a {
   color: #bbb;
@@ -173,6 +182,12 @@ a:hover {
 }
 .hover-effect:hover {
   box-shadow: 0 .1rem .4rem .1rem #ddd;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
 }
 .mid {
   text-align: center;
