@@ -21,6 +21,7 @@ class AdminController < ApplicationController
     @news.status = 0
     @news.save
 
+    flash[:info] = "Create news successfully."
     redirect_to root_url
   end
 
@@ -30,6 +31,7 @@ class AdminController < ApplicationController
     @news.status = 1
     @news.save
 
+    flash[:info] = "Delete news #{@news.id} successfully."
     redirect_to root_url
   end
 
@@ -43,13 +45,14 @@ class AdminController < ApplicationController
     @news.tag = params[:news][:tag]
     @news.save
 
+    flash[:info] = "Edit news #{@news.id} successfully."
     redirect_to root_url
   end
 
   private
   def check_token
     unless params[:token].eql?(token)
-      flash[:error] = "No permission as an admin"
+      flash[:warning] = "No permission as an admin."
       redirect_to root_url
     end
   end
