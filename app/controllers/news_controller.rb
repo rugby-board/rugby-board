@@ -46,9 +46,9 @@ class NewsController < ApplicationController
   def list
     page = params[:p].to_i || 1
     page = 1 if page <= 0
-    total = News.where(channel: 0, status: 0).count
+    total = News.where(status: 0).count
     start = (page - 1) * News::PAGINATION_STEP
-    @news = News.where(channel: 0, status: 0).reverse_order.limit(News::PAGINATION_STEP).offset(start)
+    @news = News.where(status: 0).reverse_order.limit(News::PAGINATION_STEP).offset(start)
     @page = {
       :total => total,
       :cur_page => page,
@@ -63,7 +63,7 @@ class NewsController < ApplicationController
   end
 
   def feed
-    @news = News.where(channel: 0, status: 0).last(News::PAGINATION_STEP).reverse
+    @news = News.where(status: 0).last(News::PAGINATION_STEP).reverse
     render "news/feed.xml"
   end
 
