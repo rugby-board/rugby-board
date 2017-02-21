@@ -20,6 +20,8 @@ class AdminController < ApplicationController
     @news.event = params[:event]
     @news.status = 0
     @news.save
+
+    redirect_to root_url
   end
 
   def delete
@@ -27,6 +29,8 @@ class AdminController < ApplicationController
     @news = News.find(params[:news][:id])
     @news.status = 1
     @news.save
+
+    redirect_to root_url
   end
 
   def edit
@@ -38,12 +42,15 @@ class AdminController < ApplicationController
     @news.event = params[:event]
     @news.tag = params[:news][:tag]
     @news.save
+
+    redirect_to root_url
   end
 
   private
   def check_token
-    if !params[:token].eql? token
-      redirect_to action: "index", controller: "index"
+    unless params[:token].eql?(token)
+      flash[:error] = "No permission as an admin"
+      redirect_to root_url
     end
   end
 

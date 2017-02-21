@@ -1,3 +1,4 @@
+<% unless @edit_news %>
 <div class="section">
   <div class="section-wrap">
     <div class="section-item">
@@ -27,12 +28,12 @@
         <%= f.text_field :tag %>
       </div>
       <div class="section-content">
-        <%= f.hidden_field :token, value: "#{@token}" %>
+        <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
         <%= f.submit "Create" %>
       </div>
+      <% end %>
     </div>
   </div>
-  <% end %>
 </div>
 
 <div class="section">
@@ -48,14 +49,16 @@
       </div>
     </div>
     <div class="section-content">
-      <%= f.hidden_field :token, value: "#{@token}" %>
+      <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
       <%= f.submit "Delete" %>
     </div>
   </div>
   <% end %>
 </div>
 
-<% if @edit_news != nil %>
+<% end %>
+
+<% if @edit_news %>
 <div class="section">
   <div class="section-wrap">
     <div class="section-item">
@@ -86,7 +89,7 @@
       </div>
       <div class="section-content">
         <%= f.hidden_field :id, value: "#{@edit_news.id}" %>
-      <%= f.hidden_field :token, value: "#{@token}" %>
+        <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
         <%= f.submit "Edit" %>
       </div>
       <% end %>
