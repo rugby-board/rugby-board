@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   get 'news/feed' => 'news#feed'
   get 'news/:id' => 'news#item'
 
-  get 'admin' => 'news#admin'
-  post 'news/create' => 'news#create'
-  post 'news/edit' => 'news#edit'
-  delete 'news/delete' => 'news#delete'
+  get 'admin' => 'admin#index'
+  post 'news/create' => 'admin#create'
+  post 'news/edit' => 'admin#edit'
+  delete 'news/delete' => 'admin#delete'
 
   root 'index#index'
 end
