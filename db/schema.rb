@@ -10,17 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214045127) do
+ActiveRecord::Schema.define(version: 20170221150757) do
 
   create_table "news", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
-    t.integer  "channel"
-    t.integer  "event"
-    t.string   "tag"
-    t.integer  "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",                  null: false
+    t.text     "content",                null: false
+    t.integer  "channel",    default: 0, null: false
+    t.integer  "event",      default: 0, null: false
+    t.string   "tag",                    null: false
+    t.integer  "status",     default: 0, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["channel"], name: "index_news_on_channel"
   end
 
 end
