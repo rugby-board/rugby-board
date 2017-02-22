@@ -4,7 +4,7 @@ class News < ApplicationRecord
   
   CHANNEL_LIST = [
     ['新闻', 0],
-    ['赛事', 1],
+    ['赛事', 1]
   ].freeze
 
   EVENT_LIST = [
