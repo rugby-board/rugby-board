@@ -31,7 +31,7 @@ class News < ApplicationRecord
     :highlighted => 2
   }.freeze
 
-  validates :title, length: {minimum: 2}
+  validates :title, length: {minimum: 2}, presence: true
 
   def markdown_content
     require "kramdown"

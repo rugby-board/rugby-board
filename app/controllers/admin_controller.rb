@@ -7,7 +7,7 @@ class AdminController < ApplicationController
   def index
     @token = token
 
-    if params[:id] != nil
+    unless params[:id] == nil
       @edit_news = News.find(params[:id].to_i)
     end
 
@@ -19,9 +19,11 @@ class AdminController < ApplicationController
     @news.channel = params[:channel]
     @news.event = params[:event]
     @news.status = 0
-    @news.save
-
-    flash[:info] = "Create news successfully."
+    if @news.save
+      flash[:info] = "Create news successfully."
+    else
+      flash[:warning] = @news.errors.messages
+    end
     redirect_to root_url
   end
 
@@ -31,7 +33,11 @@ class AdminController < ApplicationController
     @news.status = 1
     @news.save
 
-    flash[:info] = "Delete news #{@news.id} successfully."
+    if @news.save
+      flash[:info] = "Delete news #{@news.id} successfully."
+    else
+      flash[:warning] = @news.errors.messages
+    end
     redirect_to root_url
   end
 
@@ -45,25 +51,37 @@ class AdminController < ApplicationController
     @news.tag = params[:news][:tag]
     @news.save
 
-    flash[:info] = "Edit news #{@news.id} successfully."
+    if @news.save
+      flash[:info] = "Edit news #{@news.id} successfully."
+    else
+      flash[:warning] = @news.errors.messages
+    end
     redirect_to root_url
   end
 
   def highlight
     params.require(:news).permit(:id)
-    @news = News.find(params[:news][:id])
+    begin
+      @news = News.find(params[:news][:id])
 
-    if params["set-highlight"]
-      @news.status = News::STATUS[:highlighted]
-      flash[:info] = "Highlight news #{@news.id} set successfully."
-    end
+      if params["set-highlight"]
+        @news.status = News::STATUS[:highlighted]
+        flash[:info] = "Highlight news #{@news.id} set successfully."
+      end
 
-    if params["cancel-highlight"]
-      @news.status = News::STATUS[:ok]
-      flash[:info] = "Highlight news #{@news.id} cancelled successfully."
+      if params["cancel-highlight"]
+        @news.status = News::STATUS[:ok]
+        flash[:info] = "Highlight news #{@news.id} cancelled successfully."
+      end
+
+      unless @news.save
+        flash.delete(:info)
+        flash[:warning] = @news.errors.messages
+      end
+    rescue ActiveRecord::RecordNotFound
+      flash[:warning] = "Illegal id[#{params[:news][:id]}] input"
     end
     
-    @news.save
     redirect_to root_url
   end
 
