@@ -32,6 +32,9 @@ class News < ApplicationRecord
   }.freeze
 
   validates :title, length: {minimum: 2}, presence: true
+  validates :channel, numericality: {greater_than_or_equal_to: 0, less_than: CHANNEL_LIST.size}
+  validates :event, numericality: {greater_than_or_equal_to: 0, less_than: EVENT_LIST.size}
+  validates :status, numericality: {greater_than_or_equal_to: 0, less_than: STATUS.size}
 
   def markdown_content
     require "kramdown"
