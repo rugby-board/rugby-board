@@ -10,7 +10,7 @@ class News < ApplicationRecord
   EVENT_LIST = [
     ['无', 0],
     ['Test Matches', 1],
-    ['SixNations', 2],
+    ['Six Nations', 2],
     ['Rugby Championship', 3],
     ['Super Rugby', 4],
     ['Premiership', 5],
