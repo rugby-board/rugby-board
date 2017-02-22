@@ -168,6 +168,24 @@ a:hover {
 .section-time a {
   color: #bbb;
 }
+.section-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.section-square {
+  width: 33%;
+  font-size: 1.2rem;
+  padding: .4rem;
+  margin-right: 1rem;
+  border-radius: .2rem;
+  box-shadow: 0 .1rem .4rem 0 #ddd;
+}
+.section-square:last-child {
+  margin: 0;
+}
+.blank {
+  background-color: #fbfbfb;
+}
 .info {
   background-color: #6ec3b4;
 }

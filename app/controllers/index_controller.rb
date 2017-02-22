@@ -1,6 +1,14 @@
 class IndexController < ApplicationController
+  attr_reader :page_title
+  
   def index
-    @news = News.where(status: 0).last(News::PAGINATION_STEP).reverse
+    @highlight = News.where(status: News::STATUS[:highlighted])
+                     .reverse_order
+                     .limit(3)
+
+    @news = News.where(status: News::STATUS[:ok])
+                .last(News::PAGINATION_STEP)
+                .reverse
   end
 
   def about

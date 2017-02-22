@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post 'news/create' => 'admin#create'
   post 'news/edit' => 'admin#edit'
   delete 'news/delete' => 'admin#delete'
+  post 'news/highlight' => 'admin#highlight'
 
   root 'index#index'
 end

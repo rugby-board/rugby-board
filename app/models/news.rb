@@ -25,6 +25,12 @@ class News < ApplicationRecord
     ['Rugby Sevens', 14]
   ].freeze
 
+  STATUS = {
+    :ok => 0,
+    :deleted => 1,
+    :highlighted => 2
+  }.freeze
+
   validates :title, length: {minimum: 2}
 
   def markdown_content
