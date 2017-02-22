@@ -49,6 +49,24 @@ class AdminController < ApplicationController
     redirect_to root_url
   end
 
+  def highlight
+    params.require(:news).permit(:id)
+    @news = News.find(params[:news][:id])
+
+    if params["set-highlight"]
+      @news.status = News::STATUS[:highlighted]
+      flash[:info] = "Highlight news #{@news.id} set successfully."
+    end
+
+    if params["cancel-highlight"]
+      @news.status = News::STATUS[:ok]
+      flash[:info] = "Highlight news #{@news.id} cancelled successfully."
+    end
+    
+    @news.save
+    redirect_to root_url
+  end
+
   private
   def check_token
     unless params[:token].eql?(token)

@@ -1,4 +1,24 @@
 <% unless @edit_news %>
+
+<div class="section">
+  <div class="section-wrap">
+    <div class="section-item">
+      <div class="section-title">
+        Highlight news:
+      </div>
+      <%= form_for :news, method: :post, url: '/news/highlight' do |f| %>
+      <div class="section-content">
+        <%= f.label :id %>
+        <%= f.text_field :id %>
+        <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
+        <%= f.submit "Highlight", name: "set-highlight" %>
+        <%= f.submit "Reset", name: "cancel-highlight" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <div class="section">
   <div class="section-wrap">
     <div class="section-item">
@@ -59,6 +79,7 @@
 <% end %>
 
 <% if @edit_news %>
+
 <div class="section">
   <div class="section-wrap">
     <div class="section-item">
@@ -95,4 +116,5 @@
       <% end %>
   </div>
 </div>
+
 <% end %>
