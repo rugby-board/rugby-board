@@ -13,21 +13,7 @@
   <div class="section-wrap hover-effect" id="news-<%= h.id %>">
     <div class="section-title section-headline">
       <%= link_to h.title, "/news/#{h.id}" %>
-      </div>
-      <% if h.content.size != 0 %>
-      <div class="section-content">
-        <%= raw h.markdown_content %>
-      </div>
-      <% end %>
-      <div class="section-footer">
-        <span class="section-channel left">
-          <%= News::CHANNEL_LIST[h.channel][0] %>
-          <% if h.event != 0 %>
-            | <%= News::EVENT_LIST[h.event][0] %>
-          <% end %>
-        </span>
-        <span class="section-time right"><%= link_to h.created_at.strftime("%H:%M %Y-%m-%d"), "/news/#{h.id}" %></span>
-      </div>
+    </div>
   </div>
   <% end %>
 
