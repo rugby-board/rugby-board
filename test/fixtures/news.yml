@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 six_nations_news:
+  id: 1
   title: "英格兰保持28人阵容迎战意大利"
   content: "英格兰2月19日晚在彭尼西尔公园 Pennyhill Park 集结，为周日在特维克纳姆球场举行的六国赛对阵意大利的比赛进行训练。"
   channel: 0
@@ -9,6 +10,7 @@ six_nations_news:
   status: 0
 
 pro12_event:
+  id: 2
   title: "PRO12 联赛比分汇总"
   content: |
     | 主队 | 比分 | 客队 |
