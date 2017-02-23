@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class NewsTest < ActionDispatch::IntegrationTest
+class NewsAdminTest < ActionDispatch::IntegrationTest
   test "enter admin page" do
     get "/admin?token=12ffbb6"
     assert_response :success
