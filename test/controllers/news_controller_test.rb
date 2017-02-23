@@ -10,9 +10,4 @@ class NewsControllerTest < ActionDispatch::IntegrationTest
     get news_feed_url
     assert_response :success
   end
-
-  test "should get news admin" do
-    get admin_url
-    assert_response :redirect
-  end
 end

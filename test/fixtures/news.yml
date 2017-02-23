@@ -1,17 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: go rugby news
-  content: MyText
-  channel: 1
-  event: 1
-  tag: MyString
+six_nations_news:
+  title: "英格兰保持28人阵容迎战意大利"
+  content: "英格兰2月19日晚在彭尼西尔公园 Pennyhill Park 集结，为周日在特维克纳姆球场举行的六国赛对阵意大利的比赛进行训练。"
+  channel: 0
+  event: 2
+  tag: "England, Italy, SixNations"
   status: 0
 
-two:
-  title: MyString
-  content: MyText
+pro12_event:
+  title: "PRO12 联赛比分汇总"
+  content: |
+    | 主队 | 比分 | 客队 |
+    |----|----|----| 
+    | Connacht 康诺特 | 14-9 | Newport Gwent Dragons 龙 |
+    | Ospreys 鱼鹰 | 23-25 | Munster 芒斯特 |
+    | Ulster 阿斯特 | 37-17 | Glasgow Warriors 格拉斯哥勇士 |
+    | Cardiff Blues 加的夫兰 | 57-20 | Treviso 特雷维索 |
+    | Leinster 伦斯特 | 39-10 | Edinburgh 爱丁堡 |
+    | Scarlets 深红 | 42-7 | Zebre 斑马 |
   channel: 1
-  event: 1
-  tag: MyString
+  event: 7
+  tag: "PRO12"
   status: 0
