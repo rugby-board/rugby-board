@@ -9,3 +9,5 @@ script:
   - bin/rails test
 before_script:
   - cp config/secrets.travis.yml config/secrets.yml
+notifications:
+  email: false
