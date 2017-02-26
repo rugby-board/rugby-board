@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   delete 'news/delete' => 'admin#delete'
   post 'news/highlight' => 'admin#highlight'
 
+  get 'wiki' => 'wiki#event'
+
   root 'index#index'
 end
