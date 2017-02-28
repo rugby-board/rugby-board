@@ -1,6 +1,7 @@
 class News < ApplicationRecord
 
   PAGINATION_STEP = 20.freeze
+  DOMAIN_NAME = "http://rugbynews.space".freeze
   
   CHANNEL_LIST = [
     ['新闻', 0],
@@ -43,5 +44,9 @@ class News < ApplicationRecord
 
   def page_title
     "#{title} | "
+  end
+
+  def url
+    "#{DOMAIN_NAME}/news/#{id}"
   end
 end
