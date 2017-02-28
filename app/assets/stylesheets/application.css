@@ -10,8 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
 
 /*
@@ -65,19 +65,6 @@ th {
 }
 tr:hover {
   background-color: #facb5b;
-}
-th:first-child, td:first-child {
-  width: 40%;
-}
-th:nth-child(2) {
-  text-align: center;
-}
-td:nth-child(2) {
-  text-align: center;
-}
-th:last-child, td:last-child {
-  width: 40%;
-  text-align: right;
 }
 a {
   text-decoration: none;
@@ -219,4 +206,7 @@ a:hover {
 }
 .mid {
   text-align: center;
+}
+img {
+  max-width: 100%
 }
