@@ -85,30 +85,33 @@ a:hover {
     padding-left: .4rem;
     padding-right: .4rem;
   }
-  .site-menu a {
-    font-size: 1.2rem;
-  }
 }
 .menu {
+  margin-top: 1rem;
   padding-top: 1rem;
-  text-align: center;
-}
-.site-name {
-  font-size: 2rem;
-  padding-top: 1rem;
-  padding-bottom: .6rem;
-  border-radius: .2rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  border-radius: .1rem;
   background-color: #333;
+  display: flex;
+  font-size: 1.4rem;
+  line-height: 1.0;
 }
-.site-name a {
+.menu a {
   color: white;
   text-decoration: none;
 }
-.site-name a:hover {
+.menu a:hover {
   text-decoration: none;
 }
+.site-name {
+  padding-right: .4rem;
+  border-right: .1rem solid #fff;
+  margin-right: .4rem;
+}
 .site-menu {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  padding-top: .1rem;
 }
 .site-menu a:hover {
   text-decoration: underline;
@@ -117,16 +120,19 @@ a:hover {
   text-align: left;
   margin-top: 1rem;
 }
-@media (max-width: 42rem) {
-  .section {
-    padding-left: .4rem;
-  }
-}
 .section-wrap {
   margin-top: 1rem;
   background-color: #ffffff;
   box-shadow: 0 .1rem .4rem 0 #ddd;
   padding: 1rem;
+}
+@media (max-width: 42rem) {
+  .section {
+    margin-top: .4rem;
+  }
+  .section-wrap {
+    margin-top: .4rem;
+  }
 }
 .section-item {
   display: block;
@@ -135,7 +141,7 @@ a:hover {
 }
 .section-title {
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .section-content {
   padding-top: .8rem;
