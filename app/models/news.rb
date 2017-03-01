@@ -23,7 +23,8 @@ class News < ApplicationRecord
     ['European Challenge Cup', 11],
     ['Currie Cup', 12],
     ['Top League', 13],
-    ['Rugby Sevens', 14]
+    ['Rugby Sevens', 14],
+    ['Women\'s Rugby', 15]
   ].freeze
 
   STATUS = {
