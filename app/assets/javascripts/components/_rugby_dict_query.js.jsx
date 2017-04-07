@@ -1,4 +1,4 @@
-var RugbyDict = React.createClass({
+var RugbyDictQuery = React.createClass({
   getInitialState() {
     return {
       translationInput: "",
