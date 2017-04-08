@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/dripcoffee/rugby-dict.git
+  revision: 2271de40a1e09c91a6a33e1c533583b7668539a0
+  specs:
+    rugby-dict (1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -191,6 +197,7 @@ DEPENDENCIES
   rails (~> 5.0.1)
   react-rails
   responder
+  rugby-dict!
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
