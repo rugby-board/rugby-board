@@ -17,5 +17,11 @@ Rails.application.routes.draw do
 
   get 'wiki' => 'wiki#event'
 
+  namespace :api do
+    namespace :v1 do
+      resource :dict, only: [:show]
+    end
+  end
+
   root 'index#index'
 end
