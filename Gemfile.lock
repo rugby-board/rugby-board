@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/dripcoffee/rugby-dict.git
-  revision: 0f0ea2a3d2c11dbd12b27d310bee8fb6ad3dac04
+  revision: 36cb20a09da4ded811e41ad62843c4c89a84ce32
   specs:
-    rugby-dict (1.0.0)
+    rugby-dict (1.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -156,7 +156,7 @@ GEM
     tilt (2.0.7)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
-    uglifier (3.1.13)
+    uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     web-console (3.5.0)
       actionview (>= 5.0)
