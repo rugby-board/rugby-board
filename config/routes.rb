@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   end
 
   root 'index#index'
+
+  match "*path", via: :all, to: "index#error_404"
 end

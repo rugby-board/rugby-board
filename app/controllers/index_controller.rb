@@ -15,4 +15,9 @@ class IndexController < ApplicationController
     @page_title = "About | "
     render "index/about"
   end
+
+  def error_404
+    @page_title = "Error | "
+    render "errors/404"
+  end
 end
