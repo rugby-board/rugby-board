@@ -24,7 +24,11 @@ class News < ApplicationRecord
     ['Currie Cup', 12],
     ['Top League', 13],
     ['Rugby Sevens', 14],
-    ['Women\'s Rugby', 15]
+    ['Women\'s Rugby', 15],
+    ['Barbarians', 16],
+    ['Anglo Welsh Cup', 17],
+    ['Mitre 10 Cup', 18],
+    ['National Rugby Championship', 19]
   ].freeze
 
   STATUS = {
