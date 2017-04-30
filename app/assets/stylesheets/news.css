@@ -11,3 +11,6 @@ th:last-child, td:last-child {
   width: 40%;
   text-align: right;
 }
+.section textarea {
+  height: 20rem;
+}
