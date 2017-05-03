@@ -9,7 +9,7 @@
         <% end %>
       </div>
       <% if news.content.size != 0 %>
-      <div class="section-content">
+      <div class="section-content<%= " section-results" if news.channel == 1 %>">
         <%= raw news.markdown_content %>
       </div>
       <% end %>
