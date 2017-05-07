@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/dripcoffee/rugby-dict.git
-  revision: 175d1e6bce93f8580614acae3cc5a1a210c11381
+  revision: bdb4ff4afaaa8a8d7137fc73f4e7c93ce277c493
   specs:
     rugby-dict (1.0.2)
 
