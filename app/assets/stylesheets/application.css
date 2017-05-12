@@ -23,7 +23,7 @@
 }
 html {
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
 }
 @media (max-width: 42rem) {
   html {
@@ -141,7 +141,7 @@ a:hover {
 }
 .section-title {
   width: 100%;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 .section-content {
   padding-top: .8rem;
