@@ -5,7 +5,13 @@
         Rugby News Board 中文英式橄榄球资讯
       </div>
       <div class="section-content">
-        Copyright &copy; David Zhang, 2017. 联系请发邮件: crispgm at gmail.com
+        Copyright &copy; <%= link_to "David Zhang", "https://crispgm.com/", :target => "_blank" %>, 2017.
+        <p>
+          <%= link_to "使用 RSS 订阅", controller: "news", action: "feed" %>
+        </p>
+        <p>
+          联系请发邮件: crispgm at gmail.com
+        </p>
       </div>
     </div>
   </div>
