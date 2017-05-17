@@ -10,7 +10,7 @@ script:
   - RAILS_ENV=test bin/rails db:migrate
   - bin/rails test
 before_script:
-  - psql -c 'create database dripcoffee_rugbyboard_test;' -U dripcoffee
+  - psql -c 'create database dripcoffee_rugbyboard_test;' -U postgres
   - cp config/secrets.travis.yml config/secrets.yml
 notifications:
   email: false
