@@ -14,7 +14,7 @@ default: &default
 
 development:
   <<: *default
-  database: dripcoffee_rugbyboard_dev
+  database: dripcoffee_rugbyboard_prod
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

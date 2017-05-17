@@ -1,4 +1,5 @@
 class News < ApplicationRecord
+  self.primary_key = "id"
 
   PAGINATION_STEP = 20.freeze
   DOMAIN_NAME = "http://rugbynews.space".freeze
