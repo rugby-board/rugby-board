@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170221150757) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "news", force: :cascade do |t|
     t.string   "title",                  null: false
     t.text     "content",                null: false
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170221150757) do
     t.integer  "status",     default: 0, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.index ["channel"], name: "index_news_on_channel"
+    t.index ["channel"], name: "index_news_on_channel", using: :btree
   end
 
 end
