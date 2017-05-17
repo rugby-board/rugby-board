@@ -3,7 +3,6 @@
 <div class="section">
   <div class="section-wrap info">
     <%= link_to "返回", controller: "index", action: "index" %> |
-    <a href="#;" onclick="window.open('http://service.weibo.com/share/share.php?url=<%= @news.url %>&text=<%= @news.title %>', '_blank', 'width=550,height=370');" class="tb">微博</a>
-    <a href="#;" onclick="window.open('https://twitter.com/intent/tweet?url=<%= @news.url %>&text=<%= @news.title %>&button_hashtag=rugbynewsboard', '_blank', 'width=550,height=370');" class="tb">Tweet</a>
+    <a href="#;" onclick="window.open('https://twitter.com/intent/tweet?url=<%= @news.url %>&text=<%= @news.title %>&button_hashtag=rugbynewsboard', '_blank', 'width=550,height=370');" class="tb">Share on Twitter</a>
   </div>
 </div>

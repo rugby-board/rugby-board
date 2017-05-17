@@ -2,7 +2,7 @@ class News < ApplicationRecord
   self.primary_key = "id"
 
   PAGINATION_STEP = 20.freeze
-  DOMAIN_NAME = "http://rugbynews.space".freeze
+  DOMAIN_NAME = "http://www.rugbynews.space".freeze
   
   CHANNEL_LIST = [
     ['新闻', 0],
