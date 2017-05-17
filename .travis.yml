@@ -11,3 +11,4 @@ before_script:
   - cp config/secrets.travis.yml config/secrets.yml
 notifications:
   email: false
+  slack: navyblue-team:ioO5diAGc5WUQVDKc5BH1UbE
