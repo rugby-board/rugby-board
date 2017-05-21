@@ -7,7 +7,7 @@ var RugbyDictQuery = React.createClass({
   },
   handleTranslate() {
     $.getJSON('/api/v1/dict.json', {entry: this.state.translationInput}, (response) => { 
-      this.setState({ translationResult: response.result }) 
+      this.setState({ translationResult: response.result.join(' ') }) 
     });
   },
   handleChange(event) {
