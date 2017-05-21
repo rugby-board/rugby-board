@@ -2,16 +2,20 @@ language: ruby
 sudo: false
 rvm:
   - 2.3.0
+env:
+  CODECLIMATE_REPO_TOKEN: 8a9e38f181a491e4f8d3c4eb2355dfffd78ec137a99e6d905d55873fe5ad7911
 services:
   - postgresql
+before_script:
+  - psql -c 'create database dripcoffee_rugbyboard_test;' -U postgres
+  - cp config/secrets.travis.yml config/secrets.yml
 script:
   - bundle install
   - RAILS_ENV=test bin/rails db:create
   - RAILS_ENV=test bin/rails db:migrate
   - bin/rails test
-before_script:
-  - psql -c 'create database dripcoffee_rugbyboard_test;' -U postgres
-  - cp config/secrets.travis.yml config/secrets.yml
+after_success:
+  - bundle exec codeclimate-test-reporter
 notifications:
   email: false
   slack: navyblue-team:ioO5diAGc5WUQVDKc5BH1UbE
