@@ -1,7 +1,8 @@
 require 'test_helper'
 
-class EventControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+class WikiControllerTest < ActionDispatch::IntegrationTest
+  test "should get wiki index" do
+    get wiki_url
+    assert_response :success
+  end
 end
