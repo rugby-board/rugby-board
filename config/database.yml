@@ -21,11 +21,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  username: postgres
   database: dripcoffee_rugbyboard_test
 
 production:
   <<: *default
   database: dripcoffee_rugbyboard_prod
-  username: dripcoffee
   password: <%= ENV['DRIPCOFFEE_APP_PASSWD'] %>

@@ -60,6 +60,25 @@ class NewsTest < ActiveSupport::TestCase
     assert_not news.save
   end
 
+  test "should save news and have incremental id" do
+    news = News.new
+    news.title = "a title"
+    news.content = "a content"
+    news.channel = 0
+    news.event = 0
+    news.status = 0
+    news.tag = ""
+    news.save
+
+    assert_equal false, news.id == 0
+    assert_equal "a title", news.title
+    assert_equal "a content", news.content
+    assert_equal 0, news.channel
+    assert_equal 0, news.event
+    assert_equal 0, news.status
+    assert_equal "", news.tag
+  end
+
   test "generate markdown content" do
   	news = News.new
     news.title = "a title"
