@@ -6,7 +6,11 @@ class IndexController < ApplicationController
                      .reverse_order
                      .limit(3)
 
-    @news = News.where(status: News::STATUS[:ok])
+    @news = News.where(status: News::STATUS[:ok], channel: 0)
+                .last(News::PAGINATION_STEP)
+                .reverse
+
+    @results = News.where(status: News::STATUS[:ok], channel: 1)
                 .last(News::PAGINATION_STEP)
                 .reverse
   end
