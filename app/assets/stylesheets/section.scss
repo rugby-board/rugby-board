@@ -49,30 +49,23 @@
   font-style: italic;
   text-align: right;
   width: 50%;
+  a {
+    color: #bbb;
+  }
 }
-.section-time a {
-  color: #bbb;
+.section-headline {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  background-color: #333;
+  a {
+    color: #fbfbfb;
+  }
 }
-.section-flex {
-  display: flex;
-  justify-content: space-between;
-}
-.section-square {
-  width: 33%;
-  font-size: 1rem;
-  padding: .4rem;
-  margin-right: .8rem;
-  border-radius: .2rem;
-  box-shadow: 0 .1rem .4rem 0 #ddd;
-}
-.section-square:last-child {
-  margin: 0;
-}
-.section-headline:before {
+.section-top:before {
   content: "top";
-  color: #fbfbfb;
   background-color: #e95260;
-  padding: .2rem;
+  font-size: 1.2rem;
+  padding: .2rem .4rem .2rem .4rem;
 }
 .blank {
   background-color: #fbfbfb;
