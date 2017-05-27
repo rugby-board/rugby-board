@@ -10,7 +10,7 @@ class IndexController < ApplicationController
                 .last(News::PAGINATION_STEP)
                 .reverse
 
-    @results = News.where(status: News::STATUS[:ok], channel: 1)
+    @results = News.where(status: News::STATUS[:ok], channel: 1).where("created_at >= ?", 1.week.ago.utc)
                 .last(News::PAGINATION_STEP)
                 .reverse
   end
