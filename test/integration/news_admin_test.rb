@@ -85,7 +85,7 @@ class NewsAdminTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_response :success
     assert_select "div#flash-message", "Edit news 2 successfully."
-    assert_select "div#news-2 div.section-item div.section-content", "a new content"
+    assert_select "div#news-2 div.section-content", "a new content"
   end
 
   test "delete a news" do
