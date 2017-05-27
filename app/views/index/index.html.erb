@@ -8,23 +8,49 @@
 </div>
 <% end %>
 
-<div class="section">
-  <% @highlight.each do |h| %>
-  <div class="section-wrap hover-effect" id="news-<%= h.id %>">
-    <div class="section-title section-headline">
-      <%= link_to h.title, "/news/#{h.id}" %>
+<div class="columns">
+  <div class="column column-2-3">
+    <div class="column-title">
+      新闻
+    </div>
+
+    <div class="section">
+      <% @highlight.each do |h| %>
+      <div class="section-wrap" id="news-<%= h.id %>">
+        <div class="section-item">
+          <div class="section-title section-headline">
+            <%= link_to h.title, "/news/#{h.id}" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="section">
+      <div class="section-wrap">
+      <% @news.each do |n| %>
+        <%= render n %>
+      <% end %>
+      </div>
+    </div>
+
+    <div class="section-wrap info">
+      <div class="section-item">
+        <div class="section-title">
+          <%= link_to "更多新闻", controller: "news", action: "list" %>
+        </div>
+      </div>
     </div>
   </div>
-  <% end %>
-
-  <% @news.each do |n| %>
-    <%= render n %>
-  <% end %>
-
-  <div class="section-wrap info">
-    <div class="section-item">
-      <div class="section-title">
-        <%= link_to "更多新闻", controller: "news", action: "list" %>
+  <div class="column column-1-3">
+    <div class="column-title">
+      最新比分
+    </div>
+    <div class="section">
+      <div class="section-wrap">
+        <% @results.each do |n| %>
+          <%= render n %>
+        <% end %>
       </div>
     </div>
   </div>
