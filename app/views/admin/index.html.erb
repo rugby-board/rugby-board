@@ -116,8 +116,6 @@
           <div class="section-content">
             <%= f.label :id %>
             <%= f.text_field :id %>
-          </div>
-          <div class="section-content">
             <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
             <%= f.submit "Delete" %>
           </div>

@@ -14,7 +14,10 @@ class NewsController < ApplicationController
     page = get_page(params[:p])
     start = (page - 1) * News::PAGINATION_STEP
     # get news
-    if event_id.nil?
+    if event_id == false
+      redirect_to "/404"
+      return
+    elsif event_id.nil?
       total = News.where(status: [News::STATUS[:ok], News::STATUS[:highlighted]], channel: channel_id)
                   .count
       @news = News.where(status: [News::STATUS[:ok], News::STATUS[:highlighted]], channel: channel_id)
@@ -76,7 +79,7 @@ class NewsController < ApplicationController
     event_sym = event_name.to_sym
     return News::EVENT_NAME_ID_MAP[event_sym] if News::EVENT_NAME_ID_MAP.key?(event_sym)
 
-    nil
+    false
   end
 
   def set_page_title(channel_id, event_id)

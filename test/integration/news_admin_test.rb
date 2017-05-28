@@ -64,7 +64,7 @@ class NewsAdminTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_response :success
     assert_select "div#flash-message", "Highlight news 1 cancelled successfully."
-    assert_select "div.section-headline", 0
+    assert_select "div.section-headline", 1
   end
 
   test "edit a news" do
@@ -80,19 +80,21 @@ class NewsAdminTest < ActionDispatch::IntegrationTest
         event: 7,
         token: "12ffbb6"
       }
-
     assert_response :redirect
     follow_redirect!
     assert_response :success
     assert_select "div#flash-message", "Edit news 2 successfully."
+
+    get "/news/2"
+    assert_response :success
     assert_select "div#news-2 div.section-content", "a new content"
   end
 
   test "delete a news" do
     delete "/news/delete",
-      params: { 
+      params: {
         news: {
-          id: 2
+          id: 4
         },
         token: "12ffbb6"
       }
@@ -100,7 +102,7 @@ class NewsAdminTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     follow_redirect!
     assert_response :success
-    assert_select "div#flash-message", "Delete news 2 successfully."
-    assert_select "div#news-2", 0
+    assert_select "div#flash-message", "Delete news 4 successfully."
+    assert_select "div#news-4", 0
   end
 end

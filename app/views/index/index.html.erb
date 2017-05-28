@@ -17,7 +17,7 @@
       新闻
     </div>
 
-    <div class="section">
+    <div class="section" id="highlight">
       <% @highlight.each do |h| %>
       <div class="section-wrap section-headline">
         <div class="section-item" id="news-<%= h.id %>">
@@ -29,7 +29,7 @@
       <% end %>
     </div>
 
-    <div class="section">
+    <div class="section" id="news">
       <div class="section-wrap">
       <% @news.each do |n| %>
         <%= render n %>
@@ -37,9 +37,11 @@
       </div>
     </div>
 
-    <div class="section-wrap info">
-      <div class="section-item">
-        <%= link_to "更多新闻", news_url %>
+    <div class="section" id="more-news-foot">
+      <div class="section-wrap info">
+        <div class="section-item">
+          <%= link_to "更多新闻", news_url %>
+        </div>
       </div>
     </div>
   </div>
@@ -50,7 +52,7 @@
     <div class="column-title">
       最新比分
     </div>
-    <div class="section">
+    <div class="section" id="results">
       <div class="section-wrap">
         <% @results.each do |n| %>
           <%= render n %>
@@ -61,7 +63,7 @@
     <div class="column-title">
       赛事介绍
     </div>
-    <div class="section">
+    <div class="section" id="wiki">
       <div class="section-wrap">
         <div class="section-item">
           <div class="section-content">

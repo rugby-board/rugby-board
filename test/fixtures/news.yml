@@ -25,3 +25,39 @@ pro12_event:
   event: 7
   tag: "PRO12"
   status: 0
+
+highlight_news:
+  id: 3
+  title: "Exeter win Premiership title in extra-time"
+  content: ""
+  channel: 0
+  event: 5
+  tag: ""
+  status: 2
+
+delete_news:
+  id: 4
+  title: "I will be deleted"
+  content: ""
+  channel: 0
+  event: 2
+  tag: ""
+  status: 0
+
+<% (0..40).each do |i| %>
+news<%= i %>:
+  title: "Test news <%= i %>"
+  content: "Test news <%= i %>"
+  channel: 0
+  event: 0
+  tag: ""
+  status: 0
+
+result<%= i %>:
+  title: "Test result <%= i %>"
+  content: "Test result <%= i %>"
+  channel: 1
+  event: 0
+  tag: ""
+  status: 0
+<% end %>
