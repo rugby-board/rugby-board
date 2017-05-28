@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
   get 'live' => 'live#index'
   
-  get 'news' => 'news#list'
-  get 'results' => 'news#results'
+  get 'news'    => 'news#list', :channel => "news"
+  get 'results' => 'news#list', :channel => "results"
+  get 'event/:event_name' => 'news#list', :channel => "events"
+
   get 'news/feed' => 'news#feed'
   get 'news/:id' => 'news#item'
 
