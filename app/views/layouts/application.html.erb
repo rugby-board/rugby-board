@@ -19,16 +19,16 @@
         </div>
         <div class="site-menu">
           <span class="site-menu-item"><%= link_to "首页", index_url %></span>
-          <span class="site-menu-item"><%= link_to "新闻", controller: "news", action: "list", channel: "news" %></span>
-          <span class="site-menu-item"><%= link_to "比分", controller: "news", action: "list", channel: "results" %></span>
-          <!-- <span class="site-menu-item"><%= link_to "国际赛事", news_url %></span> -->
-          <!-- <span class="site-menu-item"><%= link_to "Super Rugby", news_url %></span> -->
-          <!-- <span class="site-menu-item"><%= link_to "Premiership", news_url %></span> -->
-          <!-- <span class="site-menu-item"><%= link_to "TOP14", news_url %></span> -->
-          <!-- <span class="site-menu-item"><%= link_to "PRO12", news_url %></span> -->
-          <!-- <span class="site-menu-item"><%= link_to "冠军赛", news_url %></span> -->
-          <!-- <span class="site-menu-item"><%= link_to "六国赛", news_url %></span> -->
-          <!-- <span class="site-menu-item"><%= link_to "世界杯", news_url %></span> -->
+          <span class="site-menu-item"><%= link_to "新闻", news_url, channel: "news" %></span>
+          <span class="site-menu-item"><%= link_to "比分", results_url, channel: "results" %></span>
+          <span class="site-menu-item"><%= link_to "SuperRugby", "/event/super-rugby" %></span>
+          <span class="site-menu-item"><%= link_to "Premiership", "/event/premiership" %></span>
+          <span class="site-menu-item"><%= link_to "TOP14", "/event/top14" %></span>
+          <span class="site-menu-item"><%= link_to "PRO12", "/event/pro12" %></span>
+          <span class="site-menu-item"><%= link_to "国际测试赛", "/event/international-tests" %></span>
+          <span class="site-menu-item"><%= link_to "冠军赛", "/event/rugby-championship" %></span>
+          <span class="site-menu-item"><%= link_to "六国赛", "/event/six-nations" %></span>
+          <span class="site-menu-item"><%= link_to "世界杯", "/event/rugby-world-cup" %></span>
           <span class="site-menu-item"><%= link_to "赛事介绍", wiki_url %></span>
           <span class="site-menu-item"><%= link_to "邮件订阅", news_feed_url %></span>
           <span class="site-menu-item"><%= link_to "关于", about_url %></span>

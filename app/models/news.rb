@@ -11,7 +11,7 @@ class News < ApplicationRecord
 
   EVENT_LIST = [
     ['无', 0],
-    ['Test Matches', 1],
+    ['国际测试赛', 1],
     ['Six Nations', 2],
     ['Rugby Championship', 3],
     ['Super Rugby', 4],
@@ -31,6 +31,17 @@ class News < ApplicationRecord
     ['Mitre 10 Cup', 18],
     ['National Rugby Championship', 19]
   ].freeze
+
+  EVENT_NAME_ID_MAP = {
+    'international-tests': 1,
+    'six-nations': 2,
+    'rugby-championship': 3,
+    'super-rugby': 4,
+    'premiership': 5,
+    'top14': 6,
+    'pro12': 7,
+    'rugby-world-cup': 9
+  }.freeze
 
   STATUS = {
     :ok => 0,

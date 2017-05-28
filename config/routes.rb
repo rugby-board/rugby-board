@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   get 'news'    => 'news#list', :channel => "news"
   get 'results' => 'news#list', :channel => "results"
-  get 'a' => 'news#list', :channel => "a"
+  get 'event/:event_name' => 'news#list', :channel => "events"
 
   get 'news/feed' => 'news#feed'
   get 'news/:id' => 'news#item'
