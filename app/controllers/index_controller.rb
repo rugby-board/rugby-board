@@ -16,12 +16,12 @@ class IndexController < ApplicationController
   end
 
   def about
-    @page_title = "About | "
+    @page_title = "关于 | "
     render "index/about"
   end
 
   def error_404
-    @page_title = "Error | "
+    @page_title = "页面不见了 | "
     render "errors/404"
   end
 end
