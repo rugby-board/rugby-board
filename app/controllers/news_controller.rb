@@ -31,6 +31,8 @@ class NewsController < ApplicationController
       :cur_page => page,
       :total_page => (total.to_f/News::PAGINATION_STEP).ceil
     }
+
+    set_page_title(channel_id, event_id)
   end
 
   def item
@@ -78,7 +80,14 @@ class NewsController < ApplicationController
   end
 
   def set_page_title(channel_id, event_id)
-    @page_title = "新闻 | "
-    @page_title = "比赛结果 | "
+    if channel_id == 1
+      @page_title = "新闻 | "
+    elsif channel_id == 2
+      @page_title = "比赛结果 | "
+    end
+
+    unless event_id.nil?
+      @page_title = "#{News::EVENT_LIST[event_id][0]} | "
+    end
   end
 end
