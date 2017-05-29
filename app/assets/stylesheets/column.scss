@@ -1,4 +1,4 @@
-$large-width: 80rem;
+$page-breakpoint: 80rem;
 
 .columns {
   display: flex;
@@ -34,7 +34,7 @@ $large-width: 80rem;
   }
 }
 
-@media (max-width: $large-width) {
+@media (max-width: $page-breakpoint) {
 
 .columns {
   display: block;

@@ -19,7 +19,8 @@
  * Copyright(c) David Zhang, 2016
  */
 
-$large-width: 80rem;
+$page-breakpoint: 80rem;
+$font-breakpoint: 48rem;
 
 * {
   box-sizing: border-box;
@@ -28,7 +29,7 @@ html {
   width: 100%;
   font-size: 16px;
 }
-@media (max-width: 42rem) {
+@media (max-width: $font-breakpoint) {
   html {
     font-size: 12px;
   }
@@ -117,7 +118,7 @@ a:hover {
   }
 }
 
-@media (max-width: $large-width) {
+@media (max-width: $page-breakpoint) {
   .container {
     width: 100%;
     padding-left: 0;
