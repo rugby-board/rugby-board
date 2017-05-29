@@ -11,7 +11,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-$page-breakpoint: 80rem;
+$min-breakpoint: 26rem;
+$page-breakpoint: 70rem;
 $font-breakpoint: 48rem;
 
 * {
@@ -47,19 +48,20 @@ footer {
   font-size: 1rem;
   overflow: hidden;
   margin-top: 2rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 .container {
-  width: 80rem;
+  width: $page-breakpoint;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 @media (max-width: $page-breakpoint) {
   .container {
     width: 100%;
     padding-left: 0;
+    min-width: $min-breakpoint;
   }
 }
 p {
@@ -68,14 +70,18 @@ p {
 table {
   width: 100%;
   border-spacing: 0;
+  th {
+    background-color: #facb5b;
+    padding: .2rem .4rem .2rem .4rem;
+  }
+  tr {
+    &:hover {
+      background-color: #facb5b;
+    }
+  }
 }
-th {
-  background-color: #facb5b;
-  padding: .2rem .4rem .2rem .4rem;
-}
-tr:hover {
-  background-color: #facb5b;
-}
+
+
 a {
   text-decoration: none;
   color: #333;

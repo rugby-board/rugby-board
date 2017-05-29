@@ -1,4 +1,4 @@
-$page-breakpoint: 80rem;
+$page-breakpoint: 70rem;
 $font-breakpoint: 48rem;
 
 .menu {
@@ -40,7 +40,7 @@ $font-breakpoint: 48rem;
   display: none;
 }
 
-@media (max-width: $font-breakpoint) {
+@media (max-width: $page-breakpoint) {
 
 .menu {
   padding-left: 0;

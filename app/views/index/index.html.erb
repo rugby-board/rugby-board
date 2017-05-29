@@ -18,15 +18,15 @@
     </div>
 
     <div class="section" id="highlight">
-      <% @highlight.each do |h| %>
       <div class="section-wrap section-headline">
+      <% @highlight.each do |h| %>
         <div class="section-item" id="news-<%= h.id %>">
           <div class="section-title section-top">
             <%= link_to h.title, "/news/#{h.id}" %>
           </div>
         </div>
-      </div>
       <% end %>
+      </div>
     </div>
 
     <div class="section" id="news">
@@ -38,8 +38,8 @@
     </div>
 
     <div class="section" id="more-news-foot">
-      <div class="section-wrap info">
-        <div class="section-item">
+      <div class="section-wrap">
+        <div class="section-item mid">
           <%= link_to "更多新闻", news_url %>
         </div>
       </div>
