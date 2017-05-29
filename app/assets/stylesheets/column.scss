@@ -1,3 +1,5 @@
+$large-width: 80rem;
+
 .columns {
   display: flex;
   text-align: left;
@@ -30,4 +32,26 @@
   .column-2-3 {
     width: 66%;
   }
+}
+
+@media (max-width: $large-width) {
+
+.columns {
+  display: block;
+  margin-top: 0;
+
+  .column {
+  	width: 100%;
+  	.column-1-2 {
+  	  width: 100%;
+  	}
+  }
+  .column-1-3 {
+    width: 100%;
+  }
+  .column-2-3 {
+    width: 100%;
+  }
+}
+
 }
