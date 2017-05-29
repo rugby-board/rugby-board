@@ -5,14 +5,6 @@
   background-color: #ffffff;
   padding: 0 1rem 0 1rem;
 }
-@media (max-width: 42rem) {
-  .section {
-    margin-top: .4rem;
-  }
-  .section-wrap {
-    margin-top: .4rem;
-  }
-}
 .section-item {
   display: block;
   line-height: 1.25;
@@ -61,20 +53,22 @@
     color: #fbfbfb;
   }
 }
-.section-top:before {
-  content: "top";
-  background-color: #e95260;
-  font-size: 1.2rem;
-  padding: .2rem .4rem .2rem .4rem;
+.section-top {
+  &:before {
+    content: "top";
+    background-color: #e95260;
+    font-size: 1.2rem;
+    padding: .2rem .4rem .2rem .4rem;
+  }
 }
 .blank {
   background-color: #fbfbfb;
 }
 .info {
   background-color: #6ec3b4;
-}
-.info a {
-  color: #393c40;
+  a {
+    color: #393c40;
+  }
 }
 .hint {
   background-color: #facb5b;
