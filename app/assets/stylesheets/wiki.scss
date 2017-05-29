@@ -1,0 +1,12 @@
+.wiki {
+  td {
+    &:nth-child(n) {
+      width: auto;
+    }
+  }
+  th {
+    &:nth-child(n) {
+      width: auto;
+    }
+  }
+}

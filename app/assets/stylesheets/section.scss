@@ -53,6 +53,21 @@
     color: #fbfbfb;
   }
 }
+.section-results {
+  th:first-child, td:first-child {
+    width: 40%;
+  }
+  th:nth-child(2) {
+    text-align: center;
+  }
+  td:nth-child(2) {
+    text-align: center;
+  }
+  th:last-child, td:last-child {
+    width: 40%;
+    text-align: right;
+  }
+}
 .section-top {
   &:before {
     content: "top";

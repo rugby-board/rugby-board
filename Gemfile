@@ -61,5 +61,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "kramdown"
 gem "responders"
 gem "react-rails"
+gem "font-awesome-sass", '~> 4.7.0'
 
 gem "rugby-dict", :github => "dripcoffee/rugby-dict"

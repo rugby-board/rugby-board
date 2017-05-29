@@ -16,3 +16,16 @@
 //= require react_ujs
 //= require components
 //= require_tree .
+
+$(document).ready(function(){
+  var isMenuDown = false;
+  $('.site-navicon>a').click(function(){
+    if (isMenuDown) {
+      $('.site-dropdown').css('display', 'none');
+    }
+    else {
+      $('.site-dropdown').css('display', 'block');
+    }
+    isMenuDown = !isMenuDown;
+  });
+});
