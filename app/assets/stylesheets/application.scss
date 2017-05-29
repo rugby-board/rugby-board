@@ -1,25 +1,18 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_self
  *= require_tree .
  */
 
 /*
- * Theme of Crisp Wiki
- * Copyright(c) David Zhang, 2016
+ * Theme of Rugby News Board
+ * Copyright(c) David Zhang, 2017
  */
 
-$page-breakpoint: 80rem;
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+$min-breakpoint: 26rem;
+$page-breakpoint: 70rem;
 $font-breakpoint: 48rem;
 
 * {
@@ -55,7 +48,21 @@ footer {
   font-size: 1rem;
   overflow: hidden;
   margin-top: 2rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
+}
+.container {
+  width: $page-breakpoint;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+@media (max-width: $page-breakpoint) {
+  .container {
+    width: 100%;
+    padding-left: 0;
+    min-width: $min-breakpoint;
+  }
 }
 p {
   margin: .8rem 0 0 0;
@@ -63,68 +70,26 @@ p {
 table {
   width: 100%;
   border-spacing: 0;
+  th {
+    background-color: #facb5b;
+    padding: .2rem .4rem .2rem .4rem;
+  }
+  tr {
+    &:hover {
+      background-color: #facb5b;
+    }
+  }
 }
-th {
-  background-color: #facb5b;
-  padding: .2rem .4rem .2rem .4rem;
-}
-tr:hover {
-  background-color: #facb5b;
-}
+
+
 a {
   text-decoration: none;
   color: #333;
-}
-a:hover {
-  text-decoration: underline;
-}
-.container {
-  width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  margin-bottom: 3rem;
-}
-.menu {
-  padding: 1rem;
-  background-color: #333;
-  font-size: 1.4rem;
-  line-height: 1.0;
-  width: 100%;
-  a {
-    color: white;
-    text-decoration: none;
-    &:hover {
-      text-decoration: none;
-    }
+
+  &:hover {
+    text-decoration: underline;
   }
 }
-.site-name {
-  font-size: 2.4rem;
-  margin-bottom: 1.4rem;
-}
-.site-menu {
-  border-top: #fbfbfb solid 1px;
-  font-size: 1.2rem;
-  padding-top: 1rem;
-
-  .site-menu-item {
-    a {
-      padding-right: .4rem;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-@media (max-width: $page-breakpoint) {
-  .container {
-    width: 100%;
-    padding-left: 0;
-  }
-}
-
 .left {
   text-align: left;
 }

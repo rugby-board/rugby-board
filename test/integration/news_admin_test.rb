@@ -47,7 +47,7 @@ class NewsAdminTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_response :success
     assert_select "div#flash-message", "Highlight news 1 set successfully."
-    assert_select "div.section-headline", "英格兰保持28人阵容迎战意大利"
+    assert_select "div#highlight .section-headline .section-item:nth-child(2)", "英格兰保持28人阵容迎战意大利"
   end
 
   test "cancel highlight a news" do

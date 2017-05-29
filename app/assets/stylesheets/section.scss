@@ -48,9 +48,23 @@
 .section-headline {
   font-size: 1.4rem;
   line-height: 2rem;
-  background-color: #333;
+  background-color: #eee;
   a {
-    color: #fbfbfb;
+  }
+}
+.section-results {
+  th:first-child, td:first-child {
+    width: 40%;
+  }
+  th:nth-child(2) {
+    text-align: center;
+  }
+  td:nth-child(2) {
+    text-align: center;
+  }
+  th:last-child, td:last-child {
+    width: 40%;
+    text-align: right;
   }
 }
 .section-top {

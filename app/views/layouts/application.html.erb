@@ -14,6 +14,9 @@
   <body>
     <div class="container">
       <header class="menu">
+        <div class="site-navicon">
+          <%= link_to icon("navicon"), "#" %>
+        </div>
         <div class="site-name">
           <%= link_to "Rugby News Board", controller: "index", action: "index" %>
         </div>
@@ -32,6 +35,26 @@
           <span class="site-menu-item"><%= link_to "赛事介绍", wiki_url %></span>
           <span class="site-menu-item"><%= link_to "邮件订阅", news_feed_url %></span>
           <span class="site-menu-item"><%= link_to "关于", about_url %></span>
+        </div>
+        <div class="site-dropdown">
+          <div class="site-dropdown-list">
+            <div class="site-menu-item"><%= link_to "SuperRugby", "/event/super-rugby" %></div>
+            <div class="site-menu-item"><%= link_to "Premiership", "/event/premiership" %></div>
+            <div class="site-menu-item"><%= link_to "TOP14", "/event/top14" %></div>
+            <div class="site-menu-item"><%= link_to "PRO12", "/event/pro12" %></div>
+            <div class="site-menu-item"><%= link_to "国际测试赛", "/event/international-tests" %></div>
+            <div class="site-menu-item"><%= link_to "冠军赛", "/event/rugby-championship" %></div>
+            <div class="site-menu-item"><%= link_to "六国赛", "/event/six-nations" %></div>
+            <div class="site-menu-item"><%= link_to "世界杯", "/event/rugby-world-cup" %></div>
+          </div>
+          <div class="site-dropdown-index">
+            <div class="site-menu-item"><%= link_to "首页", index_url %></div>
+            <div class="site-menu-item"><%= link_to "新闻", news_url, channel: "news" %></div>
+            <div class="site-menu-item"><%= link_to "比分", results_url, channel: "results" %></div>
+            <div class="site-menu-item"><%= link_to "赛事介绍", wiki_url %></div>
+            <div class="site-menu-item"><%= link_to "邮件订阅", news_feed_url %></div>
+            <div class="site-menu-item"><%= link_to "关于", about_url %></div>
+          </div>
         </div>
       </header>
 

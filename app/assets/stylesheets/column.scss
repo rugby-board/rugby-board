@@ -1,4 +1,4 @@
-$page-breakpoint: 80rem;
+$page-breakpoint: 70rem;
 
 .columns {
   display: flex;
@@ -9,6 +9,7 @@ $page-breakpoint: 80rem;
 
   .column {
     margin-right: .4rem;
+
     &:last-child {
       margin-right: 0;
     }
