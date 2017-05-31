@@ -5,4 +5,14 @@ class WikiControllerTest < ActionDispatch::IntegrationTest
     get wiki_url
     assert_response :success
   end
+
+  test "should get wiki of event" do
+    get "/wiki/six-nations"
+    assert_response :success
+  end
+
+  test "should not go for unknown event" do
+    get "/wiki/gopro"
+    assert_response :found
+  end
 end
