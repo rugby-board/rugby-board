@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   delete 'news/delete' => 'admin#delete'
   post 'news/highlight' => 'admin#highlight'
 
-  get 'wiki' => 'wiki#event'
+  get 'wiki' => 'wiki#index'
+  get 'wiki/:event_name' => 'wiki#event'
 
   namespace :api do
     namespace :v1 do

@@ -4,30 +4,8 @@
       <div class="section-title">
         赛事介绍
       </div>
-      <div class="section-content">
-        国家队赛事
-        <ul>
-          <li><a href="#the-rugby-championship">橄榄球冠军赛 The Rugby Championship</a></li>
-          <li><a href="#six-nations">欧洲六国赛 Six Nations</a></li>
-          <li><a href="#rugby-world-cup">橄榄球世界杯 Rugby World Cup</a></li>
-        </ul>
-        俱乐部赛事
-        <ul>
-          <li><a href="#super-rugby">超级橄榄球 Super Rugby</a></li>
-          <li><a href="#pro12-rugby">PRO12（前凯尔特联赛）</a></li>
-          <li><a href="#premiership-rugby">英格兰超级联赛 Premiership</a></li>
-          <li><a href="#top14-rugby">法国 TOP14 联赛</a></li>
-        </ul>
-      </div>
     </div>
   </div>
 </div>
 
-<%= render partial: "rugby_championship" %>
-<%= render partial: "six_nations" %>
-<%= render partial: "rugby_world_cup" %>
-
-<%= render partial: "super_rugby" %>
-<%= render partial: "pro12" %>
-<%= render partial: "premiership" %>
-<%= render partial: "top14" %>
+<%= render partial: @event_name %>
