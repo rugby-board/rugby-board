@@ -7,6 +7,7 @@
     <atom:link href="http://rugbynews.space/news/feed.xml" rel="self" type="application/rss+xml"/>
     <generator>RugbyNewsBoard</generator>
     <% @news.each do |n| %>
+      <% cache n do %>
     <item>
       <title><%= n.title %></title>
       <description><![CDATA[<%= raw n.markdown_content %>]]></description>
@@ -14,6 +15,7 @@
       <link><%= "http://rugbynews.space/news/#{n.id}" %></link>
       <guid><%= n.id %></guid>
     </item>
+      <% end %>
     <% end %>
   </channel>
 </rss>
