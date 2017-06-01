@@ -1,6 +1,0 @@
-#!/bin/bash
-
-source ~/.bashrc
-git pull
-script/build
-script/restart
