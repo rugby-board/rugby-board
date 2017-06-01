@@ -24,6 +24,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       resource :dict, only: [:show]
     end
+
+    namespace :v2 do
+      mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/api/v2/queries"
+      resource :queries
+    end
   end
 
   root 'index#index'

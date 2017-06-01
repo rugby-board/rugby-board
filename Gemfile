@@ -62,5 +62,7 @@ gem "kramdown"
 gem "responders"
 gem "react-rails"
 gem "font-awesome-sass", '~> 4.7.0'
+gem "graphql"
+gem "graphiql-rails"
 
 gem "rugby-dict", :github => "dripcoffee/rugby-dict"
