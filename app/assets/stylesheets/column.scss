@@ -8,6 +8,7 @@ $page-breakpoint: 70rem;
 
   .column {
     border-right: 1px solid #bbb;
+    width: 100%;
 
     &:last-child {
       border-right: 0;
@@ -31,7 +32,7 @@ $page-breakpoint: 70rem;
     width: 34%;
   }
   .column-2-3 {
-    width: 66%;
+    width: 67%;
   }
 }
 
