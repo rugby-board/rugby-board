@@ -83,14 +83,17 @@ class NewsController < ApplicationController
   end
 
   def set_page_title(channel_id, event_id)
-    if channel_id == 1
+    if channel_id == 0
       @page_title = "新闻 | "
-    elsif channel_id == 2
+      @in_page_title = "新闻"
+    elsif channel_id == 1
       @page_title = "比赛结果 | "
+      @in_page_title = "比赛结果"
     end
 
     unless event_id.nil?
       @page_title = "#{News::EVENT_LIST[event_id][0]} | "
+      @in_page_title = "#{News::EVENT_LIST[event_id][0]}"
     end
   end
 end
