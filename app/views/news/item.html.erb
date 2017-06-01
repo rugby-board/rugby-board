@@ -1,6 +1,8 @@
 <div class="section">
   <div class="section-wrap">
-    <%= render @news, nolink: true %>
+    <% cache @news do %>
+      <%= render @news, nolink: true %>
+    <% end %>
   </div>
 </div>
 

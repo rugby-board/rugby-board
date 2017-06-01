@@ -1,7 +1,9 @@
 <div class="section" id="news">
   <div class="section-wrap">
   <% @news.each do |n| %>
-    <%= render n %>
+    <% cache n do %>
+      <%= render n %>
+    <% end %>
   <% end %>
   </div>
 </div>
