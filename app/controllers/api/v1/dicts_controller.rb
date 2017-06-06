@@ -7,13 +7,17 @@ module Api
         dict = RugbyDict::Dict.from_yaml
         names = RugbyDict::Dict.segment(input)
 
-        result = []
+        query_result = []
         names.each do |word|
           t = dict.query_dict(word)
-          result << t unless t.nil?
+          query_result << t unless t.nil?
         end
 
-        respond_with result: result
+        result = {
+          :result => query_result
+        }
+
+        render json: result
       end
     end
   end
