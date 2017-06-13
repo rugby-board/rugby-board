@@ -32,6 +32,19 @@ module Api
 
         total = total.count
         news = news.reverse_order.limit(News::PAGINATION_STEP).offset(start)
+        list = []
+        news.each do |n|
+          list << {
+            :id => n.id,
+            :title => n.title,
+            :content => n.content,
+            :channel => n.channel,
+            :channel_text => News::EVENT_LIST[n.channel][0],
+            :event => n.event,
+            :event_text => News::EVENT_LIST[n.event][0],
+            :created_at => n.created_at
+          }
+        end
         
         page = {
           :total => total,
@@ -41,7 +54,7 @@ module Api
 
         result = {
           :page => page,
-          :news => news
+          :news => list
         }
         render json: result
       end
