@@ -39,7 +39,7 @@ module Api
             :title => n.title,
             :content => n.content,
             :channel => n.channel,
-            :channel_text => News::EVENT_LIST[n.channel][0],
+            :channel_text => News::CHANNEL_LIST[n.channel][0],
             :event => n.event,
             :event_text => News::EVENT_LIST[n.event][0],
             :created_at => n.created_at
