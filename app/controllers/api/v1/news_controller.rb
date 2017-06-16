@@ -4,7 +4,16 @@ module Api
       def item
         news = News.find(params[:id].to_i)
         result = {
-          :news => news
+          :news => {
+            :id => news.id,
+            :title => news.title,
+            :content => news.content,
+            :channel => news.channel,
+            :channel_text => News::CHANNEL_LIST[news.channel][0],
+            :event => news.event,
+            :event_text => News::EVENT_LIST[news.event][0],
+            :created_at => news.created_at
+          }
         }
         render json: result
       end
