@@ -1,19 +1,29 @@
 module Api
   module V1
     class NewsController < Api::V1::BaseController
+      def index
+        highlight = News.where(status: News::STATUS[:highlighted])
+                     .reverse_order
+                     .limit(3)
+        news = News.where(status: News::STATUS[:ok], channel: 0)
+                    .last(News::PAGINATION_STEP)
+                    .reverse
+        results = News.where(status: News::STATUS[:ok], channel: 1).where("created_at >= ?", 1.week.ago.utc)
+                    .last(News::PAGINATION_STEP)
+                    .reverse
+        result = {
+          :highlight => highlight.map {|n| build_news(n) },
+          :news => news.map {|n| build_news(n) },
+          :results => results.map {|n| build_news(n) }
+        }
+
+        render json: result
+      end
+
       def item
         news = News.find(params[:id].to_i)
         result = {
-          :news => {
-            :id => news.id,
-            :title => news.title,
-            :content => news.content,
-            :channel => news.channel,
-            :channel_text => News::CHANNEL_LIST[news.channel][0],
-            :event => news.event,
-            :event_text => News::EVENT_LIST[news.event][0],
-            :created_at => news.created_at
-          }
+          :news => build_news(news)
         }
         render json: result
       end
@@ -43,16 +53,7 @@ module Api
         news = news.reverse_order.limit(News::PAGINATION_STEP).offset(start)
         list = []
         news.each do |n|
-          list << {
-            :id => n.id,
-            :title => n.title,
-            :content => n.content,
-            :channel => n.channel,
-            :channel_text => News::CHANNEL_LIST[n.channel][0],
-            :event => n.event,
-            :event_text => News::EVENT_LIST[n.event][0],
-            :created_at => n.created_at
-          }
+          list << build_news(n)
         end
         
         page = {
@@ -69,6 +70,19 @@ module Api
       end
 
       private
+      def build_news(data)
+        {
+          :id => data.id,
+          :title => data.title,
+          :content => data.content,
+          :channel => data.channel,
+          :channel_text => News::CHANNEL_LIST[data.channel][0],
+          :event => data.event,
+          :event_text => News::EVENT_LIST[data.event][0],
+          :created_at => data.created_at
+        }
+      end
+
       def get_page(page_param)
         page = page_param.to_i || 1
         page = 1 if page <= 0

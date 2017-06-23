@@ -24,7 +24,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resource :dict, only: [:show]
       get 'news/:id' => 'news#item'
-      get 'list' => 'news#list'
+      get 'list'     => 'news#list'
+      get 'index'    => 'news#index'
     end
   end
 
