@@ -62,4 +62,4 @@ gem "kramdown"
 gem "react-rails"
 gem "font-awesome-sass", '~> 4.7.0'
 
-gem "rugby-dict", :github => "dripcoffee/rugby-dict"
+gem "rugby-dict", :github => "rugby-board/rugby-dict"

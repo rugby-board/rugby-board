@@ -1,7 +1,9 @@
 module Api
   module V1
     class NewsController < Api::V1::BaseController
-      def index
+      before_action :check_token
+
+      def home
         highlight = News.where(status: News::STATUS[:highlighted])
                      .reverse_order
                      .limit(3)
@@ -20,11 +22,70 @@ module Api
         render json: result
       end
 
-      def item
+      def create
+        result = {}
+        @news = News.new
+        @news.title = params[:title]
+        @news.content = params[:content]
+        @news.channel = params[:channel]
+        @news.event = params[:event]
+        @news.tag = ""
+        @news.status = 0
+        if @news.save
+          result = success_message(@news.id, "create")
+          result[:news] = @news
+        else
+          result = error_message(id, "create", 1, @news.errors.messages)
+        end
+
+        render json: result
+      end
+
+      def update
+        result = {}
+        @news = News.find(params[:id])
+        @news.title = params[:title]
+        @news.content = params[:content]
+        @news.channel = params[:channel]
+        @news.event = params[:event]
+        @news.tag = ""
+        @news.save
+
+        if @news.save
+          result = success_message(@news.id, "update")
+          result[:news] = @news
+        else
+          result = error_message(id, "update", 1, @news.errors.messages)
+        end
+
+        render json: result
+      end
+
+      def destroy
+        result = {}
+        begin
+          id = params[:id].to_i
+          @news = News.find(id)
+          @news.status = News::STATUS[:deleted]
+
+          if @news.save
+            result = success_message(id, "delete")
+          else
+            result = error_message(id, "delete", 1, @news.errors.messages)
+          end
+        rescue ActiveRecord::RecordNotFound
+          result = error_message(id, "delete", 2, "Delete id not found")
+        end
+
+        render json: result
+      end
+
+      def show
         news = News.find(params[:id].to_i)
         result = {
           :news => build_news(news)
         }
+
         render json: result
       end
 
@@ -69,7 +130,75 @@ module Api
         render json: result
       end
 
+      def highlight
+        result = {}
+        begin
+          id = params[:id].to_i
+          @news = News.find(id)
+          @news.status = News::STATUS[:highlighted]
+
+          if @news.save
+            result = success_message(id, "highlight")
+          else
+            result = error_message(id, "highlight", 1, "Highlight error")
+          end
+        rescue ActiveRecord::RecordNotFound
+          result = error_message(id, "highlight", 2, @news.errors.messages)
+        end
+
+        render json: result
+      end
+
+      def unhighlight
+        result = {}
+        begin
+          id = params[:id].to_i
+          @news = News.find(id)
+          @news.status = News::STATUS[:ok]
+
+          if @news.save
+            result = success_message(id, "unhighlight")
+          else
+            result = error_message(id, "unhighlight", 1, "Unhighlight error")
+          end
+        rescue ActiveRecord::RecordNotFound
+          result = error_message(id, "unhighlight", 2, @news.errors.messages)
+        end
+
+        render json: result
+      end
+
       private
+      def check_token
+        unless params[:token].eql?(token)
+          render json: {
+            :status => -1,
+            :message => "Access denied"
+          }
+        end
+      end
+
+      def token
+        ENV["ADMIN_TOKEN"] || "12ffbb6"
+      end
+
+      def success_message(id, action)
+        {
+          :status => 0,
+          :id => id,
+          :action => action
+        }
+      end
+
+      def error_message(id, action, status, message)
+        {
+          :status => status,
+          :id => id,
+          :action => action,
+          :message => message
+        }
+      end
+
       def build_news(data)
         {
           :id => data.id,
@@ -79,6 +208,7 @@ module Api
           :channel_text => News::CHANNEL_LIST[data.channel][0],
           :event => data.event,
           :event_text => News::EVENT_LIST[data.event][0],
+          :status => data.status,
           :created_at => data.created_at
         }
       end
