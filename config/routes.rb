@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  namespace :api, constraints: { format: 'json' } do
+    namespace :v1 do
+      resource :dict, only: [:show]
+      resources :news, only: [:create, :show, :update, :destroy]
+      post 'news/highlight/:id' => 'news#highlight'
+      post 'news/unhighlight/:id' => 'news#unhighlight'
+      get 'list' => 'news#list'
+      get 'index' => 'news#home'
+    end
+  end
+
+  get 'news/feed' => 'news#feed'
+
+  # routes below are dismissed
   get 'index' => 'index#index'
   get 'about' => 'index#about'
 
@@ -8,7 +22,6 @@ Rails.application.routes.draw do
   get 'results' => 'news#list', :channel => "results"
   get 'event/:event_name' => 'news#list', :channel => "events"
 
-  get 'news/feed' => 'news#feed'
   get 'news/:id' => 'news#item'
 
   get 'admin' => 'admin#index'
@@ -20,16 +33,8 @@ Rails.application.routes.draw do
   get 'wiki' => 'wiki#index'
   get 'wiki/:event_name' => 'wiki#event'
 
-  namespace :api do
-    namespace :v1 do
-      resource :dict, only: [:show]
-      get 'news/:id' => 'news#item'
-      get 'list'     => 'news#list'
-      get 'index'    => 'news#index'
-    end
-  end
-
   root 'index#index'
 
+  # 404 page
   match "*path", via: :all, to: "index#error_404"
 end
