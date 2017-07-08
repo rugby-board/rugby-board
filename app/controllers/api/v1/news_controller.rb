@@ -192,7 +192,7 @@ module Api
 
       def error_message(id, action, status, message)
         {
-          :status => 0,
+          :status => status,
           :id => id,
           :action => action,
           :message => message
