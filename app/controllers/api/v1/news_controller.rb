@@ -36,7 +36,7 @@ module Api
           result = success_message(@news.id, "create")
           result[:news] = @news
         else
-          result = error_message(id, "create", 1, @news.errors.messages)
+          result = error_message(0, "create", 1, @news.errors.messages)
         end
 
         render json: result
@@ -56,7 +56,7 @@ module Api
           result = success_message(@news.id, "update")
           result[:news] = @news
         else
-          result = error_message(id, "update", 1, @news.errors.messages)
+          result = error_message(@news.id, "update", 1, @news.errors.messages)
         end
 
         render json: result
