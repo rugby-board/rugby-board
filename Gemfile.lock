@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rugby-board/rugby-dict.git
-  revision: 9e4e60910f50c97bd7bbde24c4bac6a1dd2d2db0
+  revision: d7f4202ac8ee048afd9a6e105f052569b1a62b47
   specs:
     rugby-dict (1.0.2)
 

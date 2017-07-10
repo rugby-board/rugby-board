@@ -1,6 +1,7 @@
 module Api
   module V1
     class NewsController < Api::V1::BaseController
+      include AuthHelper
       before_action :check_token
       skip_before_action :verify_authenticity_token
 
@@ -170,19 +171,6 @@ module Api
       end
 
       private
-      def check_token
-        unless params[:token].eql?(token)
-          render json: {
-            :status => -1,
-            :message => "Access denied"
-          }
-        end
-      end
-
-      def token
-        ENV["ADMIN_TOKEN"] || "12ffbb6"
-      end
-
       def success_message(id, action)
         {
           :status => 0,
