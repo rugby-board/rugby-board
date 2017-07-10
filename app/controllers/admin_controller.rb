@@ -1,8 +1,7 @@
 class AdminController < ApplicationController
   include AuthHelper
-  attr_reader :page_title
-
   before_action :check_token
+  attr_reader :page_title
   
   def index
     @token = token
@@ -83,5 +82,13 @@ class AdminController < ApplicationController
     end
     
     redirect_to root_url
+  end
+
+  private
+  def check_token
+    unless params[:token].eql?(token)
+      flash[:warning] = "No permission as an admin."
+      redirect_to root_url
+    end
   end
 end

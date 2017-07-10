@@ -171,6 +171,15 @@ module Api
       end
 
       private
+      def check_token
+        unless params[:token].eql?(token)
+          render json: {
+            :status => -1,
+            :message => "Access denied"
+          }
+        end
+      end
+
       def success_message(id, action)
         {
           :status => 0,
