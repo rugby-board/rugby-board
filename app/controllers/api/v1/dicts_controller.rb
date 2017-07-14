@@ -1,6 +1,6 @@
 module Api
   module V1
-    class DictsController < Api::V1::BaseController
+    class DictsController < ApplicationController
       def show
         require "rugby-dict"
         input = params[:entry]

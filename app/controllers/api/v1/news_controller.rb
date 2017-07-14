@@ -1,9 +1,8 @@
 module Api
   module V1
-    class NewsController < Api::V1::BaseController
+    class NewsController < ApplicationController
       include AuthHelper
       before_action :check_token
-      skip_before_action :verify_authenticity_token
 
       def home
         highlight = News.where(status: News::STATUS[:highlighted])
