@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'news/feed' => 'news#feed'
+
   # 404 page
   # match "*path", via: :all, to: "index#error_404"
 end
