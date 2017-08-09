@@ -17,7 +17,7 @@ class News < ApplicationRecord
     ['Super Rugby', 4],
     ['Premiership', 5],
     ['TOP 14', 6],
-    ['PRO 12', 7],
+    ['PRO 14', 7],
     ['European Champions Cup', 8],
     ['Rugby World Cup', 9],
     ['British and Irish Lions', 10],
@@ -31,17 +31,6 @@ class News < ApplicationRecord
     ['Mitre 10 Cup', 18],
     ['National Rugby Championship', 19]
   ].freeze
-
-  EVENT_NAME_ID_MAP = {
-    'international-tests': 1,
-    'six-nations': 2,
-    'rugby-championship': 3,
-    'super-rugby': 4,
-    'premiership': 5,
-    'top14': 6,
-    'pro12': 7,
-    'rugby-world-cup': 9
-  }.freeze
 
   STATUS = {
     :ok => 0,
