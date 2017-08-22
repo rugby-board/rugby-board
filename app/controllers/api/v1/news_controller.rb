@@ -85,7 +85,7 @@ module Api
         param_id = params[:id].to_i
         news = News.find(param_id)
         adjacent = News.where(id: [param_id - 1, param_id + 1])
-        related = News.where(event: news.event).limit(10)
+        related = News.where(event: news.event).last(5).reverse
         result = {
           :news => build_news(news),
           :adjacent => build_news(adjacent),
