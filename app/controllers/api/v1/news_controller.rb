@@ -82,9 +82,14 @@ module Api
       end
 
       def show
-        news = News.find(params[:id].to_i)
+        param_id = params[:id].to_i
+        news = News.find(param_id)
+        adjacent = News.where(id: [param_id - 1, param_id + 1])
+        related = News.where(event: news.event).limit(10)
         result = {
-          :news => build_news(news)
+          :news => build_news(news),
+          :adjacent => build_news(adjacent),
+          :related => build_news(related)
         }
 
         render json: result
@@ -197,17 +202,26 @@ module Api
       end
 
       def build_news(data)
-        {
-          :id => data.id,
-          :title => data.title,
-          :content => data.content,
-          :channel => data.channel,
-          :channel_text => News::CHANNEL_LIST[data.channel][0],
-          :event => data.event,
-          :event_text => News::EVENT_LIST[data.event][0],
-          :status => data.status,
-          :created_at => data.created_at
-        }
+        return "" if data.nil?
+        if data.respond_to?(:id)
+          {
+            :id => data.id,
+            :title => data.title,
+            :content => data.content,
+            :channel => data.channel,
+            :channel_text => News::CHANNEL_LIST[data.channel][0],
+            :event => data.event,
+            :event_text => News::EVENT_LIST[data.event][0],
+            :status => data.status,
+            :created_at => data.created_at
+          }
+        else
+          built_news = []
+          data.each do |news|
+            built_news.append(build_news(news))
+          end
+          built_news
+        end
       end
 
       def get_page(page_param)
