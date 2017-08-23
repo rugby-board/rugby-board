@@ -29,7 +29,7 @@ pro12_event:
 highlight_news:
   id: 3
   title: "Exeter win Premiership title in extra-time"
-  content: ""
+  content: "good"
   channel: 0
   event: 5
   tag: ""
@@ -38,7 +38,7 @@ highlight_news:
 delete_news:
   id: 4
   title: "I will be deleted"
-  content: ""
+  content: "bad"
   channel: 0
   event: 2
   tag: ""

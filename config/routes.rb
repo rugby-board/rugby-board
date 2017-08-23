@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       post 'news/unhighlight/:id' => 'news#unhighlight'
       get 'list' => 'news#list'
       get 'index' => 'news#home'
+      get 'search' => 'search#search'
     end
   end
 
