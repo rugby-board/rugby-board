@@ -1,8 +1,7 @@
 module Api
   module V1
     class NewsController < ApplicationController
-      include AuthHelper
-      before_action :check_token
+      include NewsHelper
 
       def home
         highlight = News.where(status: News::STATUS[:highlighted])
@@ -104,19 +103,12 @@ module Api
         page = get_page(params[:p])
         start = (page - 1) * News::PAGINATION_STEP
 
-        total = News.where(status: [News::STATUS[:ok], News::STATUS[:highlighted]])
         news = News.where(status: [News::STATUS[:ok], News::STATUS[:highlighted]])
 
-        unless channel_id.nil?
-          total = total.where(channel: channel_id)
-          news = news.where(channel: channel_id)
-        end
-        unless event_id.nil?
-          total = total.where(event: event_id)
-          news = news.where(event: event_id)
-        end
+        news = news.where(channel: channel_id) unless channel_id.nil?
+        news = news.where(event: event_id) unless event_id.nil?
 
-        total = total.count
+        total = news.count
         news = news.reverse_order.limit(News::PAGINATION_STEP).offset(start)
         list = []
         news.each do |n|
@@ -175,15 +167,6 @@ module Api
       end
 
       private
-      def check_token
-        unless params[:token].eql?(token)
-          render json: {
-            :status => -1,
-            :message => "Access denied"
-          }
-        end
-      end
-
       def success_message(id, action)
         {
           :status => 0,
@@ -199,35 +182,6 @@ module Api
           :action => action,
           :message => message
         }
-      end
-
-      def build_news(data)
-        return "" if data.nil?
-        if data.respond_to?(:id)
-          {
-            :id => data.id,
-            :title => data.title,
-            :content => data.content,
-            :channel => data.channel,
-            :channel_text => News::CHANNEL_LIST[data.channel][0],
-            :event => data.event,
-            :event_text => News::EVENT_LIST[data.event][0],
-            :status => data.status,
-            :created_at => data.created_at
-          }
-        else
-          built_news = []
-          data.each do |news|
-            built_news.append(build_news(news))
-          end
-          built_news
-        end
-      end
-
-      def get_page(page_param)
-        page = page_param.to_i || 1
-        page = 1 if page <= 0
-        page
       end
 
       def get_channel_id(channel)

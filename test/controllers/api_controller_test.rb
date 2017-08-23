@@ -103,4 +103,17 @@ class ApiControllerTest < ActionDispatch::IntegrationTest
     assert_equal 1, result["news"]["channel"]
     assert_equal 1, result["news"]["event"]
   end
+
+  test "translate word" do
+    get '/api/v1/dict', params: {token: "12ffbb6", entry: "Pau"}
+    result = JSON.parse(@response.body)
+    assert_equal "波城", result["result"][0]
+  end
+
+  test "search news" do
+    get '/api/v1/search', params: {token: "12ffbb6", title: 1}
+    result = JSON.parse(@response.body)
+    assert_not_empty result["news"]
+    assert_equal 27, result["page"]["total"]
+  end
 end
