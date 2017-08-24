@@ -6,6 +6,8 @@ module Api
       def search
         title = params[:title]
         content = params[:content]
+        channel = params[:channel]
+        event = params[:event]
         startTime = params[:start_time]
         endTime = params[:end_time]
 
@@ -14,6 +16,8 @@ module Api
 
         # query title and content
         news = News.where.not(status: News::STATUS[:deleted])
+        news = news.where(channel: channel) unless channel.blank?
+        news = news.where(event: event) unless event.blank?
         title_field = News.arel_table[:title]
         news = news.where(title_field.matches("%#{title}%")) unless title.blank?
         content_field = News.arel_table[:content]
