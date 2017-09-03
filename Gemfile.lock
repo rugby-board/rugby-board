@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rugby-board/rugby-dict.git
-  revision: 4717c4e146424629edf8e8c14b898a344b6abc20
+  revision: 2ef0d117c7c92008a278bb446380b0e7b5ffa156
   specs:
     rugby-dict (1.0.2)
 
@@ -47,7 +47,7 @@ GEM
     arel (7.1.4)
     bindex (0.5.0)
     builder (3.2.3)
-    byebug (9.0.6)
+    byebug (9.1.0)
     codeclimate-test-reporter (1.0.8)
       simplecov (<= 0.13)
     concurrent-ruby (1.0.5)
@@ -80,7 +80,7 @@ GEM
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
     pg (0.21.0)
-    puma (3.9.1)
+    puma (3.10.0)
     rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -124,7 +124,7 @@ GEM
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.2.0)
+    sprockets-rails (3.2.1)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
@@ -161,4 +161,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.3
+   1.15.4
