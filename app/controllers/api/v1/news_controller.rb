@@ -16,7 +16,7 @@ module Api
         result = {
           :highlight => highlight.map {|n| build_news(n) },
           :news => news.map {|n| build_news(n) },
-          :results => results.map {|n| build_news(n) }
+          :results => results.map {|n| filter_translation(build_news(n)) }
         }
 
         render json: result
