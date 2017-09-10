@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rugby-board/rugby-dict.git
-  revision: 8ca590338dc78eec9ae163d76389c8ed56a3a7dc
+  revision: c651539f58eeb512389a67a8f6f076ab750087f5
   specs:
     rugby-dict (1.0.2)
 
@@ -61,7 +61,7 @@ GEM
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
     json (2.1.0)
-    kramdown (1.14.0)
+    kramdown (1.15.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
