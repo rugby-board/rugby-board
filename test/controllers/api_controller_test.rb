@@ -114,6 +114,6 @@ class ApiControllerTest < ActionDispatch::IntegrationTest
     get '/api/v1/search', params: {token: "12ffbb6", title: 1}
     result = JSON.parse(@response.body)
     assert_not_empty result["news"]
-    assert_equal 27, result["page"]["total"]
+    assert_equal 13, result["page"]["total"]
   end
 end
