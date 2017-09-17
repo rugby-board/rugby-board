@@ -3,7 +3,7 @@ module Api
     class DictsController < ApplicationController
       def show
         require "rugby-dict"
-        input = params[:entry]
+        input = params[:entry] || ""
         dict = RugbyDict::Dict.from_yaml
         names = RugbyDict::Dict.segment(input)
 
