@@ -8,8 +8,6 @@ module Api
         content = params[:content]
         channel = params[:channel].to_i
         event = params[:event].to_i
-        startTime = params[:start_time]
-        endTime = params[:end_time]
 
         page = get_page(params[:p])
         start = (page - 1) * News::PAGINATION_STEP
