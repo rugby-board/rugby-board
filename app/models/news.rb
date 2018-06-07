@@ -29,7 +29,8 @@ class News < ApplicationRecord
     ['Barbarians', 16],
     ['Anglo Welsh Cup', 17],
     ['Mitre 10 Cup', 18],
-    ['National Rugby Championship', 19]
+    ['National Rugby Championship', 19],
+    ['Major League Rugby', 20]
   ].freeze
 
   STATUS = {
