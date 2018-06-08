@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rugby-board/rugby-dict.git
-  revision: 532a9e49f3782ad79853df19cb26120929eca936
+  revision: fc7c5a608fdfd67d52d416947d8bf9dd00bf8e9c
   specs:
     rugby-dict (1.0.2)
 
@@ -51,19 +51,19 @@ GEM
     codeclimate-test-reporter (1.0.8)
       simplecov (<= 0.13)
     concurrent-ruby (1.0.5)
-    crass (1.0.3)
+    crass (1.0.4)
     docile (1.1.5)
     erubis (2.7.0)
-    ffi (1.9.23)
+    ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    i18n (1.0.0)
+    i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
     json (2.1.0)
-    kramdown (1.16.2)
+    kramdown (1.17.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -77,12 +77,12 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
-    nio4r (2.3.0)
+    nio4r (2.3.1)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     pg (1.0.0)
-    puma (3.11.3)
-    rack (2.0.4)
+    puma (3.11.4)
+    rack (2.0.5)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.7)
@@ -133,7 +133,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    web-console (3.5.1)
+    web-console (3.6.2)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
@@ -162,4 +162,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
