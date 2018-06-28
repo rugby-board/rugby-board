@@ -6,6 +6,7 @@ module NewsHelper
         :id => data.id,
         :title => data.title,
         :content => data.content,
+        :rendered_content => data.markdown_content,
         :channel => data.channel,
         :channel_text => News::CHANNEL_LIST[data.channel][0],
         :event => data.event,
