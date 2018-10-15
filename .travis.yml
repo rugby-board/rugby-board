@@ -3,19 +3,23 @@ sudo: false
 rvm:
   - 2.3.0
 env:
-  CODECLIMATE_REPO_TOKEN: 8a9e38f181a491e4f8d3c4eb2355dfffd78ec137a99e6d905d55873fe5ad7911
+  global:
+    - CC_TEST_REPORTER_ID=6e0c92d69173395e9099d2fa52374fa6c37bcc1e1be3fe3247d61fa2432de1b6
 services:
   - postgresql
 before_script:
   - psql -c 'create database dripcoffee_rugbyboard_test;' -U postgres
   - cp config/secrets.travis.yml config/secrets.yml
-script:
   - bundle install
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
   - RAILS_ENV=test bin/rails db:create
   - RAILS_ENV=test bin/rails db:migrate
   - bin/rails test
-after_success:
-  - bundle exec codeclimate-test-reporter
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications:
   email: false
   slack: navyblue-team:ioO5diAGc5WUQVDKc5BH1UbE
