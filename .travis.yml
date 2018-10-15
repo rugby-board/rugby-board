@@ -4,7 +4,7 @@ rvm:
   - 2.3.0
 env:
   global:
-    - CC_TEST_REPORTER_ID=6e0c92d69173395e9099d2fa52374fa6c37bcc1e1be3fe3247d61fa2432de1b6
+    - CC_TEST_REPORTER_ID=9bceb1a3273cdeb18c029dca5637d1e1a748d4501619fcc7758bd861f6cc2fdf
 services:
   - postgresql
 before_script:
