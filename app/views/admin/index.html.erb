@@ -1,0 +1,130 @@
+<div class="section">
+  <div class="section-wrap info">
+    <div class="section-item">
+      <div class="section-title">
+        Admin
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column column-1-2">
+    <% unless @edit_news %>
+      <div class="section">
+        <div class="section-wrap">
+          <div class="section-item">
+            <div class="section-title">
+              Create News
+            </div>
+            <%= form_for :news, method: :post, url: '/news/create' do |f| %>
+            <div class="section-content">
+              <%= f.label :title %>
+              <%= f.text_field :title %>
+            </div>
+            <div class="section-content">
+              <%= f.label :content %>
+              <%= f.text_area :content %>
+            </div>
+            <div class="section-content">
+              <%= f.label :channel %>
+              <%= select_tag(:channel, options_for_select(News::CHANNEL_LIST)) %>
+              <%= f.label :event %>
+              <%= select_tag(:event, options_for_select(News::EVENT_LIST)) %>
+              <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
+              <%= f.hidden_field :tag, value: "", name: "news[tag]" %>
+              <%= f.submit "Create" %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-wrap">
+          <div class="section-item">
+            <div class="section-title">
+              Highlight
+            </div>
+            <%= form_for :news, method: :post, url: '/news/highlight' do |f| %>
+            <div class="section-content">
+              <%= f.label :id %>
+              <%= f.text_field :id %>
+              <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
+              <%= f.submit "Highlight", name: "set-highlight" %>
+              <%= f.submit "Reset", name: "cancel-highlight" %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-wrap">
+          <div class="section-item">
+            <div class="section-title">
+              Delete news:
+            </div>
+            <%= form_for :news, method: :delete, url: '/news/delete' do |f| %>
+            <div class="section-content">
+              <%= f.label :id %>
+              <%= f.text_field :id %>
+              <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
+              <%= f.submit "Delete" %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="section">
+        <div class="section-wrap">
+          <div class="section-item">
+            <%= form_for :news, method: :post, url: '/news/edit' do |f| %>
+            <div class="section-title">
+              Edit news: <%= @edit_news.id %>
+            </div>
+            <div class="section-content">
+              <%= f.label :title %>
+              <%= f.text_field :title, :value => @edit_news.title %>
+            </div>
+            <div class="section-content">
+              <%= f.label :content %>
+              <%= f.text_area :content, :value => @edit_news.content %>
+            </div>
+            <div class="section-content">
+              <%= f.label :channel %>
+              <%= select_tag(:channel, options_for_select(News::CHANNEL_LIST, @edit_news.channel))
+              %>
+            </div>
+            <div class="section-content">
+              <%= f.label :event %>
+              <%= select_tag(:event, options_for_select(News::EVENT_LIST, @edit_news.event)) %>
+            </div>
+            <div class="section-content">
+              <%= f.label :tag %>
+              <%= f.text_field :tag, :value => @edit_news.tag %>
+            </div>
+            <div class="section-content">
+              <%= f.hidden_field :id, value: "#{@edit_news.id}" %>
+              <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
+              <%= f.submit "Edit" %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="column column-1-2">
+    <div class="section">
+      <div class="section-wrap">
+        <div class="section-item">
+          <%= react_component "RugbyDictQuery", {title: "Rugby Dictionary"} %>
+          <%= react_component "PlanetRugbyResultFormatter", {title: "Planet Rugby Result Formatter"} %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

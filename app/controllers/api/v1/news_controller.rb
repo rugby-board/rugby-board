@@ -1,7 +1,9 @@
 module Api
   module V1
     class NewsController < ApplicationController
-      include NewsHelper
+      include AuthHelper
+      before_action :check_token
+      skip_before_action :verify_authenticity_token
 
       def home
         highlight = News.where(status: News::STATUS[:highlighted])
@@ -114,7 +116,7 @@ module Api
         news.each do |n|
           list << build_news(n)
         end
-        
+
         page = {
           :total => total,
           :cur_page => page,
@@ -192,7 +194,7 @@ module Api
 
       def get_event_id(event)
         return nil if event.blank?
-        
+
         event
       end
     end
