@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  namespace :api, constraints: { format: 'json' } do
+    namespace :v1 do
+      resource :dict, only: [:show]
+      resources :news, only: [:create, :show, :update, :destroy]
+      post 'news/highlight/:id' => 'news#highlight'
+      post 'news/unhighlight/:id' => 'news#unhighlight'
+      get 'list' => 'news#list'
+      get 'index' => 'news#home'
+      get 'search' => 'search#search'
+    end
+  end
+
   get 'index' => 'index#index'
   get 'about' => 'index#about'
 
