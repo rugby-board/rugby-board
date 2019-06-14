@@ -85,10 +85,12 @@ class NewsController < ApplicationController
   def set_page_title(channel_id, event_id)
     if channel_id == 0
       @page_title = "新闻 | "
+      @page_icon = "fw fa-newspaper-o"
       @in_page_title = "新闻"
     elsif channel_id == 1
-      @page_title = "比赛结果 | "
-      @in_page_title = "比赛结果"
+      @page_title = "比分 | "
+      @page_icon = "fw fa-table"
+      @in_page_title = "比分"
     end
 
     unless event_id.nil?

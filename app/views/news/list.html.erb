@@ -1,40 +1,37 @@
-<div class="news">
-  <div class="news-wrap info">
-    <div class="news-item">
-      <div class="news-title">
-        <%= @in_page_title %>
+<div class="columns">
+  <div class="column">
+    <div class="heading">
+      <div class="heading-title" id="latest-news">
+        <%= icon(@page_icon) %> <%= @in_page_title %>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="news" id="news">
-  <div class="section-wrap">
-  <% @news.each do |n| %>
-    <% cache n do %>
-      <%= render n %>
-    <% end %>
-  <% end %>
-  </div>
-</div>
-
-<div class="section" id="pagination">
-  <div class="section-wrap info">
-    <div class="section-item">
-      <div class="section-title">
-        总共: <span id="total"><%= @page[:total] %></span>条
-        当前页: <span id="current"><%= @page[:cur_page] %></span>
-        <% if @page[:cur_page] > 1 %>
-          <%= link_to "上一页", controller: "news", action: "list", p: @page[:cur_page] - 1 %>
-        <% else %>
-           上一页
+    <div class="news" id="news">
+      <div class="news-wrap">
+      <% @news.each do |n| %>
+        <% cache n do %>
+          <%= render n %>
         <% end %>
-        <% if @page[:cur_page] < @page[:total_page] %>
-          <%= link_to "下一页", controller: "news", action: "list", p: @page[:cur_page] + 1 %>
-        <% else %>
-           下一页
-        <% end %>
+      <% end %>
       </div>
     </div>
+
+    <div class="news" id="pagination">
+      <div class="pagination-wrapper">
+        <div class="pagination-page">
+          <% if @page[:cur_page] > 1 %>
+            <span class="pagination-item"><%= link_to "上一页", controller: "news", action: "list", p: @page[:cur_page] - 1 %></span>
+          <% end %>
+          <% if @page[:cur_page] < @page[:total_page] %>
+            <span class="pagination-item"><%= link_to "下一页", controller: "news", action: "list", p: @page[:cur_page] + 1 %></span>
+          <% end %>
+        </div>
+        <div class="pagination-info">
+          <span class="pagination-item">总共: <span id="total"><%= @page[:total] %></span>条</span>
+          <span class="pagination-item">当前页: <span id="current"><%= @page[:cur_page] %></span></span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
