@@ -14,7 +14,7 @@ pro12_event:
   title: "PRO12 联赛比分汇总"
   content: |
     | 主队 | 比分 | 客队 |
-    |----|----|----| 
+    |----|----|----|
     | Connacht 康诺特 | 14-9 | Newport Gwent Dragons 龙 |
     | Ospreys 鱼鹰 | 23-25 | Munster 芒斯特 |
     | Ulster 阿斯特 | 37-17 | Glasgow Warriors 格拉斯哥勇士 |
@@ -49,7 +49,7 @@ news<%= i %>:
   title: "Test news <%= i %>"
   content: "Test news <%= i %>"
   channel: 0
-  event: 0
+  event: 1
   tag: ""
   status: 0
 
@@ -57,7 +57,7 @@ result<%= i %>:
   title: "Test result <%= i %>"
   content: "Test result <%= i %>"
   channel: 1
-  event: 0
+  event: 2
   tag: ""
   status: 0
 <% end %>
