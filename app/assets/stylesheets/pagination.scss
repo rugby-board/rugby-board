@@ -1,0 +1,30 @@
+.pagination-wrapper {
+  background-color: $main-font-color;
+  border-radius: 6px;
+  color: $bg-color;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: .8rem .4rem;
+
+  a {
+    color: $bg-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  span {
+    padding-left: .4rem;
+    padding-right: .4rem;
+  }
+
+  .pagination-page {
+    float: right;
+  }
+
+  .pagination-info {
+    color: inherit;
+  }
+}

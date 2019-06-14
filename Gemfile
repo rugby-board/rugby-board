@@ -59,7 +59,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "kramdown"
-gem "react-rails"
 gem "font-awesome-sass", '~> 4.7.0'
 
 gem "rugby-dict", :git => 'https://github.com/rugby-board/rugby-dict.git', :tag => '1.0.0'

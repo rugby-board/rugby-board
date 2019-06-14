@@ -1,0 +1,162 @@
+.news {
+  background-color: $news-bg-color;
+  border-radius: 6px;
+  margin-top: 1rem;
+  text-align: left;
+  width: 100%;
+
+  a {
+    color: $main-font-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.news-wrap {
+  border-bottom: 1px solid $border-color;
+  overflow: hidden;
+  width: 100%;
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+}
+
+.news-item {
+  display: block;
+  line-height: 1.25;
+  padding: .8rem;
+
+  .news-title {
+    font-size: 1rem;
+    font-weight: bold;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .news-content {
+    font-size: 1rem;
+    margin-bottom: .4rem;
+    margin-top: .4rem;
+    width: 100%;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .news-footer {
+    color: $light-font-color;
+    font-size: 1rem;
+    width: 100%;
+
+    .news-channel {
+      font-size: 1rem;
+    }
+
+    .news-time {
+      float: right;
+      font-size: 1rem;
+    }
+  }
+}
+
+.news-headline {
+  background-color: $news-highlight-bg-color;
+  font-size: 1rem;
+
+  .news-item {
+    &:first-of-type {
+      padding-bottom: 0;
+    }
+
+    &:only-of-type {
+      padding-bottom: .8rem;
+    }
+  }
+
+  .fa {
+    color: $news-highlight-font-color;
+    margin-right: .4rem;
+  }
+}
+
+.news-result {
+  table {
+    width: 100%;
+  }
+
+  th:first-child,
+  td:first-child {
+    width: 35%;
+  }
+
+  th:nth-child(2) {
+    text-align: center;
+  }
+
+  td:nth-child(2) {
+    text-align: center;
+  }
+
+  th:last-child,
+  td:last-child {
+    text-align: right;
+    width: 35%;
+  }
+}
+
+.loading {
+  font-size: 1rem;
+  padding: .8rem;
+  text-align: center;
+}
+
+.share {
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: .8rem;
+}
+
+a {
+  &.active-link {
+    text-decoration: underline;
+  }
+}
+
+.news-recommend {
+  display: flex;
+}
+
+.news-recommend-channel {
+  width: 50%;
+}
+
+.news-recommend-channel-name {
+  font-weight: bold;
+  line-height: 1.6rem;
+  margin-bottom: .4rem;
+}
+
+// .news-recommend-channel-list {
+// }
+
+@media (max-width: $page-breakpoint) {
+  .news-recommend {
+    display: block;
+  }
+
+  .news-recommend-channel {
+    width: 100%;
+
+    &:last-of-type {
+      margin-top: .4rem;
+    }
+  }
+}

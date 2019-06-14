@@ -1,0 +1,21 @@
+.heading {
+  background-color: $heading-bg-color;
+  border-radius: 6px;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+
+  .heading-title {
+    font-size: 1rem;
+    line-height: 1.8;
+    padding: .4rem .8rem;
+  }
+
+  .heading-more {
+    font-size: 1rem;
+    line-height: 1.8;
+    padding: .4rem 1rem;
+    position: absolute;
+    right: 0;
+  }
+}

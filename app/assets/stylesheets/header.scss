@@ -1,0 +1,153 @@
+.menu {
+  background-color: $main-font-color;
+  border-radius: 6px;
+  color: $menu-link-color;
+  font-size: 1.4rem;
+  line-height: 1;
+  margin: 0 0 1rem;
+  width: 100%;
+
+  a {
+    color: $menu-link-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.menu-name {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 2.8rem;
+  margin: 0 0 1.4rem 1rem;
+  padding-top: 1rem;
+}
+
+.menu-list {
+  border-top: $bg-color solid 1px;
+  display: flex;
+  font-size: 1rem;
+  margin: 0 .8rem;
+  padding: .8rem .2rem;
+
+  &:last-of-type {
+    border-top: 0;
+    padding-top: 0;
+  }
+}
+
+.menu-item {
+  a {
+    padding-right: .4rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.menu-active {
+      color: $heading-bg-color;
+    }
+  }
+}
+
+.menu-navicon {
+  display: none;
+}
+
+.menu-on {
+  display: flex;
+}
+
+.menu-off {
+  display: none;
+}
+
+@media (max-width: $page-breakpoint) {
+  .menu {
+    padding-left: 0;
+  }
+
+  .menu-navicon {
+    display: block;
+    float: right;
+    padding: 1.5rem .6rem 1.6rem 0;
+
+    button {
+      background-color: $main-font-color;
+      border: 0;
+      color: $menu-link-color;
+      font-size: 1rem;
+      font-weight: bold;
+      height: 2.1rem;
+      margin: 0;
+      padding: 0;
+      width: 2.4rem;
+    }
+  }
+
+  .menu-name {
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+  }
+
+  .menu-list {
+    display: none;
+  }
+
+  %menu-drop-style {
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px 1px $border-color;
+  }
+
+  .menu-dropdown {
+    @extend %menu-drop-style;
+    background-color: $bg-color;
+    justify-content: space-between;
+    padding: .4rem .8rem;
+    position: absolute;
+    right: .4rem;
+    top: 4rem;
+    width: 6rem;
+    z-index: 20;
+  }
+
+  .menu-dropdown-wrapper {
+    margin: .4rem 0;
+    overflow: hidden;
+
+    .menu-item {
+      height: 1.4rem;
+      margin-bottom: .6rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 8rem;
+
+      a {
+        color: $light-font-color;
+        font-size: 1.2rem;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .menu-dropdown-sublist {
+    @extend %menu-drop-style;
+    background-color: $bg-color;
+    position: absolute;
+    right: 8rem;
+    top: 3.9rem;
+    width: 18rem;
+    z-index: 20;
+  }
+
+  .menu-dropdown-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: .4rem .8rem;
+  }
+}

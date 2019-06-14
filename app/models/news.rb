@@ -2,8 +2,8 @@ class News < ApplicationRecord
   self.primary_key = "id"
 
   PAGINATION_STEP = 20.freeze
-  DOMAIN_NAME = "http://www.rugbynews.space".freeze
-  
+  DOMAIN_NAME = "http://nbrugby.com".freeze
+
   CHANNEL_LIST = [
     ['新闻', 0],
     ['比分', 1]
@@ -32,6 +32,29 @@ class News < ApplicationRecord
     ['National Rugby Championship', 19],
     ['Major League Rugby', 20]
   ].freeze
+
+  EVENT_NAME_ID_MAP = {
+    'international-tests': 1,
+    'six-nations': 2,
+    'rugby-championship': 3,
+    'super-rugby': 4,
+    'premiership': 5,
+    'top14': 6,
+    'pro14': 7,
+    'european-champions-cup': 8,
+    'rugby-world-cup': 9,
+    'british-and-irish-lions': 10,
+    'european-challenge-cup': 11,
+    'currie-cup': 12,
+    'top-league': 13,
+    'rugby-sevens': 14,
+    'womens-rugby': 15,
+    'barbarians': 16,
+    'anglo-welsh-cup': 17,
+    'mitre-10-cup': 18,
+    'national-rugby-championship': 19,
+    'major-league-rugby': 20,
+  }
 
   STATUS = {
     :ok => 0,

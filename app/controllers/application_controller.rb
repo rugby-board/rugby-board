@@ -1,8 +1,6 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
   include AuthHelper
 
-  before_action :check_token
-  protect_from_forgery with: :exception
   rescue_from ActionController::RoutingError, with: :not_found
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 

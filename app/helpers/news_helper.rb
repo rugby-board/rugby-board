@@ -1,5 +1,4 @@
 module NewsHelper
-<<<<<<< HEAD
   def build_news(data)
     return "" if data.nil?
     if data.respond_to?(:id)
@@ -62,6 +61,4 @@ module NewsHelper
     page = 1 if page <= 0
     page
   end
-=======
->>>>>>> parent of 2f9937b... Update Rails version and make it API only (#25)
 end

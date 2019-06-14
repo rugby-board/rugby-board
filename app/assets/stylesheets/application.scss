@@ -1,104 +1,128 @@
-/*
- *= require_self
- *= require_tree .
- */
-
-/*
- * Theme of Rugby News Board
- * Copyright(c) David Zhang, 2017
- */
-
-@import "font-awesome-sprockets";
-@import "font-awesome";
-
 $min-breakpoint: 26rem;
 $page-breakpoint: 70rem;
 $font-breakpoint: 48rem;
 
-* {
-  box-sizing: border-box;
-}
+$main-font-color: #343a40;            // grey 8
+$light-font-color: #868e96;           // grey 6
+$border-color: #dee2e6;               // grey 3
+$news-highlight-bg-color: #e9ecef;    // grey 2
+$bg-color: #f1f3f5;                   // grey 1
+$menu-link-color: #f8f9fa;            // grey 0
+$news-bg-color: #f8f9fa;              // grey 0
+$table-border-color: #ffe066;         // yellow 3
+$news-highlight-font-color: #e03131;  // red 8
+$heading-bg-color: #15aabf;           // cyan 6
+
+
+@import 'header';
+@import 'footer';
+@import 'column';
+@import 'heading';
+@import 'news';
+@import 'article';
+@import 'search';
+@import 'pagination';
+@import 'admin';
+
 html {
-  width: 100%;
   font-size: 16px;
 }
+
 @media (max-width: $font-breakpoint) {
   html {
     font-size: 12px;
   }
 }
+
 body {
-  margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  background-color: $bg-color;
+  color: $main-font-color;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
-  color: #333;
-  background-color: #fbfbfb;
+  margin: 0;
+  padding: 0;
+  text-align: center;
   word-wrap: break-word;
-  text-align: center;
-  height: 100%;
-  width: 100%;
 }
-body ::selection {
-  background-color: #333;
-  color: #fbfbfb;
-}
-footer {
-  text-align: center;
-  font-size: 1rem;
-  overflow: hidden;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
+
 .container {
-  width: $page-breakpoint;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1rem auto 0;
   text-align: left;
-  margin-bottom: 2rem;
+  width: $page-breakpoint;
 }
+
+.container-linen {
+  margin: .4rem;
+}
+
 @media (max-width: $page-breakpoint) {
   .container {
-    width: 100%;
-    padding-left: 0;
     min-width: $min-breakpoint;
+    width: 100%;
   }
 }
-p {
-  margin: .8rem 0 0 0;
-}
-table {
-  width: 100%;
-  border-spacing: 0;
-  th {
-    background-color: #facb5b;
-    padding: .2rem .4rem .2rem .4rem;
-  }
-  tr {
-    &:hover {
-      background-color: #facb5b;
-    }
-  }
-}
-
 
 a {
+  color: $main-font-color;
   text-decoration: none;
-  color: #333;
 
   &:hover {
     text-decoration: underline;
   }
 }
-.left {
-  text-align: left;
-}
-.right {
-  text-align: right;
-}
-.mid {
-  text-align: center;
-}
+
 img {
-  max-width: 100%
+  max-width: 100%;
+}
+
+table {
+  border-spacing: 0;
+
+  th {
+    background-color: $table-border-color;
+    padding: .2rem .4rem;
+  }
+
+  tr {
+    &:hover {
+      background-color: $table-border-color;
+    }
+  }
+}
+
+ul {
+  margin: 0 0 1rem;
+  padding: 0;
+
+  li {
+    list-style-type: dotted;
+    margin: 0 0 0 2rem;
+  }
+}
+
+.not-found {
+  text-align: center;
+
+  p {
+    color: $main-font-color;
+    font-size: 5rem;
+    margin: 1rem 0;
+    padding: 0;
+  }
+}
+
+.error {
+  background-color: $news-highlight-font-color;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 1px 1px 0 $news-highlight-font-color;
+  font-weight: bold;
+  left: 50%;
+  padding: .8rem 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  transform: translate(-50%);
+  width: 20rem;
+  z-index: 999;
 }

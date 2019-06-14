@@ -1,0 +1,45 @@
+footer {
+  background-color: $main-font-color;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin: 1rem 0;
+  overflow: hidden;
+  padding: .8rem 0;
+  text-align: center;
+
+  .footer-column {
+    background-color: $main-font-color;
+    color: $menu-link-color;
+    line-height: 1.4;
+    padding: 0 .8rem;
+    width: 100%;
+
+    .footer-title {
+      border-bottom: 1px solid $light-font-color;
+      font-weight: bold;
+      line-height: 1.2;
+      margin-bottom: .4rem;
+      padding-bottom: .4rem;
+    }
+
+    a {
+      color: $menu-link-color;
+    }
+  }
+}
+
+@media (max-width: $page-breakpoint) {
+  footer {
+    .footer-column {
+      display: none;
+
+      .footer-title {
+        border: 0;
+      }
+
+      &:first-of-type {
+        display: block;
+      }
+    }
+  }
+}

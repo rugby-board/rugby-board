@@ -14,46 +14,67 @@
   <body>
     <div class="container">
       <header class="menu">
-        <div class="site-navicon">
+        <div class="menu-navicon">
           <%= link_to icon("navicon"), "#" %>
         </div>
-        <div class="site-name">
+        <div class="menu-name">
           <%= link_to "Rugby News Board", index_url %>
         </div>
-        <div class="site-menu">
-          <span class="site-menu-item"><%= link_to "首页", index_url %></span>
-          <span class="site-menu-item"><%= link_to "新闻", news_url, channel: "news" %></span>
-          <span class="site-menu-item"><%= link_to "比分", results_url, channel: "results" %></span>
-          <span class="site-menu-item"><%= link_to "SuperRugby", "/event/super-rugby" %></span>
-          <span class="site-menu-item"><%= link_to "Premiership", "/event/premiership" %></span>
-          <span class="site-menu-item"><%= link_to "TOP14", "/event/top14" %></span>
-          <span class="site-menu-item"><%= link_to "PRO12", "/event/pro12" %></span>
-          <span class="site-menu-item"><%= link_to "国际测试赛", "/event/international-tests" %></span>
-          <span class="site-menu-item"><%= link_to "冠军赛", "/event/rugby-championship" %></span>
-          <span class="site-menu-item"><%= link_to "六国赛", "/event/six-nations" %></span>
-          <span class="site-menu-item"><%= link_to "世界杯", "/event/rugby-world-cup" %></span>
-          <span class="site-menu-item"><%= link_to "赛事介绍", wiki_url %></span>
-          <span class="site-menu-item"><%= link_to "邮件订阅", news_feed_url %></span>
-          <span class="site-menu-item"><%= link_to "关于", about_url %></span>
-        </div>
-        <div class="site-dropdown">
-          <div class="site-dropdown-list">
-            <div class="site-menu-item"><%= link_to "SuperRugby", "/event/super-rugby" %></div>
-            <div class="site-menu-item"><%= link_to "Premiership", "/event/premiership" %></div>
-            <div class="site-menu-item"><%= link_to "TOP14", "/event/top14" %></div>
-            <div class="site-menu-item"><%= link_to "PRO12", "/event/pro12" %></div>
-            <div class="site-menu-item"><%= link_to "国际测试赛", "/event/international-tests" %></div>
-            <div class="site-menu-item"><%= link_to "冠军赛", "/event/rugby-championship" %></div>
-            <div class="site-menu-item"><%= link_to "六国赛", "/event/six-nations" %></div>
-            <div class="site-menu-item"><%= link_to "世界杯", "/event/rugby-world-cup" %></div>
+        <div>
+          <div class="menu-list">
+            <span class="menu-item"><%= link_to "首页", index_url %></span>
+            <span class="menu-item"><%= link_to "新闻", news_url, channel: "news" %></span>
+            <span class="menu-item"><%= link_to "比分", results_url, channel: "results" %></span>
+            <span class="menu-item"><%= link_to "赛事介绍", wiki_url %></span>
+            <span class="menu-item"><%= link_to "相关资料" %></span>
+            <span class="menu-item"><%= link_to "关于", about_url %></span>
+            <span class="menu-item">-&nbsp;</span>
+            <span class="menu-item"><%= link_to "国际测试赛", "/event/international-tests" %></span>
+            <span class="menu-item"><%= link_to "冠军赛", "/event/rugby-championship" %></span>
+            <span class="menu-item"><%= link_to "六国赛", "/event/six-nations" %></span>
+            <span class="menu-item"><%= link_to "世界杯", "/event/rugby-world-cup" %></span>
+            <span class="menu-item"><%= link_to "狮子队", "/event/british-and-irish-lions" %></span>
+            <span class="menu-item"><%= link_to "野蛮人", "/event/barbarians" %></span>
+            <span class="menu-item"><%= link_to "7人制", "/event/rugby-sevens" %></span>
+            <span class="menu-item"><%= link_to "女子赛事", "/event/womens-rugby" %></span>
           </div>
-          <div class="site-dropdown-index">
-            <div class="site-menu-item"><%= link_to "首页", index_url %></div>
-            <div class="site-menu-item"><%= link_to "新闻", news_url, channel: "news" %></div>
-            <div class="site-menu-item"><%= link_to "比分", results_url, channel: "results" %></div>
-            <div class="site-menu-item"><%= link_to "赛事介绍", wiki_url %></div>
-            <div class="site-menu-item"><%= link_to "邮件订阅", news_feed_url %></div>
-            <div class="site-menu-item"><%= link_to "关于", about_url %></div>
+          <div class="menu-list">
+            <span class="menu-item"><%= link_to "SuperRugby", "/event/super-rugby" %></span>
+            <span class="menu-item"><%= link_to "Premiership", "/event/premiership" %></span>
+            <span class="menu-item"><%= link_to "Top14", "/event/top14" %></span>
+            <span class="menu-item"><%= link_to "PRO14", "/event/pro14" %></span>
+            <span class="menu-item"><%= link_to "欧洲冠军杯", "/event/pro14" %></span>
+            <span class="menu-item"><%= link_to "欧洲挑战杯", "/event/pro14" %></span>
+            <span class="menu-item"><%= link_to "CurrieCup", "/event/pro14" %></span>
+            <span class="menu-item"><%= link_to "Mitre10Cup", "/event/pro14" %></span>
+            <span class="menu-item"><%= link_to "NRC", "/event/pro14" %></span>
+            <span class="menu-item"><%= link_to "TopLeague", "/event/pro14" %></span>
+            <span class="menu-item"><%= link_to "MLR", "/event/pro14" %></span>
+            <span class="menu-item"><%= link_to "盎格鲁威尔士杯", "/event/pro14" %></span>
+          </div>
+        </div>
+        <div class="menu-dropdown">
+          <div class="menu-dropdown-wrapper menu-off">
+            <div class="menu-dropdown-list">
+              <div class="menu-item"><%= link_to "首页", index_url %></div>
+              <div class="menu-item"><%= link_to "新闻", news_url, channel: "news" %></div>
+              <div class="menu-item"><%= link_to "比分", results_url, channel: "results" %></div>
+              <div class="menu-item"><%= link_to "赛事介绍", wiki_url %></div>
+              <div class="menu-item"><%= link_to "邮件订阅", news_feed_url %></div>
+              <div class="menu-item"><%= link_to "关于", about_url %></div>
+            </div>
+          </div>
+          <div class="menu-dropdown-sublist menu-off">
+            <div class="menu-dropdown-wrapper menu-dropdown-flex menu-off">
+              <div class="menu-item"><%= link_to "SuperRugby", "/event/super-rugby" %></div>
+              <div class="menu-item"><%= link_to "Premiership", "/event/premiership" %></div>
+              <div class="menu-item"><%= link_to "TOP14", "/event/top14" %></div>
+              <div class="menu-item"><%= link_to "PRO12", "/event/pro12" %></div>
+              <div class="menu-item"><%= link_to "国际测试赛", "/event/international-tests" %></div>
+              <div class="menu-item"><%= link_to "冠军赛", "/event/rugby-championship" %></div>
+              <div class="menu-item"><%= link_to "六国赛", "/event/six-nations" %></div>
+              <div class="menu-item"><%= link_to "世界杯", "/event/rugby-world-cup" %></div>
+            </div>
           </div>
         </div>
       </header>

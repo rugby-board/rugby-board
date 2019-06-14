@@ -16,6 +16,7 @@ module RugbyBoard
     # -- all .rb files in that directory are automatically loaded.
     config.time_zone = "Beijing"
 
-    config.react.variant = :development
+    config.middleware.use ActionDispatch::Flash
+    config.api_only = false
   end
 end

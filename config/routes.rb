@@ -1,26 +1,12 @@
 Rails.application.routes.draw do
-  namespace :api, constraints: { format: 'json' } do
-    namespace :v1 do
-      resource :dict, only: [:show]
-      resources :news, only: [:create, :show, :update, :destroy]
-      post 'news/highlight/:id' => 'news#highlight'
-      post 'news/unhighlight/:id' => 'news#unhighlight'
-      get 'list' => 'news#list'
-      get 'index' => 'news#home'
-      get 'search' => 'search#search'
-    end
-  end
-
-  get 'news/feed' => 'news#feed'
-
-  # routes below are dismissed
   get 'index' => 'index#index'
   get 'about' => 'index#about'
 
   get 'live' => 'live#index'
 
-  get 'news'    => 'news#list', :channel => "news"
+  get 'news' => 'news#list', :channel => "news"
   get 'results' => 'news#list', :channel => "results"
+  get 'news/feed' => 'news#feed'
   get 'event/:event_name' => 'news#list', :channel => "events"
 
   get 'news/:id' => 'news#item'
