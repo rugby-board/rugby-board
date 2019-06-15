@@ -56,6 +56,25 @@ class News < ApplicationRecord
     'major-league-rugby': 20,
   }
 
+  EVENT_WIKI_NAME_MAP = {
+    'six-nations': '欧洲六国赛 Six Nations',
+    'rugby-championship': '橄榄球冠军赛 The Rugby Championship',
+    'rugby-world-cup': '橄榄球世界杯',
+    'british-and-irish-lions': '不列颠和爱尔兰狮子 British & Irish Lions',
+    'barbarians': '野蛮人',
+
+    'super-rugby': '超级橄榄球 Super Rugby',
+    'premiership': '英格兰超级联赛 Premiership',
+    'top14': '法国 Top 14 联赛',
+    'pro14': '凯尔特 PRO14 联赛',
+
+    'currie-cup': '南非库里杯 Currie Cup',
+    'top-league': '日本 Top League 联赛',
+    'mitre-10-cup': '新西兰 Mitre 10 Cup',
+    'national-rugby-championship': '澳大利亚国家橄榄球冠军赛 NRC',
+    'major-league-rugby': '美国职业橄榄球大联盟 MLR',
+  }
+
   STATUS = {
     :ok => 0,
     :deleted => 1,
