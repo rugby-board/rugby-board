@@ -17,13 +17,25 @@
 
 $(document).ready(function(){
   var isMenuDown = false;
-  $('.site-navicon>a').click(function(){
+  var isFullListDown = false;
+
+  $('.menu-navicon>a').click(function(){
     if (isMenuDown) {
-      $('.site-dropdown').css('display', 'none');
-    }
-    else {
-      $('.site-dropdown').css('display', 'block');
+      $('.menu-dropdown').css('display', 'none');
+    } else {
+      $('.menu-dropdown').css('display', 'block');
+      $('.menu-dropdown-sublist').css('display', 'none');
     }
     isMenuDown = !isMenuDown;
+    isFullListDown = false;
   });
+
+  $('#menu-list-toggle').click(function(){
+    if (isFullListDown) {
+      $('.menu-dropdown-sublist').css('display', 'none');
+    } else {
+      $('.menu-dropdown-sublist').css('display', 'block');
+    }
+    isFullListDown = !isFullListDown;
+  })
 });

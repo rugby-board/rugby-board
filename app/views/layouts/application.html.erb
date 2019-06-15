@@ -20,7 +20,7 @@
             <%= link_to icon("navicon"), "#" %>
           </div>
           <div class="menu-name">
-            <%= link_to "Rugby News Board", index_url %>
+            <%= link_to "Rugby News Board", "/" %>
           </div>
           <div>
             <div class="menu-list">
@@ -55,19 +55,19 @@
               <span class="menu-item"><%= link_to "盎格鲁威尔士杯", "/event/anglo-welsh-cup" %></span>
             </div>
           </div>
-          <div class="menu-dropdown">
-            <div class="menu-dropdown-wrapper menu-off">
+          <div class="menu-dropdown menu-off">
+            <div class="menu-dropdown-wrapper">
               <div class="menu-dropdown-list">
-                <div class="menu-item"><%= link_to "首页", index_url %></div>
                 <div class="menu-item"><%= link_to "新闻", news_url, channel: "news" %></div>
                 <div class="menu-item"><%= link_to "比分", results_url, channel: "results" %></div>
+                <div class="menu-item" id="menu-list-toggle"><%= link_to "全部列表", "#" %></div>
                 <div class="menu-item"><%= link_to "赛事介绍", wiki_url %></div>
-                <div class="menu-item"><%= link_to "邮件订阅", news_feed_url %></div>
+                <div class="menu-item"><%= link_to "相关资料", info_url %></div>
                 <div class="menu-item"><%= link_to "关于", about_url %></div>
               </div>
             </div>
             <div class="menu-dropdown-sublist menu-off">
-              <div class="menu-dropdown-wrapper menu-dropdown-flex menu-off">
+              <div class="menu-dropdown-wrapper menu-dropdown-flex">
                 <div class="menu-item"><%= link_to "SuperRugby", "/event/super-rugby" %></div>
                 <div class="menu-item"><%= link_to "Premiership", "/event/premiership" %></div>
                 <div class="menu-item"><%= link_to "Top14", "/event/top14" %></div>
@@ -76,6 +76,18 @@
                 <div class="menu-item"><%= link_to "冠军赛", "/event/rugby-championship" %></div>
                 <div class="menu-item"><%= link_to "六国赛", "/event/six-nations" %></div>
                 <div class="menu-item"><%= link_to "世界杯", "/event/rugby-world-cup" %></div>
+                <div class="menu-item"><%= link_to "欧洲冠军杯", "/event/european-champions-cup" %></div>
+                <div class="menu-item"><%= link_to "欧洲挑战杯", "/event/european-challenge-cup" %></div>
+                <div class="menu-item"><%= link_to "CurrieCup", "/event/currie-cup" %></div>
+                <div class="menu-item"><%= link_to "Mitre10Cup", "/event/mitre-10-cup" %></div>
+                <div class="menu-item"><%= link_to "NRC", "/event/national-rugby-championship" %></div>
+                <div class="menu-item"><%= link_to "TopLeague", "/event/top-league" %></div>
+                <div class="menu-item"><%= link_to "MLR", "/event/major-league-rugby" %></div>
+                <div class="menu-item"><%= link_to "盎格鲁威尔士杯", "/event/anglo-welsh-cup" %></div>
+                <div class="menu-item"><%= link_to "狮子队", "/event/british-and-irish-lions" %></div>
+                <div class="menu-item"><%= link_to "野蛮人", "/event/barbarians" %></div>
+                <div class="menu-item"><%= link_to "7人制", "/event/rugby-sevens" %></div>
+                <div class="menu-item"><%= link_to "女子赛事", "/event/womens-rugby" %></div>
               </div>
             </div>
           </div>
@@ -111,11 +123,7 @@
             <div class="footer-column">
               <div class="footer-title">关注我们</div>
               <div class="menu-item">
-                <a
-                  href="https://rugby-board.herokuapp.com/news/feed"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://rugby-board.herokuapp.com/news/feed" target="_blank" rel="noopener noreferrer">
                   RSS 订阅
                 </a>
               </div>
