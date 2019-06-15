@@ -1,128 +1,139 @@
-<div class="news">
-  <div class="news-wrap info">
-    <div class="news-item">
-      <div class="news-title">
-        Admin
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="columns">
-  <div class="column column-1-2">
-    <% unless @edit_news %>
-      <div class="news">
-        <div class="news-wrap">
-          <div class="news-item">
-            <div class="news-title">
-              Create News
-            </div>
-            <%= form_for :news, method: :post, url: '/news/create' do |f| %>
-            <div class="news-content">
-              <%= f.label :title %>
-              <%= f.text_field :title %>
-            </div>
-            <div class="news-content">
-              <%= f.label :content %>
-              <%= f.text_area :content %>
-            </div>
-            <div class="news-content">
-              <%= f.label :channel %>
-              <%= select_tag(:channel, options_for_select(News::CHANNEL_LIST)) %>
-              <%= f.label :event %>
-              <%= select_tag(:event, options_for_select(News::EVENT_LIST)) %>
-              <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
-              <%= f.hidden_field :tag, value: "", name: "news[tag]" %>
-              <%= f.submit "Create" %>
-            </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-      <div class="news">
-        <div class="news-wrap">
-          <div class="news-item">
-            <div class="news-title">
-              Highlight
-            </div>
-            <%= form_for :news, method: :post, url: '/news/highlight' do |f| %>
-            <div class="news-content">
-              <%= f.label :id %>
-              <%= f.text_field :id %>
-              <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
-              <%= f.submit "Highlight", name: "set-highlight" %>
-              <%= f.submit "Reset", name: "cancel-highlight" %>
-            </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-      <div class="news">
-        <div class="news-wrap">
-          <div class="news-item">
-            <div class="news-title">
-              Delete news:
-            </div>
-            <%= form_for :news, method: :delete, url: '/news/delete' do |f| %>
-            <div class="news-content">
-              <%= f.label :id %>
-              <%= f.text_field :id %>
-              <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
-              <%= f.submit "Delete" %>
-            </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% else %>
-      <div class="news">
-        <div class="news-wrap">
-          <div class="news-item">
-            <%= form_for :news, method: :post, url: '/news/edit' do |f| %>
-            <div class="news-title">
-              Edit news: <%= @edit_news.id %>
-            </div>
-            <div class="news-content">
-              <%= f.label :title %>
-              <%= f.text_field :title, :value => @edit_news.title %>
-            </div>
-            <div class="news-content">
-              <%= f.label :content %>
-              <%= f.text_area :content, :value => @edit_news.content %>
-            </div>
-            <div class="news-content">
-              <%= f.label :channel %>
-              <%= select_tag(:channel, options_for_select(News::CHANNEL_LIST, @edit_news.channel))
-              %>
-            </div>
-            <div class="news-content">
-              <%= f.label :event %>
-              <%= select_tag(:event, options_for_select(News::EVENT_LIST, @edit_news.event)) %>
-            </div>
-            <div class="news-content">
-              <%= f.label :tag %>
-              <%= f.text_field :tag, :value => @edit_news.tag %>
-            </div>
-            <div class="news-content">
-              <%= f.hidden_field :id, value: "#{@edit_news.id}" %>
-              <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
-              <%= f.submit "Edit" %>
-            </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+<div class="columns admin">
+  <div class="column column-1-5">
+    <%= render partial: "admin/create" %>
+    <%= render partial: "admin/edit" %>
+    <%= render partial: "admin/highlight" %>
+    <%= render partial: "admin/delete" %>
+    <%= render partial: "admin/dict" %>
   </div>
 
-  <div class="column column-1-2">
+  <div class="column column-2-5">
+  <% unless @edit_news %>
+    <%= form_for :news, method: :post, url: '/news/create' do |f| %>
     <div class="news">
       <div class="news-wrap">
         <div class="news-item">
+          <div class="news-title">
+            Create
+          </div>
+          <div class="news-content">
+            <%= f.label :title %>
+            <%= f.text_field :title, :placeholder => "Awesome News Title" %>
+          </div>
+          <div class="news-content">
+            <%= f.label :content %>
+            <%= f.text_area :content, :placeholder => "Markdown is *available* here" %>
+          </div>
+          <div class="news-content">
+            <%= f.label :channel %>
+            <%= select_tag(:channel, options_for_select(News::CHANNEL_LIST)) %>
+            <%= f.label :event %>
+            <%= select_tag(:event, options_for_select(News::EVENT_LIST)) %>
+          </div>
         </div>
       </div>
     </div>
+    <div class="news" id="preview">
+      <div class="news-wrap">
+        <div class="news-item">
+          <div class="news-title" id="preview-news-title">
+          </div>
+          <div class="news-content" id="preview-news-content">
+          </div>
+          <div class="news-footer">
+            <div class="news-time" id="preview-news-time">
+              <%= @cur_time %>
+            </div>
+            <div class="news-channel" id="preview-news-channel">
+              新闻 | 其它
+            </div>
+          </div>
+          <div class="news-content">
+            <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
+            <%= f.hidden_field :tag, value: "", name: "news[tag]" %>
+            <%= f.submit "Create" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% else %>
+    <%= form_for :news, method: :post, url: '/news/edit' do |f| %>
+    <div class="news">
+      <div class="news-wrap">
+        <div class="news-item">
+          <div class="news-title">
+            Editing News: #<%= @edit_news.id %>
+          </div>
+          <div class="news-content">
+            <%= f.label :title %>
+            <%= f.text_field :title, :value => @edit_news.title %>
+          </div>
+          <div class="news-content">
+            <%= f.label :content %>
+            <%= f.text_area :content, :value => @edit_news.content %>
+          </div>
+          <div class="news-content">
+            <%= f.label :channel %>
+            <%= select_tag(:channel, options_for_select(News::CHANNEL_LIST, @edit_news.channel)) %>
+            <%= f.label :event %>
+            <%= select_tag(:event, options_for_select(News::EVENT_LIST, @edit_news.event)) %>
+          </div>
+          <div class="news-content">
+            <%= f.hidden_field :id, value: "#{@edit_news.id}" %>
+            <%= f.hidden_field :tag, value: "", name: "tag" %>
+            <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="news" id="preview">
+      <div class="news-wrap">
+        <div class="news-item">
+          <div class="news-title" id="preview-news-title">
+            <%= @edit_news.title %>
+          </div>
+          <div class="news-content" id="preview-news-content">
+            <%= @edit_news.content %>
+          </div>
+          <div class="news-footer">
+            <div class="news-time" id="preview-news-time">
+              <%= @edit_news.created_at.strftime("%H:%M %Y-%m-%d") %>
+            </div>
+            <div class="news-channel" id="preview-news-channel">
+              <%= @edit_news.channel_event %>
+            </div>
+          </div>
+          <div class="news-content">
+            <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
+            <%= f.hidden_field :tag, value: "", name: "news[tag]" %>
+            <%= f.submit "Edit" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+  </div>
+
+  <div class="column column-2-5">
+    <div class="news">
+      <div class="news-wrap">
+        <div class="news-item">
+          <div class="news-title">
+            Recent News
+          </div>
+          <div class="news-content">
+            <% @recent_news.each do |n| %>
+              <div>
+                <%= link_to "##{n.id}", "/admin?id=#{n.id}&token=#{params[:token]}" %> <%= n.title %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= render partial: "admin/toolbox" %>
+    <%= render partial: "admin/formatter" %>
   </div>
 </div>

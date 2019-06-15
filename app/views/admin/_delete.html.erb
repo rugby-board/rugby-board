@@ -1,0 +1,16 @@
+<div class="news">
+  <div class="news-wrap">
+    <div class="news-item">
+      <div class="news-title">
+        <div style="color: red">Delete</div>
+      </div>
+      <%= form_for :news, method: :delete, url: '/news/delete' do |f| %>
+      <div class="news-content">
+        <%= f.text_field :id, :placeholder => "News ID" %>
+        <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
+        <%= f.submit "Delete" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

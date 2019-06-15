@@ -1,16 +1,15 @@
 class AdminController < ApplicationController
   include AuthHelper
   before_action :check_token
-  attr_reader :page_title
-  
+
   def index
     @token = token
 
+    @recent_news = News.where(status: News::STATUS[:ok]).last(8).reverse
+    @cur_time = Time.now.strftime("%H:%M %Y-%m-%d")
     unless params[:id] == nil
       @edit_news = News.find(params[:id].to_i)
     end
-
-    @page_title = "Admin | "
   end
 
   def create
@@ -80,8 +79,29 @@ class AdminController < ApplicationController
     rescue ActiveRecord::RecordNotFound
       flash[:warning] = "Illegal id[#{params[:news][:id]}] input"
     end
-    
+
     redirect_to root_url
+  end
+
+  def translate
+    require "rugby-dict"
+
+    input = params[:entry] || ""
+    dict = RugbyDict::Dict.from_yaml
+    names = RugbyDict::Dict.segment(input)
+
+    query_result = []
+    names.each do |word|
+      t = dict.query_dict(word)
+      query_result << t unless t.nil?
+    end
+
+    result = {
+      :query => input,
+      :translations => query_result,
+    }
+
+    render json: result
   end
 
   private

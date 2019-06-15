@@ -10,7 +10,7 @@ class News < ApplicationRecord
   ].freeze
 
   EVENT_LIST = [
-    ['无', 0],
+    ['其它', 0],
     ['国际测试赛', 1],
     ['Six Nations', 2],
     ['Rugby Championship', 3],
@@ -65,14 +65,12 @@ class News < ApplicationRecord
     'barbarians': '野蛮人',
     'rugby-sevens': '7人制橄榄球',
     'womens-rugby': '女子橄榄球',
-
     'super-rugby': '超级橄榄球 Super Rugby',
     'premiership': '英格兰超级联赛 Premiership',
     'top14': '法国 Top 14 联赛',
     'pro14': 'PRO14 联赛',
     'european-challenge-cup': '欧洲挑战杯',
     'european-champions-cup': '欧洲冠军杯',
-
     'currie-cup': '库里杯 Currie Cup',
     'top-league': '日本 Top League 联赛',
     'mitre-10-cup': 'Mitre 10 杯',
@@ -115,6 +113,23 @@ class News < ApplicationRecord
 
   def page_title
     "#{title} | "
+  end
+
+  def channel_event
+    if event == 0
+      channel_text
+    else
+      "#{channel_text} | #{event_text}"
+    end
+  end
+
+  def channel_text
+    News::CHANNEL_LIST[channel][0]
+  end
+
+  def event_text
+    return "" if event == 0
+    News::EVENT_LIST[event][0]
   end
 
   def url

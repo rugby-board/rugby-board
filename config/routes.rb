@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post 'news/edit' => 'admin#edit'
   delete 'news/delete' => 'admin#delete'
   post 'news/highlight' => 'admin#highlight'
+  get 'translate' => 'admin#translate'
 
   get 'wiki' => 'wiki#index'
   get 'wiki/:event_name' => 'wiki#event'

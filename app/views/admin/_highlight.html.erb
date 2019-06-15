@@ -1,0 +1,17 @@
+<div class="news">
+  <div class="news-wrap">
+    <div class="news-item">
+      <div class="news-title">
+        Highlight
+      </div>
+      <%= form_for :news, method: :post, url: '/news/highlight' do |f| %>
+      <div class="news-content">
+        <%= f.text_field :id, :placeholder => "News ID" %>
+        <%= f.hidden_field :token, value: "#{@token}", name: "token" %>
+        <%= f.submit "Highlight", name: "set-highlight" %>
+        <%= f.submit "Unhighlight", name: "cancel-highlight" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

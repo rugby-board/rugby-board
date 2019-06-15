@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin - Rugby News Board</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application.css', media: 'all', 'data-turboas-track': 'reload' %>
+    <%= javascript_include_tag 'admin', 'data-turboas-track': 'reload' %>
+    <link href="//fonts.googleapis.com/css?family=Crimson+Text:400,400italic&amp;subset=latin,latin-ext" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="container-linen">
+        <header>
+          <div class="heading">
+            <div class="heading-more">
+              <%= link_to "Back", index_url, :target => "_blank" %>
+            </div>
+            <div class="heading-title">
+              <%= icon("fw fa-dashboard") %> Admin
+            </div>
+          </div>
+        </header>
+
+        <%= yield %>
+
+        <footer>
+          <div class="columns">
+            <div class="footer-column">
+              <div class="footer-title">关于</div>
+              <div>Rugby News Board, 2019.</div>
+              <div>Copyright &copy; <a href="https://crispgm.com/">David Zhang</a>.</div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
