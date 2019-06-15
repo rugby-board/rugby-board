@@ -9,7 +9,9 @@
       <%= render partial: "menu" %>
     </div>
     <div class="column column-2-3">
-      <%= render partial: @event_name %>
+      <% cache do %>
+        <%= render partial: @event_name %>
+      <% end %>
     </div>
   </div>
 </div>
