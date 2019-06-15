@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   get 'wiki' => 'wiki#index'
   get 'wiki/:event_name' => 'wiki#event'
+  get 'info' => 'wiki#info'
 
   root 'index#index'
   # 404 page

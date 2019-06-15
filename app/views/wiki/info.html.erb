@@ -1,0 +1,24 @@
+<% (0..@info_list.length - 1).step(2).each do |index| %>
+<div class="columns">
+  <% @info_list[index..(index+1)].each do |info| %>
+  <div class="column column-1-2">
+    <div class="heading">
+      <div class="heading-title" id="<%= info[:id] %>">
+        <%= icon("fw fa-#{info[:icon]}") %> <%= info[:title] %>
+      </div>
+    </div>
+    <div class="news-item">
+      <ul>
+        <% info[:entries].each do |item| %>
+        <li>
+          <a target="_blank" rel="noopener noreferrer" href="<%= item[:href] %>">
+            <%= item[:title] %>
+          </a>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <% end %>
+</div>
+<% end %>
