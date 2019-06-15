@@ -16,7 +16,7 @@ class NewsAdminTest < ActionDispatch::IntegrationTest
 
   test "post a news" do
     post "/news/create",
-      params: { 
+      params: {
         news: {
           title: "A new news",
           content: "- i am markdown\n- i am markdown, too",
@@ -35,7 +35,7 @@ class NewsAdminTest < ActionDispatch::IntegrationTest
 
   test "set highlight a news" do
   	post "/news/highlight",
-      params: { 
+      params: {
         news: {
           id: 1
         },
@@ -47,12 +47,12 @@ class NewsAdminTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_response :success
     assert_select "div#flash-message", "Highlight news 1 set successfully."
-    assert_select "div#highlight .section-headline .section-item:nth-child(2)", "英格兰保持28人阵容迎战意大利"
+    assert_select "div#highlight .news-headline .news-item:nth-child(2)", "英格兰保持28人阵容迎战意大利"
   end
 
   test "cancel highlight a news" do
     post "/news/highlight",
-      params: { 
+      params: {
         news: {
           id: 1
         },
@@ -64,12 +64,12 @@ class NewsAdminTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_response :success
     assert_select "div#flash-message", "Highlight news 1 cancelled successfully."
-    assert_select "div.section-headline", 1
+    assert_select "div.news-headline", 1
   end
 
   test "edit a news" do
     post "/news/edit",
-      params: { 
+      params: {
         news: {
           id: 2,
           title: "PRO12 联赛比分汇总",
@@ -87,7 +87,7 @@ class NewsAdminTest < ActionDispatch::IntegrationTest
 
     get "/news/2"
     assert_response :success
-    assert_select "div#news-2 div.section-content", "a new content"
+    assert_select "div#news-2 div.news-content", "a new content"
   end
 
   test "delete a news" do

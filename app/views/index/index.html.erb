@@ -22,7 +22,7 @@
 
       <div class="columns">
         <div class="column">
-          <div class="news">
+          <div class="news" id="highlight">
             <div class="news-wrap news-headline">
               <% @highlight.each do |h| %>
                 <div class="news-item">
@@ -39,7 +39,7 @@
 
       <div class="columns">
         <div class="column">
-          <div class="news">
+          <div class="news" id="news">
             <% @news.each do |n| %>
               <% cache n do %>
                 <%= render n %>
@@ -63,7 +63,7 @@
       </div>
       <div class="columns">
         <div class="column">
-          <div class="news">
+          <div class="news" id="results">
             <% @results.each do |n| %>
               <% cache n do %>
                 <%= render n %>
@@ -84,7 +84,7 @@
           <%= icon("fw fa-info-circle") %> 赛事介绍
         </div>
       </div>
-      <div class="news">
+      <div class="news" id="wiki">
         <div class="news-wrap">
           <div class="news-item">
             <ul><b>国家队赛事</b>

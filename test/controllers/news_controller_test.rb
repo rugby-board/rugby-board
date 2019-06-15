@@ -16,8 +16,8 @@ class NewsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should list PRO12 event" do
-    get "/event/pro12"
+  test "should list PRO14 event" do
+    get "/event/pro14"
     assert_response :success
   end
 
