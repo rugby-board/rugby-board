@@ -41,8 +41,16 @@ class NewsController < ApplicationController
   end
 
   def item
-    @news = News.find(params[:id].to_i)
+    param_id = params[:id].to_i
+    @news = News.find(param_id)
     @page_title = @news.page_title
+    @adjacent = News.where(id: [param_id - 1, param_id + 1])
+    not_available_ids = Array.new
+    not_available_ids << @news.id
+    @adjacent.each do |n|
+      not_available_ids << n.id
+    end
+    @related = News.where(event: @news.event).where.not(id: not_available_ids).last(2).reverse
   end
 
   def feed

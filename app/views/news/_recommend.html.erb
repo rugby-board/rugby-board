@@ -1,0 +1,34 @@
+<div class="news">
+  <div class="news-wrap">
+    <div class="news-item news-recommend">
+      <div class="news-recommend-channel">
+        <div class="news-recommend-channel-name">
+          <%= icon("exchange") %> 前后看看
+        </div>
+        <div class="news-recommend-channel-list">
+          <% cache @adjacent do %>
+            <% @adjacent.each do |n| %>
+            <div>
+              <%= link_to n.title, "/news/#{n.id}" %>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="news-recommend-channel">
+        <div class="news-recommend-channel-name">
+          <%= icon("history") %> 相关推荐
+        </div>
+        <div class="news-recommend-channel-list">
+          <% cache @related do %>
+            <% @related.each do |n| %>
+            <div>
+              <%= link_to n.title, "/news/#{n.id}" %>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
