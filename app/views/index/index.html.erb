@@ -1,11 +1,15 @@
 <% flash.each do |type, msg| %>
 <div class="news">
   <div class="news-wrap <%= type %>">
-    <div id="flash-message" class="news-title">
-      <%= msg %>
+    <div class="news-item">
+      <div id="flash-message" class="news-title">
+        <%= icon("fw fa-info") %>
+        <%= msg %>
+      </div>
     </div>
   </div>
 </div>
+<div class="news"></div>
 <% end %>
 
 <div class="columns">
