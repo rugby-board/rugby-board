@@ -1,6 +1,11 @@
 <div class="columns">
   <div class="column">
     <div class="heading">
+      <% if @wiki %>
+      <div class="heading-more">
+        <%= link_to "赛事介绍", "/wiki/#{@event_name}" %>
+      </div>
+      <% end %>
       <div class="heading-title">
         <%= icon(@page_icon) %> <%= @in_page_title %>
       </div>

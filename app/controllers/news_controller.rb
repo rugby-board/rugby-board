@@ -23,7 +23,8 @@ class NewsController < ApplicationController
       @news = News.where(status: [News::STATUS[:ok], News::STATUS[:highlighted]], channel: channel_id)
                   .reverse_order.limit(News::PAGINATION_STEP).offset(start)
     else
-      @page_icon = "fw fa-flag-checkered"
+      @event_name = params[:event_name]
+      @wiki = true if News::WIKI_AVAILABILITY.key?(params[:event_name].to_sym)
       total = News.where(status: [News::STATUS[:ok], News::STATUS[:highlighted]], channel: channel_id, event: event_id)
                   .count
       @news = News.where(status: [News::STATUS[:ok], News::STATUS[:highlighted]], channel: channel_id, event: event_id)
@@ -96,7 +97,10 @@ class NewsController < ApplicationController
 
     unless event_id.nil?
       @page_title = "#{News::EVENT_LIST[event_id][0]} | "
+      @page_icon = "fw fa-flag-checkered"
       @in_page_title = "#{News::EVENT_LIST[event_id][0]}"
+      event_sym = params[:event_name].to_sym
+      @in_page_title = News::EVENT_NAME_MAP[event_sym]
     end
   end
 end

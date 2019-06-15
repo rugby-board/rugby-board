@@ -10,7 +10,7 @@ class WikiController < ApplicationController
     @page_title = "Wiki | "
     event_sym = params[:event_name].to_sym
     @display_name = News::EVENT_NAME_MAP[event_sym]
-    if News::EVENT_NAME_MAP.key?(event_sym)
+    if News::WIKI_AVAILABILITY.key?(event_sym)
       @event_name = params[:event_name].split("-").join("_")
       render 'wiki/event'
     else

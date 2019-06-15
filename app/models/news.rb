@@ -56,23 +56,45 @@ class News < ApplicationRecord
     'major-league-rugby': 20,
   }
 
-  EVENT_WIKI_NAME_MAP = {
-    'six-nations': '欧洲六国赛 Six Nations',
-    'rugby-championship': '橄榄球冠军赛 The Rugby Championship',
+  EVENT_NAME_MAP = {
+    'international-tests': '国际测试赛',
+    'six-nations': '六国赛 Six Nations',
+    'rugby-championship': '冠军赛 The Rugby Championship',
     'rugby-world-cup': '橄榄球世界杯',
     'british-and-irish-lions': '不列颠和爱尔兰狮子 British & Irish Lions',
     'barbarians': '野蛮人',
+    'rugby-sevens': '7人制橄榄球',
+    'womens-rugby': '女子橄榄球',
 
     'super-rugby': '超级橄榄球 Super Rugby',
     'premiership': '英格兰超级联赛 Premiership',
     'top14': '法国 Top 14 联赛',
-    'pro14': '凯尔特 PRO14 联赛',
+    'pro14': 'PRO14 联赛',
+    'european-challenge-cup': '欧洲挑战杯',
+    'european-champions-cup': '欧洲冠军杯',
 
-    'currie-cup': '南非库里杯 Currie Cup',
+    'currie-cup': '库里杯 Currie Cup',
     'top-league': '日本 Top League 联赛',
-    'mitre-10-cup': '新西兰 Mitre 10 Cup',
-    'national-rugby-championship': '澳大利亚国家橄榄球冠军赛 NRC',
-    'major-league-rugby': '美国职业橄榄球大联盟 MLR',
+    'mitre-10-cup': 'Mitre 10 杯',
+    'national-rugby-championship': '国家橄榄球冠军赛',
+    'major-league-rugby': '职业橄榄球大联盟',
+    'anglo-welsh-cup': '盎格鲁威尔士杯',
+  }
+
+  WIKI_AVAILABILITY = {
+    'six-nations': true,
+    'rugby-championship': true,
+    'rugby-world-cup': true,
+    'british-and-irish-lions': true,
+    'super-rugby': true,
+    'premiership': true,
+    'top14': true,
+    'pro14': true,
+    'currie-cup': true,
+    'top-league': true,
+    'mitre-10-cup': true,
+    'major-league-rugby': true,
+    'anglo-welsh-cup': true,
   }
 
   STATUS = {
