@@ -14,11 +14,7 @@
     <% end %>
     <div class="news-footer">
       <div class="news-time">
-        <% if defined?(nolink) && nolink == true %>
-          <%= news.created_at.strftime("%H:%M %Y-%m-%d") %>
-        <% else %>
-          <%= link_to news.created_at.strftime("%H:%M %Y-%m-%d"), "/news/#{news.id}" %>
-        <% end %>
+        <%= news.created_at.strftime("%H:%M %Y-%m-%d") %>
       </div>
       <div class="news-channel">
         <%= News::CHANNEL_LIST[news.channel][0] %>
