@@ -1,12 +1,15 @@
 language: ruby
 sudo: false
 rvm:
-  - 2.3.0
+  - 2.5.0
 env:
   global:
     - CC_TEST_REPORTER_ID=9bceb1a3273cdeb18c029dca5637d1e1a748d4501619fcc7758bd861f6cc2fdf
 services:
   - postgresql
+before_install:
+  - gem update --system
+  - gem install bundler
 before_script:
   - psql -c 'create database dripcoffee_rugbyboard_test;' -U postgres
   - cp config/secrets.travis.yml config/secrets.yml
@@ -22,4 +25,3 @@ after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications:
   email: false
-  slack: navyblue-team:ioO5diAGc5WUQVDKc5BH1UbE
