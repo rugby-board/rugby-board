@@ -41,12 +41,19 @@ $(document).ready(function() {
             entry: word,
             token: token,
         }, function(data) {
-            console.log(data);
             if (!data || !data.translations) {
                 return;
             }
             result = data.translations[0];
             $('#translation-result').text(result);
         });
+    });
+
+    $('button#btn-table').click(function() {
+        $('#toolbox-content').text(`| 主队 | 比分 | 客队 |
+|----|----|----|
+|  |  |  |
+|  |  |  |
+|  |  |  |`);
     });
 });
