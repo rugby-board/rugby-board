@@ -56,4 +56,43 @@ $(document).ready(function() {
 |  |  |  |
 |  |  |  |`);
     });
+
+    $('button#btn-format').click(function() {
+        const input = $('#format-content').val();
+        const lines = input.split('\n');
+        const teams = [];
+        let formatted = '| 主队 | 比分 | 客队 |\n|----|----|----|\n';
+        for (let i = 0; i < lines.length; i += 1) {
+            const line = lines[i];
+            const results = line.split('\t');
+            for (let j = 0; j < results.length; j += 1) {
+                if (j === 0) {
+                    continue;
+                }
+                if (j === 1) {
+                    formatted += '| ';
+                }
+                if (j === 1 || j === 3) {
+                  teams.push(results[j]);
+                }
+                formatted += results[j] + ' | ';
+            }
+            formatted += '\n';
+        }
+        const queryTeams = teams.join(' | ');
+        let pos = 0;
+        $.getJSON('/translate', {
+            entry: queryTeams,
+            token: token,
+        }, function(data) {
+            const translations = data.translations;
+            for (let i = 0; i < translations.length; i += 1) {
+                const chineseWord = translations[i];
+                const englishWord = teams[i];
+                pos = formatted.indexOf(englishWord, pos);
+                formatted = [formatted.slice(0, pos), chineseWord + ' ', formatted.slice(pos)].join('');
+            }
+            $('#format-content').val(formatted);
+        });
+    })
 });
