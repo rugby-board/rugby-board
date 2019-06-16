@@ -94,7 +94,7 @@
             <%= @edit_news.title %>
           </div>
           <div class="news-content" id="preview-news-content">
-            <%= @edit_news.content %>
+            <%= raw(@edit_news.markdown_content) %>
           </div>
           <div class="news-footer">
             <div class="news-time" id="preview-news-time">

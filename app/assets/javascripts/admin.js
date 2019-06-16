@@ -20,7 +20,7 @@ $(document).ready(function() {
     });
 
     $('#news_content').on('input', function(e) {
-        $('#preview-news-content').html($(this).val());
+        $('#preview-news-content').html(marked($(this).val()));
     });
 
     $('#channel').change(function() {
