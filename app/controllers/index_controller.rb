@@ -1,5 +1,6 @@
 class IndexController < ApplicationController
   attr_reader :page_title
+  include NewsHelper
 
   def index
     @highlight = News.where(status: News::STATUS[:highlighted])
@@ -10,9 +11,10 @@ class IndexController < ApplicationController
                 .last(News::PAGINATION_STEP)
                 .reverse
 
-    @results = News.where(status: News::STATUS[:ok], channel: 1).where("created_at >= ?", 1.week.ago.utc)
+    results = News.where(status: News::STATUS[:ok], channel: 1).where("created_at >= ?", 1.week.ago.utc)
                 .last(News::PAGINATION_STEP)
                 .reverse
+    @results = results.map {|n| n = filter_translation(n) }
     render "index/index"
   end
 
