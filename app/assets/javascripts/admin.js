@@ -27,6 +27,9 @@ $(document).ready(function() {
         const channel = $('#channel option:selected').text();
         const event = $('#event option:selected').text();
         $('#preview-news-channel').html(`${channel} | ${event}`);
+        if (channel == '比分') {
+            $('#preview-news-content').addClass('news-result');
+        }
     });
 
     $('#event').change(function() {
