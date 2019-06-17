@@ -26,35 +26,35 @@
           </div>
           <div>
             <div class="menu-list">
-              <span class="menu-item"><%= link_to "首页", index_url %></span>
-              <span class="menu-item"><%= link_to "新闻", news_url, channel: "news" %></span>
-              <span class="menu-item"><%= link_to "比分", results_url, channel: "results" %></span>
-              <span class="menu-item"><%= link_to "赛事介绍", wiki_url %></span>
-              <span class="menu-item"><%= link_to "相关资料", info_url %></span>
-              <span class="menu-item"><%= link_to "关于", about_url %></span>
+              <span class="menu-item <%= active_class("/") %><%=active_class(index_url) %>"><%= link_to "首页", index_url %></span>
+              <span class="menu-item <%= active_class(news_url) %>"><%= link_to "新闻", news_url, channel: "news" %></span>
+              <span class="menu-item <%= active_class(results_url) %>"><%= link_to "比分", results_url, channel: "results" %></span>
+              <span class="menu-item <%= active_class(wiki_url) %>"><%= link_to "赛事介绍", wiki_url %></span>
+              <span class="menu-item <%= active_class(info_url) %>"><%= link_to "相关资料", info_url %></span>
+              <span class="menu-item <%= active_class(about_url) %>"><%= link_to "关于", about_url %></span>
               <span class="menu-item">-&nbsp;</span>
-              <span class="menu-item"><%= link_to "国际测试赛", "/event/international-tests" %></span>
-              <span class="menu-item"><%= link_to "冠军赛", "/event/rugby-championship" %></span>
-              <span class="menu-item"><%= link_to "六国赛", "/event/six-nations" %></span>
-              <span class="menu-item"><%= link_to "世界杯", "/event/rugby-world-cup" %></span>
-              <span class="menu-item"><%= link_to "狮子队", "/event/british-and-irish-lions" %></span>
-              <span class="menu-item"><%= link_to "野蛮人", "/event/barbarians" %></span>
-              <span class="menu-item"><%= link_to "7人制", "/event/rugby-sevens" %></span>
-              <span class="menu-item"><%= link_to "女子赛事", "/event/womens-rugby" %></span>
+              <span class="menu-item <%= active_class("/event/international-tests") %>"><%= link_to "国际测试赛", "/event/international-tests" %></span>
+              <span class="menu-item <%= active_class("/event/rugby-championship") %>"><%= link_to "冠军赛", "/event/rugby-championship" %></span>
+              <span class="menu-item <%= active_class("/event/six-nations") %>"><%= link_to "六国赛", "/event/six-nations" %></span>
+              <span class="menu-item <%= active_class("/event/rugby-world-cup") %>"><%= link_to "世界杯", "/event/rugby-world-cup" %></span>
+              <span class="menu-item <%= active_class("/event/british-and-irish-lions") %>"><%= link_to "狮子队", "/event/british-and-irish-lions" %></span>
+              <span class="menu-item <%= active_class("/event/barbarians") %>"><%= link_to "野蛮人", "/event/barbarians" %></span>
+              <span class="menu-item <%= active_class("/event/rugby-sevens") %>"><%= link_to "7人制", "/event/rugby-sevens" %></span>
+              <span class="menu-item <%= active_class("/event/womens-rugby") %>"><%= link_to "女子赛事", "/event/womens-rugby" %></span>
             </div>
             <div class="menu-list">
-              <span class="menu-item"><%= link_to "SuperRugby", "/event/super-rugby" %></span>
-              <span class="menu-item"><%= link_to "Premiership", "/event/premiership" %></span>
-              <span class="menu-item"><%= link_to "Top14", "/event/top14" %></span>
-              <span class="menu-item"><%= link_to "PRO14", "/event/pro14" %></span>
-              <span class="menu-item"><%= link_to "欧洲冠军杯", "/event/european-champions-cup" %></span>
-              <span class="menu-item"><%= link_to "欧洲挑战杯", "/event/european-challenge-cup" %></span>
-              <span class="menu-item"><%= link_to "CurrieCup", "/event/currie-cup" %></span>
-              <span class="menu-item"><%= link_to "Mitre10Cup", "/event/mitre-10-cup" %></span>
-              <span class="menu-item"><%= link_to "NRC", "/event/national-rugby-championship" %></span>
-              <span class="menu-item"><%= link_to "TopLeague", "/event/top-league" %></span>
-              <span class="menu-item"><%= link_to "MLR", "/event/major-league-rugby" %></span>
-              <span class="menu-item"><%= link_to "盎格鲁威尔士杯", "/event/anglo-welsh-cup" %></span>
+              <span class="menu-item <%= active_class("/event/super-rugby") %>"><%= link_to "SuperRugby", "/event/super-rugby" %></span>
+              <span class="menu-item <%= active_class("/event/premiership") %>"><%= link_to "Premiership", "/event/premiership" %></span>
+              <span class="menu-item <%= active_class("/event/top14") %>"><%= link_to "Top14", "/event/top14" %></span>
+              <span class="menu-item <%= active_class("/event/pro14") %>"><%= link_to "PRO14", "/event/pro14" %></span>
+              <span class="menu-item <%= active_class("/event/european-champions-cup") %>"><%= link_to "欧洲冠军杯", "/event/european-champions-cup" %></span>
+              <span class="menu-item <%= active_class("/event/european-challenge-cup") %>"><%= link_to "欧洲挑战杯", "/event/european-challenge-cup" %></span>
+              <span class="menu-item <%= active_class("/event/currie-cup") %>"><%= link_to "CurrieCup", "/event/currie-cup" %></span>
+              <span class="menu-item <%= active_class("/event/mitre-10-cup") %>"><%= link_to "Mitre10Cup", "/event/mitre-10-cup" %></span>
+              <span class="menu-item <%= active_class("/event/national-rugby-championship") %>"><%= link_to "NRC", "/event/national-rugby-championship" %></span>
+              <span class="menu-item <%= active_class("/event/top-league") %>"><%= link_to "TopLeague", "/event/top-league" %></span>
+              <span class="menu-item <%= active_class("/event/major-league-rugby") %>"><%= link_to "MLR", "/event/major-league-rugby" %></span>
+              <span class="menu-item <%= active_class("/event/anglo-welsh-cup") %>"><%= link_to "盎格鲁威尔士杯", "/event/anglo-welsh-cup" %></span>
             </div>
           </div>
           <div class="menu-dropdown menu-off">

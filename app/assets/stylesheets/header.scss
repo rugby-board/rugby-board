@@ -39,15 +39,16 @@
 
 .menu-item {
   a {
+    color: inherit;
     padding-right: .4rem;
 
     &:hover {
       text-decoration: underline;
     }
+  }
 
-    &.menu-active {
-      color: $heading-bg-color;
-    }
+  &.menu-active {
+    color: $heading-bg-color;
   }
 }
 
