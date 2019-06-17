@@ -18,7 +18,7 @@ $(document).ready(function(){
   var isMenuDown = false;
   var isFullListDown = false;
 
-  $('.menu-navicon>a').click(function(){
+  $('.menu-navicon>button').click(function(){
     if (isMenuDown) {
       $('.menu-dropdown').css('display', 'none');
     } else {
