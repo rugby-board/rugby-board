@@ -92,6 +92,7 @@ class News < ApplicationRecord
     'top-league': true,
     'mitre-10-cup': true,
     'major-league-rugby': true,
+    'national-rugby-championship': true,
     'anglo-welsh-cup': true,
   }
 
