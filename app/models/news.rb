@@ -1,4 +1,8 @@
+require "kramdown"
+
 class News < ApplicationRecord
+  include NewsHelper
+
   self.primary_key = "id"
 
   PAGINATION_STEP = 20.freeze
@@ -108,8 +112,9 @@ class News < ApplicationRecord
   validates :status, numericality: {greater_than_or_equal_to: 0, less_than: STATUS.size}
 
   def markdown_content
-    require "kramdown"
-    Kramdown::Document.new(content).to_html
+    new_content = content
+    new_content = balance_score(content) if channel == 1
+    Kramdown::Document.new(new_content).to_html
   end
 
   def page_title

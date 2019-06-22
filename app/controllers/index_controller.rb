@@ -14,7 +14,9 @@ class IndexController < ApplicationController
     results = News.where(status: News::STATUS[:ok], channel: 1).where("created_at >= ?", 1.week.ago.utc)
                 .last(News::PAGINATION_STEP)
                 .reverse
-    @results = results.map {|n| n = filter_translation(n) }
+    @results = results.map do |n|
+      filter_translation(n)
+    end
     render "index/index"
   end
 
