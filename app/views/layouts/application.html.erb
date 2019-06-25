@@ -32,6 +32,7 @@
               <span class="menu-item <%= active_class(results_url) %>"><%= link_to "比分", results_url, channel: "results" %></span>
               <span class="menu-item <%= active_class(wiki_url) %>"><%= link_to "赛事介绍", wiki_url %></span>
               <span class="menu-item <%= active_class(info_url) %>"><%= link_to "相关资料", info_url %></span>
+              <span class="menu-item <%= active_class(live_url) %>"><%= link_to "直播", live_url %></span>
               <span class="menu-item <%= active_class(about_url) %>"><%= link_to "关于", about_url %></span>
               <span class="menu-item">-&nbsp;</span>
               <span class="menu-item <%= active_class("/event/international-tests") %>"><%= link_to "国际测试赛", "/event/international-tests" %></span>
@@ -65,6 +66,7 @@
                 <div class="menu-item"><%= link_to "比分", results_url, channel: "results" %></div>
                 <div class="menu-item" id="menu-list-toggle"><%= link_to "全部列表", "#" %></div>
                 <div class="menu-item"><%= link_to "赛事介绍", wiki_url %></div>
+                <div class="menu-item"><%= link_to "直播", live_url %></div>
                 <div class="menu-item"><%= link_to "相关资料", info_url %></div>
                 <div class="menu-item"><%= link_to "关于", about_url %></div>
               </div>

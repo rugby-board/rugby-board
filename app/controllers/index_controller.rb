@@ -20,6 +20,11 @@ class IndexController < ApplicationController
     render "index/index"
   end
 
+  def live
+    @page_title = "直播 | "
+    render "index/live"
+  end
+
   def about
     @page_title = "关于 | "
     render "index/about"

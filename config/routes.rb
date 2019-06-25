@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'index' => 'index#index'
+  get 'live' => 'index#live'
   get 'about' => 'index#about'
 
   get 'news' => 'news#list', :channel => "news"
