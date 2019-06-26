@@ -166,6 +166,7 @@ class Events
 
   class << self
     def event_id(event_key)
+      return false unless EVENT_NAME_ID_MAP.key?(event_key.to_sym)
       EVENT_NAME_ID_MAP[event_key.to_sym]
     end
 
