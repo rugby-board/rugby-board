@@ -24,7 +24,7 @@ class NewsController < ApplicationController
                   .reverse_order.limit(News::PAGINATION_STEP).offset(start)
     else
       @event_name = params[:event_name]
-      @wiki = true if News::WIKI_AVAILABILITY.key?(params[:event_name].to_sym)
+      @wiki = Events::wiki?(event_id)
       total = News.where(status: [News::STATUS[:ok], News::STATUS[:highlighted]], channel: channel_id, event: event_id)
                   .count
       @news = News.where(status: [News::STATUS[:ok], News::STATUS[:highlighted]], channel: channel_id, event: event_id)
@@ -86,10 +86,7 @@ class NewsController < ApplicationController
 
   def get_event_id(event_name)
     return nil if event_name.blank?
-    event_sym = event_name.to_sym
-    return News::EVENT_NAME_ID_MAP[event_sym] if News::EVENT_NAME_ID_MAP.key?(event_sym)
-
-    false
+    Events::event_id(event_name)
   end
 
   def set_page_title(channel_id, event_id)
@@ -104,11 +101,9 @@ class NewsController < ApplicationController
     end
 
     unless event_id.nil?
-      @page_title = "#{News::EVENT_LIST[event_id][0]} | "
       @page_icon = "fw fa-flag-checkered"
-      @in_page_title = "#{News::EVENT_LIST[event_id][0]}"
-      event_sym = params[:event_name].to_sym
-      @in_page_title = News::EVENT_NAME_MAP[event_sym]
+      @page_title = "#{Events::name(event_id)} | "
+      @in_page_title = Events::event_name(event_id)
     end
   end
 end
