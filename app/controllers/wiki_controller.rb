@@ -8,9 +8,14 @@ class WikiController < ApplicationController
 
   def event
     event_id = Events::event_id(params[:event_name])
+    if event_id == false || event_id.blank?
+      redirect_to "/404"
+      return
+    end
 
     @page_title = "Wiki | "
     @display_name = Events::event_name(event_id)
+
     if Events::wiki?(event_id)
       @event_name = Events::page_key(event_id)
       render 'wiki/event'

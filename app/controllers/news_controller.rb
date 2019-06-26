@@ -14,14 +14,14 @@ class NewsController < ApplicationController
     page = get_page(params[:p])
     start = (page - 1) * News::PAGINATION_STEP
     # get news
-    if event_id == false
-      redirect_to "/404"
-      return
-    elsif event_id.nil?
+    if params[:event_name].blank?
       total = News.where(status: [News::STATUS[:ok], News::STATUS[:highlighted]], channel: channel_id)
                   .count
       @news = News.where(status: [News::STATUS[:ok], News::STATUS[:highlighted]], channel: channel_id)
                   .reverse_order.limit(News::PAGINATION_STEP).offset(start)
+    elsif event_id == false
+      redirect_to "/404"
+      return
     else
       @event_name = params[:event_name]
       @wiki = Events::wiki?(event_id)
