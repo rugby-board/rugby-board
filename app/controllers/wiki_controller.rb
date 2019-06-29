@@ -36,8 +36,8 @@ class WikiController < ApplicationController
             href: 'https://mp.weixin.qq.com/s?__biz=MzI5MjUwNTUxNQ==&mid=100000064&idx=1&sn=3e9ce4898c4771920a181a3f1078a571',
           },
           {
-            title: '[体育人间] 天津橄榄球队',
-            href: 'http://tv.cctv.com/2017/11/27/VIDESF0z7GNnWRV6mxO3ULza171127.shtml',
+            title: '娶公主，哪来的自信？',
+            href: 'https://mp.weixin.qq.com/s/v9hfRo6K1bZoEHkCo4VXfQ',
           },
           {
             title: '伦敦恐袭中的第一英雄是怎样炼成的？',
@@ -46,6 +46,10 @@ class WikiController < ApplicationController
           {
             title: '橄榄球是如何改变一个草根的命运',
             href: 'https://mp.weixin.qq.com/s?__biz=MzI5MjUwNTUxNQ==&mid=2247485099&idx=1&sn=d894b0e6334b936ef966e57545964726',
+          },
+          {
+            title: '[体育人间] 天津橄榄球队',
+            href: 'http://tv.cctv.com/2017/11/27/VIDESF0z7GNnWRV6mxO3ULza171127.shtml',
           },
         ],
       },
@@ -67,7 +71,7 @@ class WikiController < ApplicationController
             href: 'https://mp.weixin.qq.com/s/ci0WpkoWSzZF9jF-PD9TEw',
           },
           {
-            title: ' Rugby & Respect That’s why we love',
+            title: 'Rugby & Respect That’s why we love',
             href: 'https://mp.weixin.qq.com/s/EXclrXpCVMHHkc-JeE5mAA',
           },
         ],
