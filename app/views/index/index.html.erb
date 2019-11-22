@@ -70,10 +70,20 @@
       <div class="columns">
         <div class="column">
           <div class="news" id="results">
-            <% @results.each do |n| %>
-              <% cache n do %>
-                <%= render n %>
+            <% unless @results.empty? %>
+              <% @results.each do |n| %>
+                <% cache n do %>
+                  <%= render n %>
+                <% end %>
               <% end %>
+            <% else %>
+            <div class="news-wrap" id="empty-result">
+              <div class="news-item">
+                <div class="news-content">
+                  <%= icon("fw fa-hourglass-end") %> 暂无数据
+                </div>
+              </div>
+            </div>
             <% end %>
           </div>
           <div class="news"></div>
